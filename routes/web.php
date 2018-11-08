@@ -32,12 +32,23 @@ Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
     'as'=>'event.delete']);
 
-    Route::get('/event/update/{id}',[
+Route::get('/event/update/{id}',[
     'uses'=>'event\eventController@eventUpdate',
     'as'=>'event.update']);
 
-    Route::post('/event/save/{id}',[
+Route::post('/event/save/{id}',[
         'uses'=>'event\eventController@eventUpdateSave',
         'as'=>'event.save'         ]);
+
+
+        
        
+// sanduni's routes
+
+
+// achinie's routes
+
+
+
+// nimesh's routes
  
