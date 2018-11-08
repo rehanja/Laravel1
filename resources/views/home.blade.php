@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+
+                    <a href="http://127.0.0.1:8000/event">event page tempary</a>
                 </div>
             </div>
         </div>
