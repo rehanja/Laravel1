@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!as a user
 
                     <a href="http://127.0.0.1:8000/event">event page tempary</a>
                 </div>
