@@ -46,9 +46,37 @@ Route::post('/event/save/{id}',[
 // sanduni's routes
 
 
-// achinie's routes
+// achini's routes - Meeting
+Route::get('/meeting',function(){
 
+    $a=App\Meeting::all();
+    return view('meeting/meetingHome')->with('meeting',$a);
+    });
 
+Route::get('create', [
+    'uses'=>'meetingController@MeetingCreate', 
+    'as'=>'meetingCreate'
+    ]);
+      
+Route::post('create', [
+    'uses'=>'meetingController@MeetingStore', 
+    'as'=>'meetingStore'
+    ]);
 
+Route::get('/delete/{id}',[
+    'uses'=>'meetingController@MeetingDelete',
+    'as'=>'meetingDelete'
+    ]);
+    
+Route::get('/update/{id}',[
+    'uses'=>'meetingController@MeetingUpdate',
+    'as'=>'meetingUpdate'
+    ]);
+    
+Route::post('/save/{id}',[
+        'uses'=>'meetingController@MeetingUpdateSave',
+        'as'=>'meetingSave'         
+        ]);
+    
 // nimesh's routes
  
