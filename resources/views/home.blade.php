@@ -14,9 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!as a user
+                    You are logged in...!!<br><br>
 
-                    <a href="http://127.0.0.1:8000/event">event page tempary</a>
+                    <a href="http://127.0.0.1:8000/event">View Event Page</a><br>
+                    <a href="http://127.0.0.1:8000/meeting">View Meeting Page</a>
                 </div>
             </div>
         </div>
