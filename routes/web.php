@@ -54,27 +54,27 @@ Route::get('/meeting',function(){
     });
 
 Route::get('create', [
-    'uses'=>'meetingController@MeetingCreate', 
+    'uses'=>'meeting\meetingController@MeetingCreate', 
     'as'=>'meetingCreate'
     ]);
       
 Route::post('create', [
-    'uses'=>'meetingController@MeetingStore', 
+    'uses'=>'meeting\meetingController@MeetingStore', 
     'as'=>'meetingStore'
     ]);
 
 Route::get('/delete/{id}',[
-    'uses'=>'meetingController@MeetingDelete',
+    'uses'=>'meeting\meetingController@MeetingDelete',
     'as'=>'meetingDelete'
     ]);
     
 Route::get('/update/{id}',[
-    'uses'=>'meetingController@MeetingUpdate',
+    'uses'=>'meeting\meetingController@MeetingUpdate',
     'as'=>'meetingUpdate'
     ]);
     
 Route::post('/save/{id}',[
-        'uses'=>'meetingController@MeetingUpdateSave',
+        'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'         
         ]);
     
