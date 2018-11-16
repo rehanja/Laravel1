@@ -119,10 +119,11 @@
             <td>{{$eventData->startDate}}</td>
             <td>{{$eventData->startTime}}</td>
             <td>{{$eventData->endTime}}</td>
-            @role('or_pm|supervising_officer')   
+            @role('or_pm|supervising_officer') 
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
             @endrole
+           
         </tr>
     @endforeach
                                            
