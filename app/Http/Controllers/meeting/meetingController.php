@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\meeting;
 use App\Meeting;
 
 use Illuminate\Http\Request;
@@ -44,8 +44,8 @@ class meetingController extends Controller
 
     public function MeetingDelete($id){
     
-        $data = Meeting::find($id);
-        $data->delete();
+        $a = Meeting::find($id);
+        $a->delete();
         return redirect()->back()->with('message','Meeting Delete Successfully!');
 
     }
