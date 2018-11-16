@@ -46,7 +46,7 @@ class HomeController extends Controller
         //$permission = Permission::create(['name' => 'delete event']);
         //$permission = Permission::create(['name' => 'update event']);
 
-    //giveing permission to p_member
+//giveing permission to p_member
     $role1 = Role::findById(1);
     $permission1 = Permission::findById(1);
     $role1->givePermissionTo($permission1);
