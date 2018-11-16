@@ -19,6 +19,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<style>
+    .card-body {
+    font-weight: bold;
+    }
+    </style>
+
 </head>
 <body>
     <div id="app">
