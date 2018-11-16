@@ -62,8 +62,12 @@
                 </div>
                 <div class="form-group">
                     <label for="abc">Status:</label>
-                    <input type="text" class="form-control" value="{{$meeting -> status}}" name="status" placeholder="Enter here" id="status">
-                </div>
+					<select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
+                        <option>Sheduled</option>
+                        <option>Resheduled</option>
+						<option>Postponed</option>
+                    </select>                
+				</div>
 
 
                 <div class="form-group">
