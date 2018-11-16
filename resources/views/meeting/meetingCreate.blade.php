@@ -25,6 +25,7 @@
                         <div class="alert alert-success">
                         <strong>
                             {{ session('message') }}
+                            <a href="http://127.0.0.1:8000/meeting">View</a>
                         </strong>
                         </div>
                     </div>
@@ -37,28 +38,28 @@
 
 
                 <div>
-                    <label for="abc">Title:</label>
-                    <input type="text" class="form-control" name="title" placeholder="Enter p-member email here" id="title">
+                    <label for="title">Title:</label>
+                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Date:</label>
+                    <label for="date">Date:</label>
                     <input type="date" class="form-control" name="date" id="date">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Start Time:</label>
+                    <label for="startTime">Start Time:</label>
                     <input type="time" class="form-control" name="startTime" id="startTime">
                 </div>
                 <div class="form-group">
-                    <label for="abc">End Time:</label>
+                    <label for="endTime">End Time:</label>
                     <input type="time" class="form-control" name="endTime" id="endTime">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Description:</label>
-                    <input type="text" class="form-control" name="description" placeholder="Enter here" id="description">
+                    <label for="description">Description:</label>
+                    <input type="text" class="form-control" name="description" placeholder="enter description here ex:name,place,etc" id="description">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Invitees:</label>
-                    <input type="text" class="form-control" name="invitees" placeholder="Enter here" id="invitees">
+                    <label for="invitees">Invitees:</label>
+                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees">
                 </div>
                 <div class="form-group">
                     <label for="abc">Status:</label>
