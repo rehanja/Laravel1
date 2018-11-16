@@ -16,8 +16,10 @@
 
                     You are logged in...!!<br><br>
 
-                    <a href="http://127.0.0.1:8000/event">View Event Page</a><br>
-                    <a href="http://127.0.0.1:8000/meeting">View Meeting Page</a>
+                   <a href="http://localhost:8000/event">event</a><br>
+                   <a href="http://localhost:8000/meeting">meeting</a><br>
+
+                    <p></p>
                 </div>
             </div>
         </div>
