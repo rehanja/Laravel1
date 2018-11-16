@@ -3,10 +3,21 @@
 @section('content')
 
 <div class="col-md-12">
-    @role('or_pm|supervising_officer') 
+        @role('or_fol')
+        <p> orfol</p>
+        @endrole
+        @role('or_pm')
+        <p> orpm</p>
+        @endrole
+        @role('p_member')
+        <p> pmember</p>
+        @endrole
+        @role('or_pm|supervising_officer')
+        <p>supervising officer</p>
+        @endrole
+    
      <div class="col-md-11"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create event</button></div>
-     @endrole   
- </div>
+      </div>
 
  <!-- Modal -->
  <div class="modal fade" id="myModal" role="dialog">
@@ -15,7 +26,9 @@
         <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
+                @role('or_pm|supervising_officer')
                   <h4 class="modal-title">Create a event</h4>
+                @endrole
                 </div>
                     <form method="post" action="/eventSave">
                         {{csrf_field()}}
@@ -105,7 +118,7 @@
         <th>Start date</th>
         <th>Start time</th>
         <th>End time</th>
-        @role('or_pm|supervising_officer') 
+        @role('or_pm|supervising_officer')
         <th>Delete button </th>
         <th>Update button </th>
         @endrole
@@ -119,15 +132,74 @@
             <td>{{$eventData->startDate}}</td>
             <td>{{$eventData->startTime}}</td>
             <td>{{$eventData->endTime}}</td>
-            @role('or_pm|supervising_officer') 
+            @role('or_pm|supervising_officer')
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
             @endrole
            
         </tr>
     @endforeach
+
+
+
                                            
     </table>
+                
+                   
+
+  <!--  <input type="hidden" id="token" value="{{}}">
+
+
+    user 1
+    <select id="dropDown1" name="role">
+        <option value="volvo">Volvo</option>
+        <option value="a">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+
+     
+    user 2
+    <select id="dropDown1" name="role">
+        <option value="volvo">Volvo</option>
+        <option value="a">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    
+    
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $( "#dropDown1" ).change(function() {
+
+        var role = $("#dropDown1").val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/assign',
+            data: {
+                "_token": $('#token').val(),
+                "role": role,
+                "user_id": role
+            },
+
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (reject) {
+                console.log(reject);
+            }
+        });
+
+    });
+});
+
+    </script>
+-->
+
+    
 
 
 @endsection

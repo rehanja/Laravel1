@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Event Management System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -77,13 +77,28 @@
                 </div>
             @endif
 
+            
+
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Event Management System
                 </div>
-
-                
+    
             </div>
+            <br>
+            @role('or_fol')
+            <p> orfol</p>
+            @endrole
+            @role('or_pm')
+            <p> orpm</p>
+            @endrole
+            @role('p_member')
+            <p> pmember</p>
+            @endrole
+            @role('or_pm|supervising_officer')
+            <p>supervising officer</p>
+            @endrole
+
         </div>
     </body>
 </html>
