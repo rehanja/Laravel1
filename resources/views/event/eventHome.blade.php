@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="col-md-12">
-      
+    @role('or_pm|supervising_officer') 
      <div class="col-md-11"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create event</button></div>
-     
+     @endrole   
  </div>
 
  <!-- Modal -->
@@ -105,10 +105,10 @@
         <th>Start date</th>
         <th>Start time</th>
         <th>End time</th>
-   
+        @role('or_pm|supervising_officer') 
         <th>Delete button </th>
         <th>Update button </th>
-    
+        @endrole
        
     @foreach($event as $eventData)
         <tr>
@@ -119,8 +119,10 @@
             <td>{{$eventData->startDate}}</td>
             <td>{{$eventData->startTime}}</td>
             <td>{{$eventData->endTime}}</td>
+            @role('or_pm|supervising_officer')   
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
+            @endrole
         </tr>
     @endforeach
                                            
