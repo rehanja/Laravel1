@@ -15,7 +15,7 @@
         <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title">Create an event</h4>
+                  <h4 class="modal-title">Create a event</h4>
                 </div>
                     <form method="post" action="/eventSave">
                         {{csrf_field()}}
