@@ -40,6 +40,9 @@ Route::post('/event/save/{id}',[
         'uses'=>'event\eventController@eventUpdateSave',
         'as'=>'event.save'         ]);
 
+        
+Route::post('/assign', 'HomeController@index');  
+
 
         
        
@@ -80,3 +83,4 @@ Route::post('/save/{id}',[
     
 // nimesh's routes
  
+
