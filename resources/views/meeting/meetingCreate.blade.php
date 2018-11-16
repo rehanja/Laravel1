@@ -38,7 +38,7 @@
 
                 <div>
                     <label for="abc">Title:</label>
-                    <input type="text" class="form-control" name="title" placeholder="Enter here" id="title">
+                    <input type="text" class="form-control" name="title" placeholder="Enter p-member email here" id="title">
                 </div>
                 <div class="form-group">
                     <label for="abc">Date:</label>
@@ -62,8 +62,12 @@
                 </div>
                 <div class="form-group">
                     <label for="abc">Status:</label>
-                    <input type="text" class="form-control" name="status" placeholder="Enter here" id="status">
-                </div>
+					<select class="form-control" name="status" id="status">
+                        <option>Sheduled</option>
+						<option>Resheduled</option>
+                        <option>Postponed</option>
+                    </select>                
+				</div>
 
 
                 <div class="form-group">
