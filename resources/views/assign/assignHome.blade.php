@@ -29,7 +29,7 @@
      
     Choose user type 
     <select id="dropDown1" name="role">
-        @foreach ($assign as $item)
+        @foreach ($assign as $item)   
             <option value="{{$item->name}}">{{$item->name}}</option>
         @endforeach
             

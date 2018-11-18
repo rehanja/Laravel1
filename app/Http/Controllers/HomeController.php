@@ -97,7 +97,7 @@ class HomeController extends Controller
     $user1=User::find($memberId);
     $user1->assignRole($role);
 
-
+echo("added you role correctly");
 
             return view('home');
         

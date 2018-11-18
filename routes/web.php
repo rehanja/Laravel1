@@ -12,34 +12,35 @@ Route::get('/home', 'HomeController@home')->name('home');
 
 Route::get('/event', 'event\eventController@index');
 
-Route::post('/eventSave', 'event\eventController@eventSave');   
+Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');   
 
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
-    'as'=>'event.delete']);
+    'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm'); 
 
 Route::get('/event/update/{id}',[
     'uses'=>'event\eventController@eventUpdate',
-    'as'=>'event.update']);
+    'as'=>'event.update'])->middleware('role:supervising_officer|or_pm'); 
 
 Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
-    'as'=>'event.save'         ]);
+    'as'=>'event.save' ])->middleware('role:supervising_officer');
 
 Route::post('/event/save/{id}',[
     'uses'=>'HomeController@index@eventUpdateSave',
-    'as'=>'event.save'         ]);
+    'as'=>'event.save'
+    ])->middleware('role:supervising_officer|or_pm'); 
 
 
 Route::get('/assign',[
     'uses'=>'HomeController@assignHome',
-    'as'=>'assign' 
-                   ]);  
+    'as'=>'assign'  
+    ])->middleware('role:supervising_officer|or_pm');  
         
 Route::post('/assign/save',[
     'uses'=>'HomeController@index',
     'as'=>'assign.save' 
-           ]);  
+    ])->middleware('role:supervising_officer|or_pm'); 
 
 
         
