@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
 
 //event routes-rehan 
 Route::get('/event', 'event\eventController@index');
@@ -41,8 +41,15 @@ Route::post('/event/save/{id}',[
         'as'=>'event.save'         ]);
 
 
+        Route::get('/assign',[
+            'uses'=>'HomeController@assignHome',
+            'as'=>'assign' 
+                   ]);  
         
-Route::post('/assign', 'HomeController@index');  
+Route::post('/assign/save',[
+    'uses'=>'HomeController@index',
+    'as'=>'assign.save' 
+           ]);  
 
 
         

@@ -16,54 +16,37 @@
 @endrole
 
 
-  <input type="hidden" id="token" value="{{}}">
+<form method="post" action="/assign/save">
+    {{csrf_field()}}
+<div class="form-group">
+        <label for="usr">Mermber Id:</label>
+        <input type="number" class="form-control" name="memberId" placeholder="Enter here" id="usr">
+    </div>
 
 
-    user 1
-    <select id="dropDown1" name="role">
-        <option value="volvo">Volvo</option>
-        <option value="a">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
-    </select>
+  {{-- <input type="hidden" id="token" value="{{}}"> --}}
 
      
-    user 2
+    Choose user type 
     <select id="dropDown1" name="role">
-        <option value="volvo">Volvo</option>
-        <option value="a">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
+        @foreach ($assign as $item)
+            <option value="{{$item->name}}">{{$item->name}}</option>
+        @endforeach
+            
     </select>
+
+    
+
     
     
+    <input type="submit" value="Submit">
+</form> 
 
 
-<script type="text/javascript">
-$(document).ready(function(){
-    $( "#dropDown1" ).change(function() {
 
-        var role = $("#dropDown1").val();
 
-        $.ajax({
-            type: 'POST',
-            url: '/assign',
-            data: {
-                "_token": $('#token').val(),
-                "role": role,
-                "user_id": role
-            },
 
-            success: function (data) {
-                console.log(data);
-            },
-            error: function (reject) {
-                console.log(reject);
-            }
-        });
 
-    });
-});
+ 
 
-    </script>
-
+@endsection
