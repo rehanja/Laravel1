@@ -2,79 +2,68 @@
 
 @section('content')
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-</style>
-</head>
-<body>
-
-<h2>Aligned Dropdown Content</h2>
-<p>Determine whether the dropdown content should go from left to right or right to left with the left and right properties.</p>
-
-<div class="dropdown" style="float:left;">
-  <button class="dropbtn">Left</button>
-  <div class="dropdown-content" style="left:0;">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-
-<div class="dropdown" style="float:right;">
-  <button class="dropbtn">Right</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-
-</body>
-</html>
+@role('or_fol')
+<p> orfol</p>
+@endrole
+@role('or_pm')
+<p> orpm</p>
+@endrole
+@role('p_member')
+<p> pmember</p>
+@endrole
+@role('or_pm|supervising_officer')
+<p>supervising officer</p>
+@endrole
 
 
+  <input type="hidden" id="token" value="{{}}">
 
-@endsection
+
+    user 1
+    <select id="dropDown1" name="role">
+        <option value="volvo">Volvo</option>
+        <option value="a">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+
+     
+    user 2
+    <select id="dropDown1" name="role">
+        <option value="volvo">Volvo</option>
+        <option value="a">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    
+    
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $( "#dropDown1" ).change(function() {
+
+        var role = $("#dropDown1").val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/assign',
+            data: {
+                "_token": $('#token').val(),
+                "role": role,
+                "user_id": role
+            },
+
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (reject) {
+                console.log(reject);
+            }
+        });
+
+    });
+});
+
+    </script>
+

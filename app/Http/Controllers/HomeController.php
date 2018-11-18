@@ -31,7 +31,7 @@ class HomeController extends Controller
     //     $role1->givePermissionTo($permission1);
     //  }
 
-    public function index()
+    public function index(request $request )
     {
        
     //   relavent to role dashboard

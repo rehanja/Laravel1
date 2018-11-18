@@ -20,11 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //event routes-rehan 
-Route::get('/event',function(){
-
-    $a=App\event::all();
-    return view('event/eventHome')->with('event',$a);
-    });
+Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');   
 
@@ -39,6 +35,11 @@ Route::get('/event/update/{id}',[
 Route::post('/event/save/{id}',[
         'uses'=>'event\eventController@eventUpdateSave',
         'as'=>'event.save'         ]);
+
+Route::post('/event/save/{id}',[
+        'uses'=>'HomeController@index@eventUpdateSave',
+        'as'=>'event.save'         ]);
+
 
         
 Route::post('/assign', 'HomeController@index');  

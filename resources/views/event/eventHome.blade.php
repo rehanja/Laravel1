@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@role('or_fol')
+    @role('or_fol')
         <p> orfol</p>
         @endrole
         @role('or_pm')
