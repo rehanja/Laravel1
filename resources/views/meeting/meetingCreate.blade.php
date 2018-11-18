@@ -70,6 +70,19 @@
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
                 </div>
 
+                @role('or_fol')
+                <p> orfol</p>
+                @endrole
+                @role('or_pm')
+                <p> orpm</p>
+                @endrole
+                @role('p_member')
+                <p> pmember</p>
+                @endrole
+                @role('or_pm|supervising_officer')
+                <p>supervising officer</p>
+                @endrole
+
             </div>            
         </div>                            
     </div>

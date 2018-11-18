@@ -46,6 +46,9 @@ Route::post('/event/save/{id}',[
         'uses'=>'event\eventController@eventUpdateSave',
         'as'=>'event.save'         ]);
 
+        
+Route::post('/assign', 'HomeController@index');  
+
 
 
 // achini's routes - Meeting
@@ -56,28 +59,42 @@ Route::get('/meeting',function(){
     });
 
 Route::get('create', [
+
     'uses'=>'meetingController@MeetingCreate',
+
+    'uses'=>'meeting\meetingController@MeetingCreate', 
+
     'as'=>'meetingCreate'
     ]);
 
 Route::post('create', [
+
     'uses'=>'meetingController@MeetingStore',
+
+    'uses'=>'meeting\meetingController@MeetingStore', 
+
     'as'=>'meetingStore'
     ]);
 
 Route::get('/delete/{id}',[
-    'uses'=>'meetingController@MeetingDelete',
+    'uses'=>'meeting\meetingController@MeetingDelete',
     'as'=>'meetingDelete'
     ]);
 
 Route::get('/update/{id}',[
-    'uses'=>'meetingController@MeetingUpdate',
+    'uses'=>'meeting\meetingController@MeetingUpdate',
     'as'=>'meetingUpdate'
     ]);
 
 Route::post('/save/{id}',[
+
         'uses'=>'meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
+
+        'uses'=>'meeting\meetingController@MeetingUpdateSave',
+        'as'=>'meetingSave'         
+
         ]);
 
 // nimesh's routes
+
