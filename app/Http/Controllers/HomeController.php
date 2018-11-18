@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -30,10 +31,27 @@ class HomeController extends Controller
     //     $permission1 = Permission::findById($permission);
     //     $role1->givePermissionTo($permission1);
     //  }
-
-    public function index(request $request )
+    public function assignHome()
     {
-       
+                $assign = DB::table('roles')->get();
+        //return Auth::user()->id;
+        return view('assign\assignHome')->with('assign',$assign);
+    }
+    public function Home(request $request)
+    {
+        return view('home');
+
+    }
+
+
+
+    public function index(request $request)
+    {
+    //    dd($request->all());
+       $memberId = $request['memberId'];
+       $role = $request['role'];
+
+
     //   relavent to role dashboard
     //   $role_id => $request["p_name"];.
     //  'description' => $request->p_description,
@@ -46,6 +64,7 @@ class HomeController extends Controller
         //$role = Role::create(['name' => 'or_fol']);
         //$role = Role::create(['name' => 'or_pm']);
         //$role = Role::create(['name' => 'supervising_officer']);
+      
 
       //creating permissions for 4 types of users
         //$permission = Permission::create(['name' => 'view event']);
@@ -75,23 +94,12 @@ class HomeController extends Controller
 
 
 //assign p_member role to user
-    $user1=User::find(1);
-    $user1->assignRole('p_member');
-
-//assign or_fol role to user
-    $user2=User::find(2);
-    $user2->assignRole('or_fol');
-
-//assign or_pm role to user
-    $user3=User::find(3);
-    $user3->assignRole('or_pm');
-
-//assign supervising_officer role to user
-    $user4=User::find(4);
-    $user4->assignRole('supervising_officer');
+    $user1=User::find($memberId);
+    $user1->assignRole($role);
 
 
-        
+
+            return view('home');
         
  
 
@@ -99,6 +107,6 @@ class HomeController extends Controller
 
 
 
-        return view('home');
+       
     }
 }
