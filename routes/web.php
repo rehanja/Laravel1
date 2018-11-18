@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,6 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@home')->name('home');
 
 //event routes-rehan 
+
 Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');   
@@ -33,17 +23,17 @@ Route::get('/event/update/{id}',[
     'as'=>'event.update']);
 
 Route::post('/event/save/{id}',[
-        'uses'=>'event\eventController@eventUpdateSave',
-        'as'=>'event.save'         ]);
+    'uses'=>'event\eventController@eventUpdateSave',
+    'as'=>'event.save'         ]);
 
 Route::post('/event/save/{id}',[
-        'uses'=>'HomeController@index@eventUpdateSave',
-        'as'=>'event.save'         ]);
+    'uses'=>'HomeController@index@eventUpdateSave',
+    'as'=>'event.save'         ]);
 
 
-        Route::get('/assign',[
-            'uses'=>'HomeController@assignHome',
-            'as'=>'assign' 
+Route::get('/assign',[
+    'uses'=>'HomeController@assignHome',
+    'as'=>'assign' 
                    ]);  
         
 Route::post('/assign/save',[
@@ -85,8 +75,8 @@ Route::get('/update/{id}',[
     ]);
     
 Route::post('/save/{id}',[
-        'uses'=>'meeting\meetingController@MeetingUpdateSave',
-        'as'=>'meetingSave'         
+    'uses'=>'meeting\meetingController@MeetingUpdateSave',
+    'as'=>'meetingSave'         
         ]);
     
 // nimesh's routes
