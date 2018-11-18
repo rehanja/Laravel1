@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
+use App\Mail\verifyEmail;
+use Mail;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -67,7 +72,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        Session::flash('status','Registerd! but verify your email to activate your account');
+
+        $user= User::create([
             'nameWithInitials' => $data['nameWithInitials'],
             'name' => $data['name'],
             'nic' => $data['nic'],
@@ -75,6 +82,39 @@ class RegisterController extends Controller
             'contactNumber' => $data['contactNumber'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'verifyToken' => Str::random(40), //create randomely verify Token
         ]);
+
+        $thisUser = User::findOrFail($user->id);
+        $this->sendEmail($thisUser);
+
+        return $user;
+
+    }
+
+    protected function view(array $data){
+        $d=User::all();
+
+        return ('or-pm')->with('data',$d);
+    }
+
+    protected function sendEmail($thisUser){
+        Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
+    }
+
+    protected function verifyEmailFirst(){
+        return view('email.verifyEmailFirst');
+    }
+
+    protected function sendEmailDone(Request $request){
+        $email = $request->email;
+        $verifyToken = $request->verifyToken;
+        //echo User::where('email', $email)->get();
+        $user = User::where(['email'=>$email,'verifyToken'=>$verifyToken])->first();
+        if($user){
+           return user::where(['email'=>$email,'verifyToken'=>$verifyToken])->update(['status'=>'1','verifyToken'=>NULL]);
+        }else{
+            return 'user not found';
+        }
     }
 }
