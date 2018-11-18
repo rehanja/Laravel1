@@ -31,8 +31,15 @@ class HomeController extends Controller
     //     $role1->givePermissionTo($permission1);
     //  }
 
-    public function index()
+    public function index(request $request )
     {
+       
+    //   relavent to role dashboard
+    //   $role_id => $request["p_name"];.
+    //  'description' => $request->p_description,
+    //  'prize' => $request->p_price,
+
+
   
         //creating roles for 4 types of users
         //$role = Role::create(['name' => 'p_member']);
@@ -82,6 +89,11 @@ class HomeController extends Controller
 //assign supervising_officer role to user
     $user4=User::find(4);
     $user4->assignRole('supervising_officer');
+
+
+        
+        
+ 
 
 
 

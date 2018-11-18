@@ -25,7 +25,6 @@
                         <div class="alert alert-success">
                         <strong>
                             {{ session('message') }}
-                            <a href="http://127.0.0.1:8000/meeting">View</a>
                         </strong>
                         </div>
                     </div>
@@ -38,42 +37,53 @@
 
 
                 <div>
-                    <label for="title">Title:</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
+                    <label for="abc">Title:</label>
+                    <input type="text" class="form-control" name="title" placeholder="Enter here" id="title">
                 </div>
                 <div class="form-group">
-                    <label for="date">Date:</label>
+                    <label for="abc">Date:</label>
                     <input type="date" class="form-control" name="date" id="date">
                 </div>
                 <div class="form-group">
-                    <label for="startTime">Start Time:</label>
+                    <label for="abc">Start Time:</label>
                     <input type="time" class="form-control" name="startTime" id="startTime">
                 </div>
                 <div class="form-group">
-                    <label for="endTime">End Time:</label>
+                    <label for="abc">End Time:</label>
                     <input type="time" class="form-control" name="endTime" id="endTime">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
-                    <input type="text" class="form-control" name="description" placeholder="enter description here ex:name,place,etc" id="description">
+                    <label for="abc">Description:</label>
+                    <input type="text" class="form-control" name="description" placeholder="Enter here" id="description">
                 </div>
                 <div class="form-group">
-                    <label for="invitees">Invitees:</label>
-                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees">
+                    <label for="abc">Invitees:</label>
+                    <input type="text" class="form-control" name="invitees" placeholder="Enter here" id="invitees">
                 </div>
                 <div class="form-group">
                     <label for="abc">Status:</label>
-					<select class="form-control" name="status" id="status">
-                        <option>Sheduled</option>
-						<option>Resheduled</option>
-                        <option>Postponed</option>
-                    </select>                
-				</div>
-
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-md">Create</button>
+                    <input type="text" class="form-control" name="status" placeholder="Enter here" id="status">
                 </div>
+
+                
+                <div class="form-group">
+                        @role('or_pm|supervising_officer')
+                    <button type="submit" class="btn btn-primary btn-md">Create</button>
+                    @endrole
+                </div>
+
+                @role('or_fol')
+                <p> orfol</p>
+                @endrole
+                @role('or_pm')
+                <p> orpm</p>
+                @endrole
+                @role('p_member')
+                <p> pmember</p>
+                @endrole
+                @role('or_pm|supervising_officer')
+                <p>supervising officer</p>
+                @endrole
 
             </div>            
         </div>                            
