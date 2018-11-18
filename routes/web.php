@@ -19,14 +19,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//event routes-rehan 
+// sanduni's routes
+//verify email
+Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
+
+//event routes-rehan
 Route::get('/event',function(){
 
     $a=App\event::all();
     return view('event/eventHome')->with('event',$a);
     });
 
-Route::post('/eventSave', 'event\eventController@eventSave');   
+Route::post('/eventSave', 'event\eventController@eventSave');
 
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
@@ -41,10 +47,6 @@ Route::post('/event/save/{id}',[
         'as'=>'event.save'         ]);
 
 
-        
-       
-// sanduni's routes
-
 
 // achini's routes - Meeting
 Route::get('/meeting',function(){
@@ -54,12 +56,12 @@ Route::get('/meeting',function(){
     });
 
 Route::get('create', [
-    'uses'=>'meetingController@MeetingCreate', 
+    'uses'=>'meetingController@MeetingCreate',
     'as'=>'meetingCreate'
     ]);
-      
+
 Route::post('create', [
-    'uses'=>'meetingController@MeetingStore', 
+    'uses'=>'meetingController@MeetingStore',
     'as'=>'meetingStore'
     ]);
 
@@ -67,16 +69,15 @@ Route::get('/delete/{id}',[
     'uses'=>'meetingController@MeetingDelete',
     'as'=>'meetingDelete'
     ]);
-    
+
 Route::get('/update/{id}',[
     'uses'=>'meetingController@MeetingUpdate',
     'as'=>'meetingUpdate'
     ]);
-    
+
 Route::post('/save/{id}',[
         'uses'=>'meetingController@MeetingUpdateSave',
-        'as'=>'meetingSave'         
+        'as'=>'meetingSave'
         ]);
-    
+
 // nimesh's routes
- 
