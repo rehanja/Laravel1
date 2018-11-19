@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers\event;
 use App\event;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class eventController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index(){
+
+        $a=event::all();
+        //return Auth::user()->id;
+        return view('event/eventHome')->with('event',$a);
+    }
+
+    
     public function eventSave(Request $request){
          //validation part
 // dd($request->all());
