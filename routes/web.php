@@ -27,6 +27,8 @@ Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember
 //delete Member
 Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
 
+
+
 //event routes-rehan
 
 Route::get('/event',function(){
@@ -38,16 +40,16 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');   
+Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
 
 
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
-    'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm'); 
+    'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm');
 
 Route::get('/event/update/{id}',[
     'uses'=>'event\eventController@eventUpdate',
-    'as'=>'event.update'])->middleware('role:supervising_officer|or_pm'); 
+    'as'=>'event.update'])->middleware('role:supervising_officer|or_pm');
 
 Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
@@ -56,26 +58,26 @@ Route::post('/event/save/{id}',[
 Route::post('/event/save/{id}',[
     'uses'=>'HomeController@index@eventUpdateSave',
     'as'=>'event.save'
-    ])->middleware('role:supervising_officer|or_pm'); 
-
+    ])->middleware('role:supervising_officer|or_pm');
 
 
 
 Route::get('/assign',[
     'uses'=>'HomeController@assignHome',
-    'as'=>'assign'  
-    ])->middleware('role:supervising_officer|or_pm');  
-        
+    'as'=>'assign'
+    ])->middleware('role:supervising_officer|or_pm');
+
 Route::post('/assign/save',[
     'uses'=>'HomeController@index',
-    'as'=>'assign.save' 
-    ])->middleware('role:supervising_officer|or_pm'); 
+    'as'=>'assign.save'
+    ])->middleware('role:supervising_officer|or_pm');
 
 Route::post('/assign', 'HomeController@index');
 
 
 
 // achini's routes - Meeting
+
 Route::get('/meeting',function(){
 
     $a=App\Meeting::all();

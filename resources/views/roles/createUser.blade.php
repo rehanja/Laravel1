@@ -37,7 +37,7 @@
         @if(!$details->isActive)
         <a href="/markAsCompleted/{{$details->id}}" class="btn btn-primary">Marked as Member</a>
         @else
-        <a href="/markAsCompleted/{{$details->id}}" class="btn btn-success">Marked as Not Member</a>
+        <a href="/markAsNotCompleted/{{$details->id}}" class="btn btn-info">Marked as Not Member</a>
         @endif
         </td>
 
