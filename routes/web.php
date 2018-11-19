@@ -17,13 +17,25 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
 
-// sanduni's routes
+// routes - sanduni
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
+//view users
+Route::get('/createUser',function () {
+    $d=App\User::all();
+    return view('roles/createUser')->with('data',$d);
+});
+
+//issue membership
+Route::get('/markAsCompleted/{id}','Auth\RegisterController@updateAsMember');
+Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember');
+
+//delete Member
+Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
 
 //event routes-rehan
 Route::get('/event',function(){
@@ -46,8 +58,8 @@ Route::post('/event/save/{id}',[
         'uses'=>'event\eventController@eventUpdateSave',
         'as'=>'event.save'         ]);
 
-        
-Route::post('/assign', 'HomeController@index');  
+
+Route::post('/assign', 'HomeController@index');
 
 
 
@@ -62,7 +74,7 @@ Route::get('create', [
 
     'uses'=>'meetingController@MeetingCreate',
 
-    'uses'=>'meeting\meetingController@MeetingCreate', 
+    'uses'=>'meeting\meetingController@MeetingCreate',
 
     'as'=>'meetingCreate'
     ]);
@@ -71,7 +83,7 @@ Route::post('create', [
 
     'uses'=>'meetingController@MeetingStore',
 
-    'uses'=>'meeting\meetingController@MeetingStore', 
+    'uses'=>'meeting\meetingController@MeetingStore',
 
     'as'=>'meetingStore'
     ]);
@@ -90,10 +102,6 @@ Route::post('/save/{id}',[
 
         'uses'=>'meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
-
-        'uses'=>'meeting\meetingController@MeetingUpdateSave',
-        'as'=>'meetingSave'         
-
         ]);
 
 // nimesh's routes

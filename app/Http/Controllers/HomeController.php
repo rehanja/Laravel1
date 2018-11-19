@@ -30,17 +30,22 @@ class HomeController extends Controller
     //     $permission1 = Permission::findById($permission);
     //     $role1->givePermissionTo($permission1);
     //  }
+    public function home()
+    {
+
+        return view('home');
+    }
 
     public function index()
     {
-       
+
     //   relavent to role dashboard
     //   $role_id => $request["p_name"];.
     //  'description' => $request->p_description,
     //  'prize' => $request->p_price,
 
 
-  
+
         //creating roles for 4 types of users
         //$role = Role::create(['name' => 'p_member']);
         //$role = Role::create(['name' => 'or_fol']);
@@ -91,14 +96,14 @@ class HomeController extends Controller
     $user4->assignRole('supervising_officer');
 
 
-        
-        
- 
 
 
 
 
 
-        return view('home');
+
+
+
+    return view('home');
     }
 }

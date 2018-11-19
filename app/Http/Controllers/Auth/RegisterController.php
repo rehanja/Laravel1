@@ -92,11 +92,11 @@ class RegisterController extends Controller
 
     }
 
-    protected function view(array $data){
-        $d=User::all();
 
-        return ('or-pm')->with('data',$d);
-    }
+    //protected function view(){
+       // $d=User::all();
+        //return view('roles.createUser')->with('data',$d);
+    //}
 
     protected function sendEmail($thisUser){
         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
@@ -116,5 +116,27 @@ class RegisterController extends Controller
         }else{
             return 'user not found';
         }
+    }
+
+    protected function updateAsMember($id){
+        $task=User::find($id);
+
+        $task->isActive=1;
+        $task->save();
+        return redirect()->back();
+    }
+    protected function updateAsNotMember($id){
+        $task=User::find($id);
+
+        $task->isActive=0;
+        $task->save();
+        return redirect()->back();
+    }
+
+    protected function deleteMember($id){
+        $task=User::find($id);
+
+        $task->delete();
+        return redirect()->back();
     }
 }
