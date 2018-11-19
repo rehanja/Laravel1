@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,6 +7,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@home')->name('home');
+
 
 // routes - sanduni
 //verify email
@@ -38,26 +28,48 @@ Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember
 Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
 
 //event routes-rehan
-Route::get('/event',function(){
 
-    $a=App\event::all();
+Route::get('/event',function(){
+  $a=App\event::all();
     return view('event/eventHome')->with('event',$a);
-    });
+   });
+
+Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
+Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');   
+
+
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
-    'as'=>'event.delete']);
+    'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm'); 
 
 Route::get('/event/update/{id}',[
     'uses'=>'event\eventController@eventUpdate',
-    'as'=>'event.update']);
+    'as'=>'event.update'])->middleware('role:supervising_officer|or_pm'); 
 
 Route::post('/event/save/{id}',[
-        'uses'=>'event\eventController@eventUpdateSave',
-        'as'=>'event.save'         ]);
+    'uses'=>'event\eventController@eventUpdateSave',
+    'as'=>'event.save' ])->middleware('role:supervising_officer');
 
+Route::post('/event/save/{id}',[
+    'uses'=>'HomeController@index@eventUpdateSave',
+    'as'=>'event.save'
+    ])->middleware('role:supervising_officer|or_pm'); 
+
+
+
+
+Route::get('/assign',[
+    'uses'=>'HomeController@assignHome',
+    'as'=>'assign'  
+    ])->middleware('role:supervising_officer|or_pm');  
+        
+Route::post('/assign/save',[
+    'uses'=>'HomeController@index',
+    'as'=>'assign.save' 
+    ])->middleware('role:supervising_officer|or_pm'); 
 
 Route::post('/assign', 'HomeController@index');
 
@@ -71,20 +83,12 @@ Route::get('/meeting',function(){
     });
 
 Route::get('create', [
-
-    'uses'=>'meetingController@MeetingCreate',
-
     'uses'=>'meeting\meetingController@MeetingCreate',
-
     'as'=>'meetingCreate'
     ]);
 
 Route::post('create', [
-
-    'uses'=>'meetingController@MeetingStore',
-
     'uses'=>'meeting\meetingController@MeetingStore',
-
     'as'=>'meetingStore'
     ]);
 
@@ -99,7 +103,6 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
-
         'uses'=>'meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);

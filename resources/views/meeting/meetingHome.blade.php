@@ -36,7 +36,7 @@
             <td><a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a></td>
         </tr>
     @endforeach
-    @role('or_fol')
+                @role('or_fol')
                 <p> orfol</p>
                 @endrole
                 @role('or_pm')
