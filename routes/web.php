@@ -27,7 +27,9 @@ Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember
 //delete Member
 Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
 
-
+//update Member
+Route::get('/updateMember/{id}','Auth\RegisterController@updateMember');
+Route::post('/updateUser','Auth\RegisterController@updateMemberView');
 
 //event routes-rehan
 
