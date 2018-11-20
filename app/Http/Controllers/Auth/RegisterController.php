@@ -92,12 +92,6 @@ class RegisterController extends Controller
 
     }
 
-
-    //protected function view(){
-       // $d=User::all();
-        //return view('roles.createUser')->with('data',$d);
-    //}
-
     protected function sendEmail($thisUser){
         Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
     }
@@ -139,4 +133,32 @@ class RegisterController extends Controller
         $task->delete();
         return redirect()->back();
     }
+
+    protected function updateMember($id){
+        $task=User::find($id);
+
+        return view('roles/updateUser')->with('data',$task);
+    }
+
+    protected function updateMemberView(Request $request){
+            $id=$request->id;
+            $nameWithInitilas=$request->nameWithInitials;
+            $name=$request->name;
+            $nic=$request->nic;
+            $address=$request->address;
+            $contactNumber=$request->contactNumber;
+
+            $data=User::find($id);
+            $data->nameWithInitilas=$nameWithInitilas;
+            $data->name=$name;
+            $data->nic=$nic;
+            $data->address=$address;
+            $data->contactNumber=$contactNumber;
+            $data->save();
+
+            $d=User::all();
+            return view('roles/createUser')->with('data',$d);
+
+    }
+
 }
