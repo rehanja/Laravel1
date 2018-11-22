@@ -32,13 +32,15 @@
 
 
 
-            <div class="groove">
+            <div class="abc">
                 <h2>Create Meeting</h2><br>
 
 
-                <div>
+
+                
                     <label for="abc">Title:</label>
                     <input type="text" class="form-control" name="title" placeholder="Enter here" id="title">
+
                 </div>
                 <div class="form-group">
                     <label for="abc">Date:</label>
