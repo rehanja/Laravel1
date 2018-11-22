@@ -107,7 +107,7 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
-        'uses'=>'meetingController@MeetingUpdateSave',
+        'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
 
