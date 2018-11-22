@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 @role('or_fol')
 <p> orfol</p>
 @endrole
@@ -26,27 +26,24 @@
 
   {{-- <input type="hidden" id="token" value="{{}}"> --}}
 
-     
-    Choose user type 
+
+    Choose user type
     <select id="dropDown1" name="role">
-        @foreach ($assign as $item)   
+        @foreach ($assign as $item)
             <option value="{{$item->name}}">{{$item->name}}</option>
         @endforeach
-            
+
     </select>
 
-    
-
-    
-    
-    <input type="submit" value="Submit">
-</form> 
+     <input type="submit" value="Submit">
+</div>
+</form>
 
 
 
 
 
 
- 
+
 
 @endsection

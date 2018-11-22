@@ -49,21 +49,24 @@
             <td><a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a></td>
 
         </tr>
-    @endforeach
-                @role('or_fol')
-                <p> orfol</p>
-                @endrole
-                @role('or_pm')
-                <p> orpm</p>
-                @endrole
-                @role('p_member')
-                <p> pmember</p>
-                @endrole
-                @role('or_pm|supervising_officer')
-                <p>supervising officer</p>
-                @endrole
-                                           
+        @endforeach
+
+
+        @role('or_fol')
+        <p> orfol</p>
+        @endrole
+        @role('or_pm')
+        <p> orpm</p>
+        @endrole
+        @role('p_member')
+        <p> pmember</p>
+        @endrole
+        @role('or_pm|supervising_officer')
+        <p>supervising officer</p>
+        @endrole
+                                             
     </table>
 
 
 @endsection
+   

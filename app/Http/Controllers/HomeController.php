@@ -65,17 +65,17 @@ class HomeController extends Controller
 
 
         //creating roles for 4 types of users
-        //$role = Role::create(['name' => 'p_member']);
+       // $role = Role::create(['name' => 'p_member']);
         //$role = Role::create(['name' => 'or_fol']);
         //$role = Role::create(['name' => 'or_pm']);
         //$role = Role::create(['name' => 'supervising_officer']);
       
 
       //creating permissions for 4 types of users
-        //$permission = Permission::create(['name' => 'view event']);
-        //$permission = Permission::create(['name' => 'create event']);
-        //$permission = Permission::create(['name' => 'delete event']);
-        //$permission = Permission::create(['name' => 'update event']);
+       // $permission = Permission::create(['name' => 'view event']);
+       // $permission = Permission::create(['name' => 'create event']);
+       // $permission = Permission::create(['name' => 'delete event']);
+       // $permission = Permission::create(['name' => 'update event']);
 
 //giveing permission to p_member
     $role1 = Role::findById(1);
