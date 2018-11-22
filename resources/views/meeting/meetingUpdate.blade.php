@@ -33,11 +33,11 @@
 
 
 
-            <div class="groove">
+            <div class="abc">
                 <h2>Update Meeting</h2><br>
 
 
-                <div>
+                <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="email" class="form-control" value="{{$meeting -> title}}" name="title" placeholder="enter p-member email here" id="title">
                 </div>
@@ -63,16 +63,17 @@
                 </div>
                 <div class="form-group">
                     <label for="status">Status:</label>
-					<select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
+                    <select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
                         <option>Sheduled</option>
                         <option>Resheduled</option>
-						<option>Postponed</option>
+                        <option>Postponed</option>
                     </select>                
-				</div>
+                </div>
 
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-md">Update</button>
+
                 </div>
 
             </div>            
