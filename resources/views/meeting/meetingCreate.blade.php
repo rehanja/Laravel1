@@ -37,7 +37,7 @@
 
 
 
-                
+
                     <label for="abc">Title:</label>
                     <input type="text" class="form-control" name="title" placeholder="Enter here" id="title">
 
@@ -69,9 +69,9 @@
 
 
                 <div class="form-group">
-                        @role('or_pm|supervising_officer')
+                        
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
-                    @endrole
+
                 </div>
 
                 @role('or_fol')
