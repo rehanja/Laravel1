@@ -19,7 +19,24 @@
                    <a href="http://localhost:8000/event">event</a><br>
                    <a href="http://localhost:8000/meeting">meeting</a><br>
 
-                    <p></p>
+                   <a href="http://localhost:8000/createUser">create user</a><br>
+
+                   <a href="http://localhost:8000/assign">assign</a><br>
+
+                   @role('or_fol')
+                   <p> orfol</p>
+                   @endrole
+                   @role('or_pm')
+                   <p> orpm</p>
+                   @endrole
+                   @role('p_member')
+                   <p> pmember</p>
+                   @endrole
+                   @role('or_pm|supervising_officer')
+                   <p>supervising officer</p>
+                   @endrole
+
+
                 </div>
             </div>
         </div>
