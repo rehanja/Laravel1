@@ -65,7 +65,7 @@
                     <input type="text" class="form-control" name="status" placeholder="Enter here" id="status">
                 </div>
 
-                
+
                 <div class="form-group">
                         @role('or_pm|supervising_officer')
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
@@ -85,8 +85,8 @@
                 <p>supervising officer</p>
                 @endrole
 
-            </div>            
-        </div>                            
+            </div>
+        </div>
     </div>
 </form>
 
