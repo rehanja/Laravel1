@@ -77,6 +77,13 @@ Route::post('/save/{id}',[
         'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'         
         ]);
+
+Route::get('/send/{id}',[
+    'uses'=>'meeting\meetingController@MeetingViewMail',
+    'as'=>'meetingViewMail'         
+    ]);
+    
+
     
 // nimesh's routes
  
