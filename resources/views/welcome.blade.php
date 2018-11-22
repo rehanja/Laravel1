@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Event Management System
+                    <strong>Event Management System</strong>
                 </div>
     
             </div>

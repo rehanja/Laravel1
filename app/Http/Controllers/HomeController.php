@@ -31,15 +31,18 @@ class HomeController extends Controller
     //     $permission1 = Permission::findById($permission);
     //     $role1->givePermissionTo($permission1);
     //  }
+
     public function assignHome()
     {
                 $assign = DB::table('roles')->get();
         //return Auth::user()->id;
         return view('assign\assignHome')->with('assign',$assign);
     }
+  
     public function Home(request $request)
     {
         return view('home');
+
 
     }
 
@@ -47,9 +50,11 @@ class HomeController extends Controller
 
     public function index(request $request)
     {
+
     //    dd($request->all());
        $memberId = $request['memberId'];
        $role = $request['role'];
+
 
 
     //   relavent to role dashboard
@@ -58,7 +63,7 @@ class HomeController extends Controller
     //  'prize' => $request->p_price,
 
 
-  
+
         //creating roles for 4 types of users
         //$role = Role::create(['name' => 'p_member']);
         //$role = Role::create(['name' => 'or_fol']);
@@ -103,10 +108,5 @@ echo("added you role correctly");
         
  
 
-
-
-
-
-       
     }
 }
