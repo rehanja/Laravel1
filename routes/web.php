@@ -1,52 +1,85 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home')->name('home');
 
-//event routes-rehan 
+
+// routes - sanduni
+//verify email
+Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
+//view users
+Route::get('/createUser',function () {
+    $d=App\User::all();
+    return view('roles/createUser')->with('data',$d);
+});
+
+//issue membership
+Route::get('/markAsCompleted/{id}','Auth\RegisterController@updateAsMember');
+Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember');
+
+//delete Member
+Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
+
+//update Member
+Route::get('/updateMember/{id}','Auth\RegisterController@updateMember');
+Route::post('/updateUser','Auth\RegisterController@updateMemberView');
+
+//event routes-rehan
+
 Route::get('/event',function(){
-
-    $a=App\event::all();
+  $a=App\event::all();
     return view('event/eventHome')->with('event',$a);
-    });
+   });
 
-Route::post('/eventSave', 'event\eventController@eventSave');   
+Route::get('/event', 'event\eventController@index');
+
+Route::post('/eventSave', 'event\eventController@eventSave');
+
+Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
+
 
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
-    'as'=>'event.delete']);
+    'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm');
 
 Route::get('/event/update/{id}',[
     'uses'=>'event\eventController@eventUpdate',
-    'as'=>'event.update']);
+    'as'=>'event.update'])->middleware('role:supervising_officer|or_pm');
 
 Route::post('/event/save/{id}',[
-        'uses'=>'event\eventController@eventUpdateSave',
-        'as'=>'event.save'         ]);
+    'uses'=>'event\eventController@eventUpdateSave',
+    'as'=>'event.save' ])->middleware('role:supervising_officer');
+
+Route::post('/event/save/{id}',[
+    'uses'=>'HomeController@index@eventUpdateSave',
+    'as'=>'event.save'
+    ])->middleware('role:supervising_officer|or_pm');
 
 
-        
-       
-// sanduni's routes
+
+Route::get('/assign',[
+    'uses'=>'HomeController@assignHome',
+    'as'=>'assign'
+    ])->middleware('role:supervising_officer|or_pm');
+
+Route::post('/assign/save',[
+    'uses'=>'HomeController@index',
+    'as'=>'assign.save'
+    ])->middleware('role:supervising_officer|or_pm');
+
+Route::post('/assign', 'HomeController@index');
+
 
 
 // achini's routes - Meeting
+
 Route::get('/meeting',function(){
 
     $a=App\Meeting::all();
@@ -54,12 +87,12 @@ Route::get('/meeting',function(){
     });
 
 Route::get('create', [
-    'uses'=>'meeting\meetingController@MeetingCreate', 
+    'uses'=>'meeting\meetingController@MeetingCreate',
     'as'=>'meetingCreate'
     ]);
-      
+
 Route::post('create', [
-    'uses'=>'meeting\meetingController@MeetingStore', 
+    'uses'=>'meeting\meetingController@MeetingStore',
     'as'=>'meetingStore'
     ]);
 
@@ -67,16 +100,17 @@ Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
     'as'=>'meetingDelete'
     ]);
-    
+
 Route::get('/update/{id}',[
     'uses'=>'meeting\meetingController@MeetingUpdate',
     'as'=>'meetingUpdate'
     ]);
-    
+
 Route::post('/save/{id}',[
-        'uses'=>'meeting\meetingController@MeetingUpdateSave',
-        'as'=>'meetingSave'         
+        'uses'=>'meetingController@MeetingUpdateSave',
+        'as'=>'meetingSave'
         ]);
+
 
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
@@ -85,5 +119,6 @@ Route::get('/send/{id}',[
     
 
     
+
 // nimesh's routes
- 
+
