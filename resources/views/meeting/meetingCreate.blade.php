@@ -37,11 +37,17 @@
                 <h2>Create Meeting</h2><br>
 
 
+<<<<<<< HEAD
 
                 <div>
                     <label for="title">Title:</label>
                     <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
 
+=======
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
+>>>>>>> ab40305947349b37d78261f1fa84fd5f6bf2b54d
                 </div>
                 <div class="form-group">
                     <label for="date">Date:</label>
@@ -65,19 +71,17 @@
                 </div>
                 <div class="form-group">
                     <label for="abc">Status:</label>
-					<select class="form-control" name="status" id="status">
+				<select class="form-control" name="status" id="status">
                         <option>Sheduled</option>
 						<option>Resheduled</option>
                         <option>Postponed</option>
                     </select>
 				</div>
 
-
                 <div class="form-group">
-                        @role('or_pm|supervising_officer')
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
-                    @endrole
                 </div>
+
 
                 @role('or_fol')
                 <p> orfol</p>
@@ -98,3 +102,4 @@
 </form>
 
 @endsection
+
