@@ -37,17 +37,11 @@
                 <h2>Create Meeting</h2><br>
 
 
-<<<<<<< HEAD
 
-
-                    <label for="abc">Title:</label>
-                    <input type="text" class="form-control" name="title" placeholder="Enter here" id="title">
-
-=======
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
->>>>>>> db7139b025456f7a752ef6b9bfcb73fd3adc35b0
+
                 </div>
                 <div class="form-group">
                     <label for="date">Date:</label>
