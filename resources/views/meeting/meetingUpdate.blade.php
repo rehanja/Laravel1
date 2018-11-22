@@ -37,7 +37,7 @@
                 <h2>Update Meeting</h2><br>
 
 
-                <div>
+                <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="email" class="form-control" value="{{$meeting -> title}}" name="title" placeholder="enter p-member email here" id="title">
                 </div>

@@ -12,7 +12,7 @@
     </div>
 </div><br>
     <div class="col-md-12">
-    <table class="table table-dark">
+    <table class="table table-light">
         <th>Title</th>
         <th>Date</th>
         <th>Start Time</th>
@@ -20,7 +20,7 @@
         <th>Description</th>
         <th>Invitees</th>
         <th>Status</th>
-        <th scope="col">Action</th>
+        <th colspan="2"></th>
     
        
     @foreach($meeting as $data)
