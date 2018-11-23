@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in...!!<br><br>
+                    You are logged in...!<br><br>
 
                    <a href="http://localhost:8000/event">event</a><br>
                    <a href="http://localhost:8000/meeting">meeting</a><br>
