@@ -114,11 +114,11 @@ Route::post('/save/{id}',[
 
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
-    'as'=>'meetingViewMail'         
+    'as'=>'meetingViewMail'
     ]);
-    
 
-    
+
+
 
 // nimesh's routes
 
