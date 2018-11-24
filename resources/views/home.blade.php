@@ -4,8 +4,8 @@
 @section('content')
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
-    <a href="http://localhost:8000/assign" class="w3-bar-item w3-button">assign</a>
-    <a href="http://localhost:8000/meeting" class="w3-bar-item w3-button">meeting</a>
+    <a href="http://localhost:8000/assign" class="w3-bar-item w3-button">Assign</a>
+    <a href="http://localhost:8000/meeting" class="w3-bar-item w3-button">Meeting</a>
     {{-- <div class="w3-dropdown-hover">
       <button class="w3-button">Dropdown
         <i class="fa fa-caret-down"></i>
@@ -15,8 +15,10 @@
         <a href="#" class="w3-bar-item w3-button">Link</a>
       </div>
     </div> --}}
-    <a href="http://localhost:8000/createUser" class="w3-bar-item w3-button">create user</a>
-    <a href="http://localhost:8000/event" class="w3-bar-item w3-button">event</a>
+    <a href="http://localhost:8000/createUser" class="w3-bar-item w3-button">Create User</a>
+    <a href="http://localhost:8000/event" class="w3-bar-item w3-button">Event</a>
+    <a href="http://localhost:8000/vote" class="w3-bar-item w3-button">Polling</a>
+
   </div>
 <div class="container">
     <div class="row justify-content-center">
@@ -31,7 +33,7 @@
                         </div>
                     @endif
 
-                    You are logged in...!!<br><br>
+                    You are logged in...!<br><br>
 
 
 
