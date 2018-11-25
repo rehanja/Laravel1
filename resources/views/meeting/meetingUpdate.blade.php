@@ -65,7 +65,7 @@
                     <label for="status">Status:</label>
                     <select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
                         <option>Sheduled</option>
-                        <option>Resheduled</option>
+                        <option>Re-sheduled</option>
                         <option>Postponed</option>
                     </select>                
                 </div>

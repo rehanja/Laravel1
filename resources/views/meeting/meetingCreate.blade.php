@@ -67,8 +67,10 @@
                     <label for="abc">Status:</label>
                     <select class="form-control" name="status" id="status">
                         <option>Sheduled</option>
-                        <option>Resheduled</option>
+                        <option>Re-sheduled</option>
                         <option>Postponed</option>
+                        <option>Finished</option>
+
                     </select>
                 </div>
 
