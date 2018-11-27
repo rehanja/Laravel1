@@ -4,8 +4,13 @@
 @section('content')
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
+    
     <a href="http://localhost:8000/assign" class="w3-bar-item w3-button">Assign</a>
+    <a href="http://localhost:8000/createUser" class="w3-bar-item w3-button">Create user</a>
     <a href="http://localhost:8000/meeting" class="w3-bar-item w3-button">Meeting</a>
+    <a href="http://localhost:8000/event" class="w3-bar-item w3-button">Event</a>
+    <a href="http://localhost:8000/vote" class="w3-bar-item w3-button">Polling</a>
+
     {{-- <div class="w3-dropdown-hover">
       <button class="w3-button">Dropdown
         <i class="fa fa-caret-down"></i>
@@ -15,9 +20,7 @@
         <a href="#" class="w3-bar-item w3-button">Link</a>
       </div>
     </div> --}}
-    <a href="http://localhost:8000/createUser" class="w3-bar-item w3-button">Create User</a>
-    <a href="http://localhost:8000/event" class="w3-bar-item w3-button">Event</a>
-    <a href="http://localhost:8000/vote" class="w3-bar-item w3-button">Polling</a>
+    
 
   </div>
 <div class="container">
@@ -33,23 +36,19 @@
                         </div>
                     @endif
 
-                    You are logged in...!<br><br>
-
-
-
-                   @role('or_fol')
-                   <p> orfol</p>
-                   @endrole
-                   @role('or_pm')
-                   <p> orpm</p>
-                   @endrole
-                   @role('p_member')
-                   <p> pmember</p>
-                   @endrole
-                   @role('or_pm|supervising_officer')
-                   <p>supervising officer</p>
-                   @endrole
-
+                    You are logged in as a
+                    @role('p_member')
+                     Primary member 
+                    @endrole
+                    @role('or_fol')
+                     Officer responsible for follow up (OR_FOL)
+                    @endrole
+                    @role('or_pm')
+                     Officer responsible for respctive member (OR_PM)
+                    @endrole
+                    @role('or_pm|supervising_officer')
+                    Supervising officer
+                    @endrole<br><br>
 
                     <h2>Welcome</h2><br>
                     <h4>Upcoming Events</h4><hr>
@@ -63,9 +62,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 @endsection
