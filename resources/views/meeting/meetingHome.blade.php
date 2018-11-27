@@ -33,9 +33,17 @@
         <th>Description</th>
         <th>Invitees</th>
         <th>Status</th>
+<<<<<<< HEAD
         
         <th colspan="3"><center>Actions</center></th>
         
+=======
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Sending Emails</th>
+    
+       
+>>>>>>> ffed76acd78f4a7fd1a3aafd1a85a29f33fdeeaf
     @foreach($meeting as $data)
         <tr>
             <td>{{ $data->title }}</td>
@@ -48,11 +56,22 @@
             
             <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
             <td><a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a></td>
+<<<<<<< HEAD
             <td><a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a></td>
             
-        </tr>
-        @endforeach
+=======
+        
 
+            <td>
+            <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a>
+            </td>
+
+>>>>>>> ffed76acd78f4a7fd1a3aafd1a85a29f33fdeeaf
+        </tr>
+    @endforeach    
+            
+
+        
 
         @role('or_fol')
         <p> orfol</p>
