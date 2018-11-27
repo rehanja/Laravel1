@@ -122,3 +122,8 @@ Route::get('/send/{id}',[
 
 // nimesh's routes
 
+
+Route::get('/profile','profile\ProfileController@getProfile');
+
+Route::get('/profile/editprofile','profile\ProfileController@editProfile');
+
