@@ -10,6 +10,7 @@
     <a href="http://localhost:8000/meeting" class="w3-bar-item w3-button">Meeting</a>
     <a href="http://localhost:8000/event" class="w3-bar-item w3-button">Event</a>
     <a href="http://localhost:8000/vote" class="w3-bar-item w3-button">Polling</a>
+    <a href="http://localhost:8000/profile" class="w3-bar-item w3-button">profile</a>
 
     {{-- <div class="w3-dropdown-hover">
       <button class="w3-button">Dropdown
