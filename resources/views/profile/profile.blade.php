@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 <head>
 <style>
 
