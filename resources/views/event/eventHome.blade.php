@@ -113,40 +113,32 @@ you log in as
     </div>
 </div>
     <div class="col-md-12">
-    <table class="table table-dark">
-        <th>Event Name</th>
-        <th>Reason</th>
-        <th>Region</th>
-        <th>Budget</th>
-        <th>Start date</th>
-        <th>Start time</th>
-        <th>End time</th>
-        @role('or_pm|supervising_officer')
-        <th>Delete button </th>
-        <th>Update button </th>
-        @endrole
+   
        
+
     @foreach($event as $eventData)
-        <tr>
-            <td>{{$eventData->eventName}}</td>
-            <td>{{$eventData->reason}}</td>
-            <td>{{$eventData->region}}</td>
-            <td>{{$eventData->budget}}</td>
-            <td>{{$eventData->startDate}}</td>
-            <td>{{$eventData->startTime}}</td>
-            <td>{{$eventData->endTime}}</td>
-            @role('or_pm|supervising_officer')
-            <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
-            <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
-            @endrole
-           
-        </tr>
-    @endforeach
+    <div class="card" style="width:18%">
+        <div class="card-body" >
+            
+                <h5 class="card-title">Event name: {{$eventData->eventName}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Reason : {{$eventData->reason}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Region : {{$eventData->region}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Budget : {{$eventData->budget}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Start date : {{$eventData->startDate}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Start time : {{$eventData->startTime}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">End time : {{$eventData->endTime}}</h6>
+                <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a>
+                <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a>
+                <p class="card-text">Event created by rehan</p>
+         
+        </div>
+      </div>
+      @endforeach
 
 
 
                                            
-    </table>
+
                 
                    
 
