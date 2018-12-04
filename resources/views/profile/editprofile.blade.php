@@ -17,14 +17,38 @@
                         <div id="div_id_username" class="form-group required">
                             <label for="id_username" class="control-label col-md-4  requiredField"> Name </label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="username" placeholder="{{Auth::user()->name}}" style="margin-bottom: 10px" type="text" />
+                                <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="nameinitial" placeholder="{{Auth::user()->name}}" style="margin-bottom: 10px" type="text" />
                             </div>
                         </div>
+                        <div id="div_id_nameinitial" class="form-group required">
+                            <label for="id_nameinitial" class="control-label col-md-4  requiredField"> Name with initials </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md  textinput textInput form-control" id="id_nameinitial" maxlength="30" name="nameinitial" placeholder="{{Auth::user()->nameWithInitials}}" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_nic" class="form-group required">
+                            <label for="id_nic" class="control-label col-md-4  requiredField"> NIC </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md  textinput textInput form-control" id="id_nic" maxlength="30" name="nic" placeholder="{{Auth::user()->nic}}" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_number" class="form-group required">
+                             <label for="id_number" class="control-label col-md-4  requiredField"> Contact Number</label>
+                             <div class="controls col-md-8 ">
+                                 <input class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="{{Auth::user()->contactNumber}}" style="margin-bottom: 10px" type="text" />
+                            </div> 
+                        </div> 
                         <div id="div_id_email" class="form-group required">
                             <label for="id_email" class="control-label col-md-4  requiredField"> E-mail</label>
                             <div class="controls col-md-8 ">
                                 <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="{{Auth::user()->email}}" style="margin-bottom: 10px" type="email" />
                             </div>     
+                        </div>
+                        <div id="div_id_location" class="form-group required">
+                            <label for="id_location" class="control-label col-md-4  requiredField">Address</label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" id="id_location" name="location" placeholder="{{Auth::user()->address}}" style="margin-bottom: 10px" type="text" />
+                            </div> 
                         </div>
                         <div id="div_id_password1" class="form-group required">
                             <label for="id_password1" class="control-label col-md-4  requiredField">Password</label>
@@ -37,19 +61,6 @@
                              <div class="controls col-md-8 ">
                                 <input class="input-md textinput textInput form-control" id="id_password2" name="password2" placeholder="Confirm your password" style="margin-bottom: 10px" type="password" />
                             </div>
-                        </div>
-                        
-                        <div id="div_id_number" class="form-group required">
-                             <label for="id_number" class="control-label col-md-4  requiredField"> Contact Number</label>
-                             <div class="controls col-md-8 ">
-                                 <input class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="Contact Number" style="margin-bottom: 10px" type="text" />
-                            </div> 
-                        </div> 
-                        <div id="div_id_location" class="form-group required">
-                            <label for="id_location" class="control-label col-md-4  requiredField">Address</label>
-                            <div class="controls col-md-8 ">
-                                <input class="input-md textinput textInput form-control" id="id_location" name="location" placeholder="Address" style="margin-bottom: 10px" type="text" />
-                            </div> 
                         </div>
                         <div class="form-group">
                             <div class="controls col-md-offset-4 col-md-8 ">

@@ -6,6 +6,7 @@
 
 .profile-img{
     text-align: center;
+    margin-left:-18%;
 }
 .profile-img img{
     width: 70%;
@@ -120,6 +121,22 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
+                                                <label>Name with initials</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{Auth::user()->nameWithInitials}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>NIC No</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{Auth::user()->nic}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
@@ -131,7 +148,15 @@
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p>{{Auth::user()->contactNumber}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{Auth::user()->address}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -139,7 +164,18 @@
                                                 <label>Role</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
+                                                <p> @role('or_fol')
+            <p> orfol</p>
+            @endrole
+            @role('or_pm')
+            orpm
+            @endrole
+            @role('p_member')
+            pmember
+            @endrole
+            @role('or_pm|supervising_officer')
+            supervising officer
+            @endrole</p>
                                             </div>
                                         </div>
                             </div>
