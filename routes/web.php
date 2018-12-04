@@ -31,6 +31,8 @@ Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
 Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
+
+
 //event routes-rehan
 
 Route::get('/event',function(){

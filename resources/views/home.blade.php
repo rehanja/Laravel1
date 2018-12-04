@@ -4,6 +4,7 @@
 @section('content')
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
+
     
     <a href="/assign" class="w3-bar-item w3-button">Assign</a>
     <a href="/createUser" class="w3-bar-item w3-button">Create user</a>
@@ -21,7 +22,7 @@
         <a href="#" class="w3-bar-item w3-button">Link</a>
       </div>
     </div> --}}
-    
+
 
   </div>
 <div class="container">
@@ -39,7 +40,7 @@
 
                     You are logged in as a
                     @role('p_member')
-                     Primary member 
+                     Primary member
                     @endrole
                     @role('or_fol')
                      Officer responsible for follow up (OR_FOL)
