@@ -15,4 +15,13 @@ class ProfileController extends Controller
     public function editprofile(){
         return view('profile.editprofile');
     }
+
+    public function submit(Request $request){
+        dd($request->all());
+        return 5;
+    }
+
+    public function upload(){
+        return 5;
+    }
 }
