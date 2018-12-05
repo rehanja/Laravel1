@@ -9,11 +9,12 @@
                 <div class="panel-title">Edit Profile</div>
             </div>  
             <div class="panel-body" >
-                <form method="post" action=".">
+                <form method="post" action="/profile/editprofile/submit">
+                {{csrf_field()}}
                     <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
                             
 
-                    <form  class="form-horizontal" method="post" >
+                    <form  class="form-horizontal" method="post" action="/profile/editprofile/submit">
                         <div id="div_id_username" class="form-group required">
                             <label for="id_username" class="control-label col-md-4  requiredField"> Name </label>
                             <div class="controls col-md-8 ">
@@ -71,13 +72,11 @@
                         <div class="form-group"> 
                             <div class="aab controls col-md-4 "></div>
                             <div class="controls col-md-8 ">
-                                <input type="submit" name="Signup" value="Submit" class="btn btn-primary btn btn-info" id="submit-id-signup" />
+                                <input type="submit" name="submit" value="save" class="btn btn-primary btn btn-info" id="submit-id-signup" />
                             </div>
                         </div> 
-                            
+                        
                     </form>
-
-                </form>
             </div>
         </div>
     </div> 
