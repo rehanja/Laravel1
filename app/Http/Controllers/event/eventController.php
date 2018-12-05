@@ -25,7 +25,7 @@ class eventController extends Controller
     
     public function eventSave(Request $request){
          //validation part
-// dd($request->all());
+ //dd($request->all());
 $this ->validate($request,[
     'eventName'=>'required|max:20',
     'reason'=>'required|max:20',
