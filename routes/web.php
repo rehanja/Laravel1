@@ -44,7 +44,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave');
 
 
 Route::get('/event/delete/{id}',[
