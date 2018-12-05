@@ -25,57 +25,26 @@
     </div>
 </div><br>
     <div class="col-md-12">
-    <table class="table table-light">
-        <th>Title</th>
-        <th>Date</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-        <th>Description</th>
-        <th>Invitees</th>
-        <th>Status</th>
-        <th colspan="3"><center>Actions</center></th>
-        <th>Delete</th>
-        <th>Update</th>
-        <th>Sending Emails</th>
-    
-       
+            @foreach($meeting as $data)
+            <div class="card" style="width:19%">
+                <div class="card-body" >
+                    
+                        <h5 class="card-title">Meeting with: {{ $data->title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Title : {{ $data->title }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Date : {{ $data->date }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Start time : {{ $data->startTime }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">End time : {{ $data->endTime }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Description : {{ $data->description }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6>
+                        <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
+                        <a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                        <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a>
+                        <p class="card-text">Event created by achini</p>
+                 
+                </div>
+              </div>
+              @endforeach  
 
-    @foreach($meeting as $data)
-        <tr>
-            <td>{{ $data->title }}</td>
-            <td>{{ $data->date }}</td>
-            <td>{{ $data->startTime }}</td>
-            <td>{{ $data->endTime }}</td>
-            <td>{{ $data->description }}</td>
-            <td>{{ $data->invitees }}</td>
-            <td>{{ $data->status }}</td>
-            
-            <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
-            <td><a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a></td>
-            <td><a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a></td>
-
-
-        </tr>
-    @endforeach    
-            
-
-        
-
-        @role('or_fol')
-        <p> orfol</p>
-        @endrole
-        @role('or_pm')
-        <p> orpm</p>
-        @endrole
-        @role('p_member')
-        <p> pmember</p>
-        @endrole
-        @role('or_pm|supervising_officer')
-        <p>supervising officer</p>
-        @endrole
-                                             
-    </table>
-
-
+           
 @endsection
    
