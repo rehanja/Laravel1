@@ -31,6 +31,8 @@ Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
 Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
+
+
 //event routes-rehan
 
 Route::get('/event',function(){
@@ -42,7 +44,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
 
 
 Route::get('/event/delete/{id}',[
@@ -57,10 +58,7 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
-Route::post('/event/save/{id}',[
-    'uses'=>'HomeController@index@eventUpdateSave',
-    'as'=>'event.save'
-    ])->middleware('role:supervising_officer|or_pm');
+
 
 
 
