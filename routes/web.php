@@ -21,15 +21,17 @@ Route::get('/createUser',function () {
 });
 
 //issue membership
-Route::get('/markAsCompleted/{id}','Auth\RegisterController@updateAsMember');
-Route::get('/markAsNotCompleted/{id}','Auth\RegisterController@updateAsNotMember');
+Route::get('/markAsCompleted/{id}','Auth\UsersController@updateAsMember');
+Route::get('/markAsNotCompleted/{id}','Auth\UsersController@updateAsNotMember');
 
 //delete Member
-Route::get('/deleteMember/{id}','Auth\RegisterController@deleteMember');
+Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
 
 //update Member
-Route::get('/updateMember/{id}','Auth\RegisterController@updateMember');
-Route::post('/updateUser','Auth\RegisterController@updateMemberView');
+Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
+Route::post('/updateUser','Auth\UsersController@updateMemberView');
+
+
 
 //event routes-rehan
 
@@ -42,7 +44,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
 
 
 Route::get('/event/delete/{id}',[
@@ -57,22 +58,19 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
-Route::post('/event/save/{id}',[
-    'uses'=>'HomeController@index@eventUpdateSave',
-    'as'=>'event.save'
-    ])->middleware('role:supervising_officer|or_pm');
+
 
 
 
 Route::get('/assign',[
     'uses'=>'HomeController@assignHome',
     'as'=>'assign'
-    ])->middleware('role:supervising_officer|or_pm');
+    ]);
 
 Route::post('/assign/save',[
     'uses'=>'HomeController@index',
     'as'=>'assign.save'
-    ])->middleware('role:supervising_officer|or_pm');
+    ]);
 
 Route::post('/assign', 'HomeController@index');
 
@@ -107,18 +105,26 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
-        'uses'=>'meetingController@MeetingUpdateSave',
+        'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
 
 
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
-    'as'=>'meetingViewMail'         
+    'as'=>'meetingViewMail'
     ]);
-    
 
-    
+
+
 
 // nimesh's routes
 
+
+Route::get('/profile','profile\ProfileController@getProfile');
+
+Route::get('/profile/editprofile','profile\ProfileController@editProfile');
+
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+
+Route::post('upload','prifile\ProfileController@upload');
