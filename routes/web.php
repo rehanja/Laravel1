@@ -115,7 +115,23 @@ Route::get('/send/{id}',[
     'as'=>'meetingViewMail'
     ]);
 
+Route::get('poll', [
+    'uses'=>'event\eventController@PollsView',
+    'as'=>'pollsview'
+    ]);
 
+Route::get('vote', [
+    'uses'=>'event\eventController@Vote',
+    'as'=>'vote'
+    ]);
+    
+Route::get('vote', [
+    'uses'=>'event\eventController@GetEvent',
+    'as'=>'vote'
+    ]);
+    
+    
+    
 
 
 // nimesh's routes

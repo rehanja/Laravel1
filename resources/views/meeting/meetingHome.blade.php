@@ -26,7 +26,7 @@
 </div><br>
     <div class="col-md-12">
             @foreach($meeting as $data)
-            <div class="card" style="width:19%">
+            <div class="card" style="width:25%">
                 <div class="card-body" >
                     
                         <h5 class="card-title">Meeting with: {{ $data->title }}</h5>
@@ -39,7 +39,7 @@
                         <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
                         <a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
                         <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a>
-                        <p class="card-text">Event created by achini</p>
+                        <p class="card-text">Meeting created by achini</p>
                  
                 </div>
               </div>

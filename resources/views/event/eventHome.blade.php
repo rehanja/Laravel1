@@ -117,7 +117,7 @@ you log in as
        
 
     @foreach($event as $eventData)
-    <div class="card" style="width:18%">
+    <div class="card" style="width:25%">
         <div class="card-body" >
             
                 <h5 class="card-title">Event name: {{$eventData->eventName}}</h5>

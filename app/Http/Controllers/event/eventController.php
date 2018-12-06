@@ -102,4 +102,21 @@ public function eventUpdateSave(Request $request,$id){
      return redirect('/event')->with('event',$data);
 }
  
+
+    public function Vote(){
+
+        return view('polling/vote');
+
+    }
+    public function GetEvent(){
+            $event = event::get();
+
+            return view('polling/vote')->with('event', $event);
+    }
+    public function PollsView(){
+
+        return view('polling/poll');
+
+    }
+
 }
