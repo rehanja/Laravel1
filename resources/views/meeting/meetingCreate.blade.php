@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form method="post" action="{{ Route('meetingStore') }}">
+<form method="post" action="/create">
 
     {{csrf_field()}}
 
