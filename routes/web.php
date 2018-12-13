@@ -134,6 +134,6 @@ Route::get('/profile','profile\ProfileController@getProfile');
 
 Route::get('/profile/editprofile','profile\ProfileController@editProfile');
 
-Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
 
-Route::post('upload','prifile\ProfileController@upload');
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
