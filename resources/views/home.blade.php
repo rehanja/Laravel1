@@ -10,7 +10,7 @@
     <a href="/createUser" class="w3-bar-item w3-button">Create user</a>
     <a href="/meeting" class="w3-bar-item w3-button">Meeting</a>
     <a href="/event" class="w3-bar-item w3-button">Event</a>
-    <a href="/vote" class="w3-bar-item w3-button">Polling</a>
+    <a href="/poll" class="w3-bar-item w3-button">Polling</a>
     <a href="/profile" class="w3-bar-item w3-button">profile</a>
 
     {{-- <div class="w3-dropdown-hover">

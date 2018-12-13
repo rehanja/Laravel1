@@ -89,10 +89,7 @@ Route::get('create', [
     'as'=>'meetingCreate'
     ]);
 
-Route::post('create', [
-    'uses'=>'meeting\meetingController@MeetingStore',
-    'as'=>'meetingStore'
-    ]);
+Route::post('/create', 'meeting\meetingController@MeetingStore');
 
 Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
@@ -116,6 +113,18 @@ Route::get('/send/{id}',[
     ]);
 
 
+//routs for votes
+Route::get('poll', [
+    'uses'=>'event\eventController@PollsView',
+    'as'=>'pollsview'
+    ]);
+
+Route::get('voteAdd',[
+    'uses'=>'event\eventController@VoteAdd',
+    'as'=>'voteAdd'
+    ]);
+
+    
 
 
 // nimesh's routes
@@ -125,6 +134,6 @@ Route::get('/profile','profile\ProfileController@getProfile');
 
 Route::get('/profile/editprofile','profile\ProfileController@editProfile');
 
-Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
 
-Route::post('upload','prifile\ProfileController@upload');
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');

@@ -12,6 +12,8 @@ class meetingController extends Controller
 {
     public function MeetingCreate(){
 
+        //$meeting = Meeting::latest()->paginate(3);
+
         return view('meeting/meetingCreate');
 
     }
@@ -40,7 +42,7 @@ class meetingController extends Controller
 
         $meeting->save();
 
-        $meeting=Meeting::all();
+        $meeting = Meeting::all();
         return redirect()->back()->with('message','Meeting Created Successfully.'); 
 
     }
