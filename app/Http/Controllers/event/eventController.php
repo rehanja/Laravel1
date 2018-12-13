@@ -25,98 +25,100 @@ class eventController extends Controller
     
     public function eventSave(Request $request){
          //validation part
- dd($request->all());
-$this ->validate($request,[
-    'eventName'=>'required|min:10',
-    'reason'=>'required|max:20',
-    'region'=>'required|max:20',
-    'budget'=>'required',
-    'startDate'=>'required',
-    'startDate'=>'required',
-    'startDate'=>'required',
- ]);
-
-
-$event=new event;
-
- $event->eventName=$request->eventName;
- $event->reason=$request->reason;
- $event->region=$request->region;
- $event->budget=$request->budget;
- $event->startDate=$request->startDate;
- $event->startTime=$request->startTime;
- $event->endTime=$request->endTime;
- $event->save();
-
- $data=event::all();
-//return redirect()->back();
-return redirect('/event')->with('event',$data);
-   
-}
-public function eventDelete($id){
-    //dd($id);
-    $a=event::find($id);
-    $a->delete();
-    return redirect()->back();
-}
-
-
-public function eventUpdate($id){
-
-    $event = event::find($id);
-
-
-    return view('event/eventUpdate')->with('event',$event);
-      
-      
-}
-
-
-public function eventUpdateSave(Request $request,$id){
-     //validation part
     //dd($request->all());
     $this ->validate($request,[
-        'eventName'=>'required|min: 10',
+        'eventName'=>'required|min:10',
         'reason'=>'required|max:20',
         'region'=>'required|max:20',
         'budget'=>'required',
         'startDate'=>'required',
         'startDate'=>'required',
         'startDate'=>'required',
-     ]);
+    ]);
 
-      $event=event::find($id);
 
-      $event->eventName = $request->eventName;
-      $event->reason = $request->reason;
-      $event->region = $request->region;
-      $event->budget = $request->budget;
-      $event->startDate = $request->startDate;
-      $event->startTime = $request->startTime;
-      $event->endTime = $request->endTime;
-     
-    //$date = $event->start;
-     $event->save();
-     $data=event::all();
-     //return '0';
-     return redirect('/event')->with('event',$data);
-}
- 
+    $event=new event;
 
-    public function Vote(){
+    $event->eventName=$request->eventName;
+    $event->reason=$request->reason;
+    $event->region=$request->region;
+    $event->budget=$request->budget;
+    $event->startDate=$request->startDate;
+    $event->startTime=$request->startTime;
+    $event->endTime=$request->endTime;
+    $event->save();
 
-        return view('polling/vote');
-
+    $data=event::all();
+    //return redirect()->back();
+    return redirect('/event')->with('event',$data);
+    
     }
-    public function GetEvent(){
-            $event = event::get();
-
-            return view('polling/vote')->with('event', $event);
-    }
-    public function PollsView(){
-
-        return view('polling/poll');
-
+    public function eventDelete($id){
+        //dd($id);
+        $a=event::find($id);
+        $a->delete();
+        return redirect()->back();
     }
 
+
+    public function eventUpdate($id){
+
+        $event = event::find($id);
+
+
+        return view('event/eventUpdate')->with('event',$event);
+        
+        
+    }
+
+
+    public function eventUpdateSave(Request $request,$id){
+        //validation part
+        //dd($request->all());
+        $this ->validate($request,[
+            'eventName'=>'required|min: 10',
+            'reason'=>'required|max:20',
+            'region'=>'required|max:20',
+            'budget'=>'required',
+            'startDate'=>'required',
+            'startDate'=>'required',
+            'startDate'=>'required',
+        ]);
+
+        $event=event::find($id);
+
+        $event->eventName = $request->eventName;
+        $event->reason = $request->reason;
+        $event->region = $request->region;
+        $event->budget = $request->budget;
+        $event->startDate = $request->startDate;
+        $event->startTime = $request->startTime;
+        $event->endTime = $request->endTime;
+        
+        //$date = $event->start;
+        $event->save();
+        $data=event::all();
+        //return '0';
+        return redirect('/event')->with('event',$data);
+    }
+    
+
+//functions for polling
+    public function PollsView(Request $request){
+
+        $event = event::get();
+        return view('polling/poll')->with('event',$event);
+
+    }
+    
+    public function VoteAdd(Request $request){
+            $id = Auth::user()->id;
+            $event = Event::find($request->eventid);
+            
+            $event->vote = $event->vote + 1;
+            $event->save();
+            $data=event::all();
+            // return '0';
+            return redirect('/event')->with('event',$data);
+    }
 }

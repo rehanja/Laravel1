@@ -2,6 +2,20 @@
 
 @section('content')
 
+you log in as 
+    @role('p_member')
+     pmember
+    @endrole
+    @role('or_fol')
+     orfol
+    @endrole
+    @role('or_pm')
+     orpm
+    @endrole
+    @role('or_pm|supervising_officer')
+    supervising officer
+    @endrole
+
 <!--for email sending & meeting deleting-->
         @if (session('message'))
             <div class="flash-message">
@@ -19,7 +33,7 @@
 
         <div class="col-md-12">
             
-            <a class="btn btn-info" href="{{ route('meetingCreate') }}"><b> Create Meeting</b></a>
+            <a class="btn btn-primary" href="{{ route('meetingCreate') }}"> Create Meeting</a>
             
         </div>
     </div>
@@ -38,7 +52,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6>
                         <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
                         <a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                        <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send</a>
+                        <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send an E-mail</a>
                         <p class="card-text">Meeting created by achini</p>
                  
                 </div>

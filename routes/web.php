@@ -89,10 +89,7 @@ Route::get('create', [
     'as'=>'meetingCreate'
     ]);
 
-Route::post('create', [
-    'uses'=>'meeting\meetingController@MeetingStore',
-    'as'=>'meetingStore'
-    ]);
+Route::post('/create', 'meeting\meetingController@MeetingStore');
 
 Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
@@ -115,22 +112,18 @@ Route::get('/send/{id}',[
     'as'=>'meetingViewMail'
     ]);
 
+
+//routs for votes
 Route::get('poll', [
     'uses'=>'event\eventController@PollsView',
     'as'=>'pollsview'
     ]);
 
-Route::get('vote', [
-    'uses'=>'event\eventController@Vote',
-    'as'=>'vote'
+Route::get('voteAdd',[
+    'uses'=>'event\eventController@VoteAdd',
+    'as'=>'voteAdd'
     ]);
-    
-Route::get('vote', [
-    'uses'=>'event\eventController@GetEvent',
-    'as'=>'vote'
-    ]);
-    
-    
+
     
 
 
