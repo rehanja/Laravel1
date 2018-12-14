@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 you log in as 
     @role('p_member')
      pmember
@@ -43,8 +42,8 @@ you log in as
             <div class="card" style="width:25%">
                 <div class="card-body" >
                     
-                        <h5 class="card-title">Meeting with: {{ $data->title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Title : {{ $data->title }}</h6>
+                        <h5 class="card-title">Meeting with: {{ $data->name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Member Email : {{ $data->title }}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">Date : {{ $data->date }}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">Start time : {{ $data->startTime }}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">End time : {{ $data->endTime }}</h6>
