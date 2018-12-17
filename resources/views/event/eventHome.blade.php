@@ -120,7 +120,8 @@ you log in as
     <div class="col-md-12">
    
        
-    <p> * Noted : Give your votes for Event(s). After voted, You cannot change.</p>
+    <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  After voted, You cannot change.</p>
 
 <div class="col-md-12">
     @foreach($event as $eventData)
@@ -140,6 +141,26 @@ you log in as
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
                         <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by rehan</p>
 
+        
+        @if (session('error'))
+            <div class="flash-message">
+                <div class="alert alert-danger">
+                    <strong>
+                        {{ session('error') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
+
+        @if (session('message'))
+            <div class="flash-message">
+                <div class="alert alert-success">
+                    <strong>
+                        {{ session('message') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
                     <div class="vote">
                         <button type="button" onclick="location.href='{{ route('voteAdd',['eventid' => $eventData->id] ) }}'" class="btn btn-success btn-sm">Vote</button>
                     </div>
