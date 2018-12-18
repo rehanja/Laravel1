@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\event;
 use App\event;
+use App\vote;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -114,11 +115,26 @@ class eventController extends Controller
     public function VoteAdd(Request $request){
             $id = Auth::user()->id;
             $event = Event::find($request->eventid);
-            
-            $event->vote = $event->vote + 1;
-            $event->save();
+
+            $c = count(vote::where(['event_id'=> $event->id, 'user_id'=> $id])->get());
+            if($c==0){
+                $event->vote = $event->vote + 1;
+                $event->save();
+
+                $vote = new vote;
+                $vote->event_id= $event->id;
+                $vote->user_id= $id;
+                $vote->save();
+
+                return redirect()->back()->with('message','Voted successfully.'); 
+            }
+
+            else {
+                return redirect()->back()->with('error','Opps, You have already voted for this event.!'); 
+            }
             $data=event::all();
             // return '0';
             return redirect('/event')->with('event',$data);
     }
+    
 }

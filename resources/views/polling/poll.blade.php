@@ -36,7 +36,7 @@ you log in as
             <tr>
                 <td><center>{{$data->id}}</center></td>
                 <td>{{$data->eventName}}</td>
-                <td>{{$data->vote}}</td>
+                <td>&nbsp;&nbsp;{{$data->vote}}</td>
             </tr>
 
             @endforeach
