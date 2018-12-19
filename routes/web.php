@@ -76,7 +76,8 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes - Meeting
+// achini's routes 
+// routes for Meeting
 
 Route::get('/meeting',function(){
 
@@ -113,7 +114,7 @@ Route::get('/send/{id}',[
     ]);
 
 
-//routs for votes
+//routes for votes
 Route::get('poll', [
     'uses'=>'event\eventController@PollsView',
     'as'=>'pollsview'
