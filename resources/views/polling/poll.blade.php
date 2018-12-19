@@ -24,17 +24,19 @@ you log in as
 </div>
 <br><br>
 
-    <div>
+    <center><div>
         <table class="table" style="width:50%">
             <tr>
+                <th><center>Event No </center></th>
                 <th>Event Name </th>
                 <th>Votes </th>
             </tr>
 
             @foreach($event as $data)
             <tr>
+                <td><center>{{$data->id}}</center></td>
                 <td>{{$data->eventName}}</td>
-                <td>{{$data->vote}}</td>
+                <td>&nbsp;&nbsp;{{$data->vote}}</td>
             </tr>
 
             @endforeach
