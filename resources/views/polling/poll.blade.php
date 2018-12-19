@@ -24,7 +24,7 @@ you log in as
 </div>
 <br><br>
 
-    <div>
+    <center><div>
         <table class="table" style="width:50%">
             <tr>
                 <th><center>Event No </center></th>

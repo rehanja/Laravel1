@@ -107,7 +107,7 @@ class eventController extends Controller
 //functions for polling
     public function PollsView(Request $request){
 
-        $event = event::get();
+        $event = event::orderBy('vote', 'ASCE')->get();
         return view('polling/poll')->with('event',$event);
 
     }
@@ -132,7 +132,8 @@ class eventController extends Controller
             else {
                 return redirect()->back()->with('error','Opps, You have already voted for this event.!'); 
             }
-            $data=event::all();
+
+            $data = event::all();
             // return '0';
             return redirect('/event')->with('event',$data);
     }
