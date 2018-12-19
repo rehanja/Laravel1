@@ -107,7 +107,7 @@ class eventController extends Controller
 //functions for polling
     public function PollsView(Request $request){
 
-        $event = event::get();
+        $event = event::orderBy('vote', 'ASCE')->get();
         return view('polling/poll')->with('event',$event);
 
     }
