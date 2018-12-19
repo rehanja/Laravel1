@@ -123,25 +123,7 @@ you log in as
     <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   After voted, You cannot change.</p>
 
-<div class="col-md-12">
-    @foreach($event as $eventData)
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <div class="card-body" >
-                    
-                        <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Budget : {{$eventData->budget}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date : {{$eventData->startDate}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time : {{$eventData->startTime}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
-                        <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by rehan</p>
 
-        
         @if (session('error'))
             <div class="flash-message">
                 <div class="alert alert-danger">
@@ -161,6 +143,27 @@ you log in as
                 </div>
             </div>
         @endif
+
+        
+<div class="col-md-12">
+    @foreach($event as $eventData)
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="card-body" >
+                    
+                        <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Budget : {{$eventData->budget}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date : {{$eventData->startDate}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time : {{$eventData->startTime}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by rehan</p>
+
+    
                     <div class="vote">
                         <button type="button" onclick="location.href='{{ route('voteAdd',['eventid' => $eventData->id] ) }}'" class="btn btn-success btn-sm">Vote</button>
                     </div>

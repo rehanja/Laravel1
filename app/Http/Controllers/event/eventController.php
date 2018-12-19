@@ -132,7 +132,8 @@ class eventController extends Controller
             else {
                 return redirect()->back()->with('error','Opps, You have already voted for this event.!'); 
             }
-            $data=event::all();
+
+            $data = event::all();
             // return '0';
             return redirect('/event')->with('event',$data);
     }
