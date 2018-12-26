@@ -12,6 +12,8 @@ class meetingController extends Controller
 {
     public function MeetingCreate(){
 
+        //$meeting = Meeting::latest()->paginate(3);
+
         return view('meeting/meetingCreate');
 
     }
@@ -19,7 +21,8 @@ class meetingController extends Controller
     public function MeetingStore(Request $request){
          
         $this ->validate($request,[
-            'title'      => 'required|distinct',                 //input validations
+            'name'       => 'required',                             //input validations
+            'title'      => 'required|distinct',                 
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
@@ -30,7 +33,8 @@ class meetingController extends Controller
 
         $meeting=new Meeting;
 
-        $meeting->title       = $request-> input('title');          //store in db
+        $meeting->name        = $request-> input('name');          //store in db
+        $meeting->title       = $request-> input('title');        
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
@@ -40,7 +44,7 @@ class meetingController extends Controller
 
         $meeting->save();
 
-        $meeting=Meeting::all();
+        $meeting = Meeting::all();
         return redirect()->back()->with('message','Meeting Created Successfully.'); 
 
     }
@@ -75,6 +79,7 @@ class meetingController extends Controller
 
         $meeting = Meeting::find($id);
 
+        $meeting->name        = $request-> input('name');
         $meeting->title       = $request-> input('title');
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 <head>
 <style>
 
@@ -79,22 +80,39 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="container emp-profile">
-            <form method="post">
+            <form action="/photoUpload" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <img src="/uploads/profilePic/{{Auth::user()->profilePic}}">
                             <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
+                                Choose Photo
+                                <input type="file" name="profilePic">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
+                        <input class="btn btn-primary" type="submit" value="Upload Photo">
+
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
                                         {{Auth::user()->name}}
                                     </h5>
+                                    <h6>
+                                    <p> @role('or_fol')
+                                                orfol
+                                                @endrole
+                                                @role('or_pm')
+                                                orpm
+                                                @endrole
+                                                @role('p_member')
+                                                pmember
+                                                @endrole
+                                                @role('or_pm|supervising_officer')
+                                                supervising officer
+                                                @endrole</p>
+                                    </h6>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -165,17 +183,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> @role('or_fol')
-            <p> orfol</p>
-            @endrole
-            @role('or_pm')
-            orpm
-            @endrole
-            @role('p_member')
-            pmember
-            @endrole
-            @role('or_pm|supervising_officer')
-            supervising officer
-            @endrole</p>
+                                                orfol
+                                                @endrole
+                                                @role('or_pm')
+                                                orpm
+                                                @endrole
+                                                @role('p_member')
+                                                pmember
+                                                @endrole
+                                                @role('or_pm|supervising_officer')
+                                                supervising officer
+                                                @endrole</p>
                                             </div>
                                         </div>
                             </div>

@@ -36,37 +36,41 @@
             <div class="abc">
                 <h2>Update Meeting</h2><br>
 
-
                 <div class="form-group">
-                    <label for="title">Title:</label>
+                    <label for="title">Member name :</label>
+                    <input type="text" class="form-control" value="{{$meeting -> name}}" name="name" placeholder="enter p-member name here" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="title">Member Email :</label>
                     <input type="email" class="form-control" value="{{$meeting -> title}}" name="title" placeholder="enter p-member email here" id="title">
                 </div>
                 <div class="form-group">
-                    <label for="date">Date:</label>
+                    <label for="date">Date :</label>
                     <input type="date" class="form-control" value="{{$meeting -> date}}" name="date" id="date">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Start Time:</label>
+                    <label for="abc">Start Time :</label>
                     <input type="startTime" class="form-control" value="{{$meeting -> startTime}}" name="startTime" id="startTime">
                 </div>
                 <div class="form-group">
-                    <label for="endTime">End Time:</label>
+                    <label for="endTime">End Time :</label>
                     <input type="time" class="form-control" value="{{$meeting -> endTime}}" name="endTime" id="endTime">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
+                    <label for="description">Description :</label>
                     <input type="textarea" class="form-control" value="{{$meeting -> description}}" name="description" placeholder="enter description here ex:name,place,etc" id="description">
                 </div>
                 <div class="form-group">
-                    <label for="invitees">Invitees:</label>
+                    <label for="invitees">Invitees :</label>
                     <input type="text" class="form-control" value="{{$meeting -> invitees}}" name="invitees" placeholder="enter invitees here" id="invitees">
                 </div>
                 <div class="form-group">
-                    <label for="status">Status:</label>
+                    <label for="status">Status :</label>
                     <select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
                         <option>Sheduled</option>
-                        <option>Re-sheduled</option>
                         <option>Postponed</option>
+                        <option>Re-sheduled</option>
+                        <option>Finished</option>
                     </select>                
                 </div>
 
