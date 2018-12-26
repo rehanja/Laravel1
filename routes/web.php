@@ -31,6 +31,10 @@ Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
 Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
+//assign or-fol
+Route::get('/assignOrFol', function () {
+    return view('assign/assignOrFol');
+});
 
 
 //event routes-rehan
