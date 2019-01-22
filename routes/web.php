@@ -129,7 +129,7 @@ Route::get('voteAdd',[
     'as'=>'voteAdd'
     ]);
 
-    
+//after meeting informing an accepted user
 
 
 // nimesh's routes
