@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
-
+ 
 @section('content')
 you log in as 
     @role('p_member')
@@ -85,8 +85,12 @@ you log in as
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="usr">End time:</label>
+                                    <label for="usr">End time: </label>
                                     <input type="time" class="form-control" name="endTime" placeholder="Enter here" id="usr">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="usr"><h4> Event creating by {{Auth::user()->name}}</h4> </label>
                                 </div>
 
                                 <div>
@@ -101,6 +105,7 @@ you log in as
                     </form>
                         <div class="modal-footer">
                        If you want you can update event later
+                       
                         </div>
             </div>
                                 
@@ -144,14 +149,14 @@ you log in as
             </div>
         @endif
 
-        
+
 <div class="col-md-12">
     @foreach($event as $eventData)
     <div class="row">
         <div class="column">
             <div class="card">
                 <div class="card-body" >
-                    
+
                         <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
@@ -161,7 +166,7 @@ you log in as
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by rehan</p>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
 
     
                     <div class="vote">

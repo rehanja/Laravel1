@@ -81,13 +81,16 @@ class UsersController extends Controller
             $name=$request->name;
             $nic=$request->nic;
             $address=$request->address;
+            $pollingDivision=$request->pollingDivision;
             $contactNumber=$request->contactNumber;
+
 
             $data=User::find($id);
             $data->nameWithInitials=$nameWithInitials;
             $data->name=$name;
             $data->nic=$nic;
             $data->address=$address;
+            $data->pollingDivision=$pollingDivision;
             $data->contactNumber=$contactNumber;
             $data->save();
 

@@ -82,7 +82,11 @@ Route::post('/assign', 'HomeController@index');
 
 
 
+
+
+
 // achini's routes
+
 // routes for Meeting
 
 Route::get('/meeting',function(){
@@ -134,13 +138,25 @@ Route::get('voteAdd',[
 
 
 
+
 // nimesh's routes
 
 
 Route::get('/profile','profile\ProfileController@getProfile');
 
-Route::get('/profile/editprofile','profile\ProfileController@editProfile');
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+Route::get('/profile/editprofile/{id}',[
+    'uses'=>'profile\ProfileController@editProfile',
+    'as'=>'userEdit']);
+
 
 Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
 
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+Route::post('/profile/editprofile/submit/{id}',[
+    'uses'=>'profile\ProfileController@submit',
+    'as'=>'userUpdate' ]);
+
+
