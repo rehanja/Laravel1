@@ -50,9 +50,7 @@
         <a href="/deleteMember/{{$details->id}}" class="btn btn-danger">Delete</a>
         </td>
 
-        <td>
-        <a href="{{route('verifyMember',['email' => $details->email]) }}" class="btn btn-primary">Send</a>
-        </td>
+       
     </tr>
 
     @endforeach
