@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
-
+ 
 @section('content')
 you log in as 
     @role('p_member')
@@ -151,7 +151,7 @@ you log in as
         <div class="column">
             <div class="card">
                 <div class="card-body" >
-                    
+
                         <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
