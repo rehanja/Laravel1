@@ -36,6 +36,8 @@ Route::get('/assignOrFol', function () {
     return view('assign/assignOrFol');
 });
 
+Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
+
 
 //event routes-rehan
 
@@ -80,7 +82,7 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes 
+// achini's routes
 // routes for Meeting
 
 Route::get('/meeting',function(){
@@ -129,7 +131,7 @@ Route::get('voteAdd',[
     'as'=>'voteAdd'
     ]);
 
-    
+
 
 
 // nimesh's routes
@@ -139,6 +141,6 @@ Route::get('/profile','profile\ProfileController@getProfile');
 
 Route::get('/profile/editprofile','profile\ProfileController@editProfile');
 
-Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
 
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');

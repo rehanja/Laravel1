@@ -97,4 +97,13 @@ class UsersController extends Controller
 
     }
 
+    protected function assignOrFol(Request $request){
+        $lat=$request->lat;
+        $lng=$request->lng;
+
+        $memebers=User::whereBetween('lat',[$lat-0.1,$lat+0.1])->whereBetween('lng',[$lng-0.1,$lng+0.1])->get();
+
+        return $memebers;
+    }
+
 }
