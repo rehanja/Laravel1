@@ -76,6 +76,8 @@ Route::post('/assign', 'HomeController@index');
 
 
 
+
+
 // achini's routes 
 // routes for Meeting
 
@@ -126,6 +128,10 @@ Route::get('voteAdd',[
     ]);
 
 //after meeting informing an accepted user
+
+
+
+
 
 
 // nimesh's routes
