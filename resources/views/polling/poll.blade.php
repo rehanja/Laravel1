@@ -18,7 +18,7 @@ you log in as
 <div class="content">
     <div class="title m-b-md">
         <div class="col-md-12">    
-            <button type="button" onclick="location.href='{{ url('event') }}'" class="btn btn-primary">Vote for Events</button>    
+            <button type="button" onclick="location.href='{{ url('event') }}'" class="btn btn-primary">Vote Events</button>    
         </div>
     </div>
 </div>
