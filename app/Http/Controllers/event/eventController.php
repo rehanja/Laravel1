@@ -48,6 +48,7 @@ class eventController extends Controller
     $event->startDate=$request->startDate;
     $event->startTime=$request->startTime;
     $event->endTime=$request->endTime;
+    //$event->eventCreated=$request->{{Auth::user()->name}};
     $event->save();
 
     $data=event::all();

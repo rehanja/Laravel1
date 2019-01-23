@@ -69,7 +69,7 @@ class HomeController extends Controller
         //$role = Role::create(['name' => 'or_fol']);
         //$role = Role::create(['name' => 'or_pm']);
        // $role = Role::create(['name' => 'supervising_officer']);
-       $role = Role::create(['name' => 'temporyMember']);
+       //$role = Role::create(['name' => 'temporyMember']);
 
       //creating permissions for 4 types of users
        // $permission = Permission::create(['name' => 'view event']);
