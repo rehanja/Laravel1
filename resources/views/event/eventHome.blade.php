@@ -151,10 +151,6 @@ you log in as
         <div class="column">
             <div class="card">
                 <div class="card-body" >
-                    
-                    <div class="voteCount">
-                        <h4>{{$eventData->vote}}<br> votes</h4>
-                    </div>
 
                         <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
