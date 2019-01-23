@@ -143,8 +143,16 @@ Route::get('voteAdd',[
 
 Route::get('/profile','profile\ProfileController@getProfile');
 
-Route::get('/profile/editprofile','profile\ProfileController@editProfile');
+//Route::get('/profile/editprofile','profile\ProfileController@editProfile');
 
-Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
+//Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
 
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+Route::get('/profile/editprofile/{id}',[
+    'uses'=>'profile\ProfileController@editProfile',
+    'as'=>'userEdit']);
+
+Route::post('/profile/editprofile/submit/{id}',[
+    'uses'=>'profile\ProfileController@submit',
+    'as'=>'userUpdate' ]);
