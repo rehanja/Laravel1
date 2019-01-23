@@ -82,7 +82,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                        <p>Do you really want to issue membership? Then temporary member will become an active member.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
@@ -120,7 +120,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                        <p>Do you really want to remove membership? Then active member will become an temporary member.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
