@@ -4,6 +4,7 @@
 
 <!--Begin of update form-->
     <form method="post" action="{{route('userUpdate',['id'=>$user->id])}}">
+
     {{csrf_field()}}
         <div class = "container">
             <div class="form-group">

@@ -17,7 +17,7 @@ class ProfileController extends Controller
 
     public function editProfile($id){
         $user = User::find($id);
-
+      
         return view('profile.editprofile')->with('user',$user);
     }
 
@@ -36,7 +36,6 @@ class ProfileController extends Controller
         //return '0';
         return redirect('/profile')->with('user',$data);
         //dd($request->all());
-       // return view('profile.profile');
     }
 
     public function uploadPhoto(Request $request){

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<link href="{{ asset('css/search.css') }}" rel="stylesheet">
 
 @section('content')
 you log in as 
@@ -24,10 +25,40 @@ you log in as
 </div>
 <br><br>
 
+
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }       
+            }
+        }
+    </script>
+
+<!--Search bar-->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for event id.." title="Type in a name" >
+
+
+
     <center><div>
-        <table class="table" style="width:50%">
-            <tr>
-                <th><center>Event No </center></th>
+        <table id="myTable" class="table"  style="width:60%;">
+            <tr class="header">
+                <th>Event No </th>
                 <th>Event Name </th>
                 <th>No.of Votes </th>
                 <th>Voting Rate</th>
@@ -35,12 +66,11 @@ you log in as
 
             @foreach($event as $data)
             <tr>
-                <td><center>{{ $data->id }}</center></td>
+                <td>{{ $data->id }}</td>
                 <td>{{ $data->eventName }}</td>
                 <td>&nbsp;&nbsp;{{ $data->vote }}</td>
-                <td>&nbsp;&nbsp;{{ $data->vote/$sum * 100 }}%</td>
+                <td>&nbsp;&nbsp;{{ number_format($data->vote/$sum*100, 1) }}%</td>
             </tr>
-
             @endforeach
         </table>
     </div>
