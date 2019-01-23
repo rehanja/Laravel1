@@ -123,10 +123,6 @@ Route::post('/save/{id}',[
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
     'as'=>'meetingViewMail'
-<<<<<<< HEAD
-    ]);
-
-=======
     ]);
 
 
@@ -140,9 +136,6 @@ Route::get('voteAdd',[
     'uses'=>'event\eventController@VoteAdd',
     'as'=>'voteAdd'
     ]);
-
-
->>>>>>> 10588c695cfff8d3ed03e3b732e170314b73562f
 
 
 
