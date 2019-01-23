@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
+
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -23,6 +27,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAIZadz71k-G4BbaQ2wCSpa8mRPVkf3pjk&libraries=places"
     async defer></script>
 
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{asset('js/script.js')}}"></script>
 
@@ -33,6 +40,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/confirmationModel.css') }}" rel="stylesheet">
+
+
     <style>
         .card-body {
             font-weight: bold;
