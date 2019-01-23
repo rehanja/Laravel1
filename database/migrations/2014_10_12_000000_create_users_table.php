@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('contactNumber');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('profilePic')->default("https://photos.gograph.com/thumbs/CSP/CSP992/male-profile-picture-vector-stock_k14386009.jpg");
+            $table->string('profilePic')->default('default.jpg');
             $table->boolean('isActive')->default(0);
             $table->string('verifyToken')->nullable();
             $table->boolean('status')->default(0);

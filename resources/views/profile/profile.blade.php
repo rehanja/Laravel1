@@ -12,6 +12,7 @@
 .profile-img img{
     width: 70%;
     height: 40%;
+    border-radius:10%;
 }
 .profile-img .file {
     position: relative;
@@ -80,21 +81,19 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="container emp-profile">
-            <form action="{{URL::to('upload')}}" method="post" enctype="multipart/form-data">
+            <form action="/photoUpload" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="{{Auth::user()->profilePic}}" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Upload Photo
-                                <input type="submit" name="uploadfile" id="uploadfile"/>
-                            </div>
+                            <img src="/uploads/profilePic/{{Auth::user()->profilePic}}">
                             <div class="file btn btn-lg btn-primary">
                                 Choose Photo
-                                <input type="file" name="file" id="file"/>
+                                <input type="file" name="profilePic">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
-                            <input type="hidden" value="{{csrf_token()}}" name="_token">
                         </div>
+                        <input class="btn btn-primary" type="submit" value="Upload Photo">
+
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
@@ -118,7 +117,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                    <a href="profile/editprofile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
+                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
                     </div>
                 </div>
                         <div class="tab-content profile-tab" id="myTabContent">
