@@ -17,28 +17,25 @@ class ProfileController extends Controller
 
     public function editProfile($id){
         $user = User::find($id);
+      
         return view('profile.editprofile')->with('user',$user);
     }
 
     public function submit(Request $request, $id){
-       // $this->authorize('modifyUser', auth()->user());
-        //dd($request->all());
         $user=User::find($id);
 
         $user->nameWithInitials = $request->nameWithInitials;
         $user->name = $request->name;
         $user->nic = $request->nic;
-        $user->contactNumber = $request->contactNumber;
-        $user->email = $request->email;
         $user->address = $request->address;
-       // $event->endTime = $request->endTime;
-        
+        $user->contactNumber = $request->contactNumber;
+        $user->email = $request->email;        
         //$date = $event->start;
         $user->save();
         $data=User::all();
-        //return 0;
-        return redirect('profile')->with('user',$data);
-       // return view('profile.profile');
+        //return '0';
+        return redirect('/profile')->with('user',$data);
+        //dd($request->all());
     }
 
     public function uploadPhoto(Request $request){
