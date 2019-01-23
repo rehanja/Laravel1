@@ -100,14 +100,13 @@ class meetingController extends Controller
     public function MeetingViewMail($id)
     {
 
-       $meeting = Meeting::find($id);
+        $meeting = Meeting::find($id);
       
-       $date = '2018-12-12 at 08:00:00 to 09:00:00.';
-             
-       Mail::to($id)->send(new MeetingConfirmation($date));
+        $meeting = 'bhbhj';
+        Mail::to($id)->send(new MeetingConfirmation($meeting));
        
-       return redirect()->back()->with('message','Email sent successfully.');
-       //return 'Email has been sent successfully';
+        return redirect()->back()->with('message','Email sent successfully.');
+        //return 'Email has been sent successfully';
     }  
  
 
