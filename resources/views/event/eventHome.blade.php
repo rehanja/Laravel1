@@ -92,7 +92,7 @@ you log in as
                                 <div class="form-group">
                                     <label for="usr"><h4> Event creating by {{Auth::user()->name}}</h4> </label>
                                 </div>
-$new={{Auth::user()->name}};
+
                                 <div>
                                     <input type="submit" class="btn btn-primary" value="save">
                                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -166,7 +166,7 @@ $new={{Auth::user()->name}};
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by $new</p>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
 
     
                     <div class="vote">
