@@ -58,7 +58,6 @@ you log in as
     <center><div>
         <table id="myTable" class="table"  style="width:60%;">
             <tr class="header">
-                <th>Event No </th>
                 <th>Event Name </th>
                 <th>No.of Votes </th>
                 <th>Voting Rate</th>
@@ -66,7 +65,6 @@ you log in as
 
             @foreach($event as $data)
             <tr>
-                <td>{{ $data->id }}</td>
                 <td>{{ $data->eventName }}</td>
                 <td>&nbsp;&nbsp;{{ $data->vote }}</td>
                 <td>&nbsp;&nbsp;{{ number_format($data->vote/$sum*100, 1) }}%</td>
