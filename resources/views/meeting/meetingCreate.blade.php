@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form method="post" action="{{ Route('meetingStore') }}">
+<form method="post" action="/create">
 
     {{csrf_field()}}
 
@@ -34,49 +34,60 @@
 
 
             <div class="abc">
+
                 <h2>Create Meeting</h2><br>
 
 
-<<<<<<< HEAD
+
 
                 <div>
                     <label for="title">Title:</label>
                     <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
 
-=======
+
                 <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
->>>>>>> ab40305947349b37d78261f1fa84fd5f6bf2b54d
+                    <label for="title">Member Name :</label>
+                    <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name">
+
                 </div>
                 <div class="form-group">
-                    <label for="date">Date:</label>
+                    <label for="title">Member Email :</label>
+                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
+
+                </div>
+                <div class="form-group">
+                    <label for="date">Date :</label>
                     <input type="date" class="form-control" name="date" id="date">
                 </div>
                 <div class="form-group">
-                    <label for="startTime">Start Time:</label>
+                    <label for="startTime">Start Time :</label>
                     <input type="time" class="form-control" name="startTime" id="startTime">
                 </div>
                 <div class="form-group">
-                    <label for="endTime">End Time:</label>
+                    <label for="endTime">End Time :</label>
                     <input type="time" class="form-control" name="endTime" id="endTime">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
+                    <label for="description">Description :</label>
                     <input type="text" class="form-control" name="description" placeholder="enter description here ex:name,place,etc" id="description">
                 </div>
                 <div class="form-group">
-                    <label for="invitees">Invitees:</label>
+                    <label for="invitees">Invitees :</label>
                     <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees">
                 </div>
                 <div class="form-group">
-                    <label for="abc">Status:</label>
-				<select class="form-control" name="status" id="status">
+
+                    <label for="abc">Status :</label>
+                    <select class="form-control" name="status" id="status">
                         <option>Sheduled</option>
-						<option>Resheduled</option>
                         <option>Postponed</option>
+                        <option>Re-sheduled</option>
+                        <option>Finished</option>
+
                     </select>
-				</div>
+                </div>
+
+
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-md">Create</button>

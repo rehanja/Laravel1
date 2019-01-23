@@ -31,6 +31,14 @@ Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
 Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
+//assign or-fol
+Route::get('/assignOrFol', function () {
+    return view('assign/assignOrFol');
+});
+
+Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
+
+
 //event routes-rehan
 
 Route::get('/event',function(){
@@ -42,7 +50,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
 
 
 Route::get('/event/delete/{id}',[
@@ -57,10 +64,7 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
-Route::post('/event/save/{id}',[
-    'uses'=>'HomeController@index@eventUpdateSave',
-    'as'=>'event.save'
-    ])->middleware('role:supervising_officer|or_pm');
+
 
 
 
@@ -78,7 +82,12 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes - Meeting
+
+
+
+// achini's routes
+
+// routes for Meeting
 
 Route::get('/meeting',function(){
 
@@ -91,10 +100,7 @@ Route::get('create', [
     'as'=>'meetingCreate'
     ]);
 
-Route::post('create', [
-    'uses'=>'meeting\meetingController@MeetingStore',
-    'as'=>'meetingStore'
-    ]);
+Route::post('/create', 'meeting\meetingController@MeetingStore');
 
 Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
@@ -117,10 +123,47 @@ Route::post('/save/{id}',[
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
     'as'=>'meetingViewMail'
+<<<<<<< HEAD
     ]);
 
+=======
+    ]);
+
+
+//routes for votes
+Route::get('poll', [
+    'uses'=>'event\eventController@PollsView',
+    'as'=>'pollsview'
+    ]);
+
+Route::get('voteAdd',[
+    'uses'=>'event\eventController@VoteAdd',
+    'as'=>'voteAdd'
+    ]);
+
+
+>>>>>>> 10588c695cfff8d3ed03e3b732e170314b73562f
 
 
 
 // nimesh's routes
+
+
+Route::get('/profile','profile\ProfileController@getProfile');
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+Route::get('/profile/editprofile/{id}',[
+    'uses'=>'profile\ProfileController@editProfile',
+    'as'=>'userEdit']);
+
+
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+Route::post('/profile/editprofile/submit/{id}',[
+    'uses'=>'profile\ProfileController@submit',
+    'as'=>'userUpdate' ]);
+
 

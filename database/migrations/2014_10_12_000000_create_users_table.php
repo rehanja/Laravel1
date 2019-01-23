@@ -19,9 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('nic');
             $table->string('address');
+            $table->string('pollingDivision')->nullable();
             $table->string('contactNumber');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('profilePic')->default('default.jpg');
             $table->boolean('isActive')->default(0);
 
             $table->string('verifyToken')->nullable();

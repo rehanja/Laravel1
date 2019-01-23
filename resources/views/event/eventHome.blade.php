@@ -1,26 +1,32 @@
 @extends('layouts.app')
+<link href="{{ asset('css/card.css') }}" rel="stylesheet">
 
 @section('content')
+you log in as
+    @role('p_member')
+     pmember
+    @endrole
     @role('or_fol')
-        <p> orfol</p>
-        @endrole
-        @role('or_pm')
-        <p> orpm</p>
-        @endrole
-        @role('p_member')
-        <p> pmember</p>
-        @endrole
-        @role('or_pm|supervising_officer')
-        <p>supervising officer</p>
-        @endrole
+     orfol
+    @endrole
+    @role('or_pm')
+     orpm
+    @endrole
+    @role('or_pm|supervising_officer')
+    supervising officer
+    @endrole
 
 <div class="col-md-12">
 
 
     @role('or_pm|supervising_officer')
-        <div class="col-md-11"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create an event</button></div>
+        <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
     @endrole
-      </div>
+
+    <br>
+        <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
+
+</div>
 
 
  <!-- Modal -->
@@ -81,8 +87,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="usr">End time:</label>
+                                    <label for="usr">End time: </label>
                                     <input type="time" class="form-control" name="endTime" placeholder="Enter here" id="usr">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="usr"><h4> Event creating by {{Auth::user()->name}}</h4> </label>
                                 </div>
 
                                 <div>
@@ -97,6 +107,7 @@
                     </form>
                         <div class="modal-footer">
                        If you want you can update event later
+
                         </div>
             </div>
 
@@ -114,6 +125,7 @@
     </div>
 </div>
     <div class="col-md-12">
+
     <table class="table table-dark">
         <th>Event Name</th>
         <th>Reason</th>
@@ -122,11 +134,9 @@
         <th>Start date</th>
         <th>Start time</th>
         <th>End time</th>
-<<<<<<< HEAD
+
         @role('or_pm|supervising_officer')
-=======
-        @role('or_pm|supervising_officer')
->>>>>>> ce3d14ba6731bd0f83fd85305498acd7397ea583
+
         <th>Delete button </th>
         <th>Update button </th>
         @endrole
@@ -140,11 +150,9 @@
             <td>{{$eventData->startDate}}</td>
             <td>{{$eventData->startTime}}</td>
             <td>{{$eventData->endTime}}</td>
-<<<<<<< HEAD
+
             @role('or_pm|supervising_officer')
-=======
-            @role('or_pm|supervising_officer')
->>>>>>> ce3d14ba6731bd0f83fd85305498acd7397ea583
+\
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
             @endrole
@@ -154,8 +162,66 @@
 
 
 
+    <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  After voted, You cannot change.</p>
+
+
+
+        @if (session('error'))
+            <div class="flash-message">
+                <div class="alert alert-danger">
+                    <strong>
+                        {{ session('error') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
+
+        @if (session('message'))
+            <div class="flash-message">
+                <div class="alert alert-success">
+                    <strong>
+                        {{ session('message') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
+
+
 
     </table>
+
+
+<div class="col-md-12">
+    @foreach($event as $eventData)
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="card-body" >
+
+                        <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Budget : {{$eventData->budget}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date : {{$eventData->startDate}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time : {{$eventData->startTime}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
+
+
+
+                    <div class="vote">
+                        <button type="button" onclick="location.href='{{ route('voteAdd',['eventid' => $eventData->id] ) }}'" class="btn btn-success btn-sm">Vote</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
 
 
 

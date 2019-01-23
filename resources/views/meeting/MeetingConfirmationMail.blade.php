@@ -1,12 +1,15 @@
 
 <div>
-    <strong>Hello,</strong><br><br>
+    <strong>Hello {{Auth::User()->name}},</strong><br><br>
     
-    The meeting has been sheduled on {{ $date }} 
+    The meeting has been sheduled on {{ $meeting }}  
 
     
-    <br>Confirm your ability or inability.
-    <br><br><br>
-    Best Regards,
-    <br>Code Breakers
+    <br>Please confirm your participation.<br>
+    <br/>
+    
+
+    <br><br>
+    Best Regards,<br>
+    Code Breakers
 </div>

@@ -12,6 +12,8 @@ class meetingController extends Controller
 {
     public function MeetingCreate(){
 
+        //$meeting = Meeting::latest()->paginate(3);
+
         return view('meeting/meetingCreate');
 
     }
@@ -19,17 +21,20 @@ class meetingController extends Controller
     public function MeetingStore(Request $request){
          
         $this ->validate($request,[
-            'title'      => 'required',                 //input validations
+            'name'       => 'required',                             //input validations
+            'title'      => 'required|distinct',                 
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
+            'invitees'   => 'required',
             'status'     => 'required',
         ]);
 
 
         $meeting=new Meeting;
 
-        $meeting->title       = $request-> input('title');          //store in db
+        $meeting->name        = $request-> input('name');          //store in db
+        $meeting->title       = $request-> input('title');        
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
@@ -39,7 +44,7 @@ class meetingController extends Controller
 
         $meeting->save();
 
-        $meeting=Meeting::all();
+        $meeting = Meeting::all();
         return redirect()->back()->with('message','Meeting Created Successfully.'); 
 
     }
@@ -74,6 +79,7 @@ class meetingController extends Controller
 
         $meeting = Meeting::find($id);
 
+        $meeting->name        = $request-> input('name');
         $meeting->title       = $request-> input('title');
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
@@ -94,15 +100,14 @@ class meetingController extends Controller
     public function MeetingViewMail($id)
     {
 
-       $meeting = Meeting::find($id);
-
-       $date = '2018-12-12 at 08:00:00 to 09:00:00.';
-             
-       Mail::to($id)->send(new MeetingConfirmation($date));
+        $meeting = Meeting::find($id);
+      
+        $meeting = 'bhbhj';
+        Mail::to($id)->send(new MeetingConfirmation($meeting));
        
-       return redirect()->back()->with('message','Email sent successfully.');
-       //return 'Email has been sent successfully';
-    }      
+        return redirect()->back()->with('message','Email sent successfully.');
+        //return 'Email has been sent successfully';
+    }  
  
- 
+
 }

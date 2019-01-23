@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('startDate')->default(now());
             $table->time('startTime')->default(now());
             $table->time('endTime')->default(now());
+            $table->bigInteger('vote')->default(0);
             
             $table->timestamps();
         });

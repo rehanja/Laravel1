@@ -10,17 +10,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class MeetingConfirmation extends Mailable
 {
     use Queueable, SerializesModels;
-    public $date;
+    public $meeting;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($date)
+    public function __construct($meeting)
     {
         
-        $this->date = $date;
+        $this->meeting = $meeting;
     }
 
     /**
