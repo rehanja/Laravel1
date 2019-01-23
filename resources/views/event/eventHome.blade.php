@@ -121,7 +121,7 @@ you log in as
    
        
     <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  After voted,  cannot change.</p>
+                  After voted, You cannot change.</p>
 
 
         @if (session('error'))
