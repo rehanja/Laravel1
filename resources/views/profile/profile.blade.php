@@ -12,6 +12,7 @@
 .profile-img img{
     width: 70%;
     height: 40%;
+    border-radius:10%;
 }
 .profile-img .file {
     position: relative;
