@@ -48,7 +48,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-Route::post('/eventSave', 'event\eventController@eventSave')->middleware('role:supervising_officer|or_pm');
 
 
 Route::get('/event/delete/{id}',[
@@ -63,10 +62,7 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
-Route::post('/event/save/{id}',[
-    'uses'=>'HomeController@index@eventUpdateSave',
-    'as'=>'event.save'
-    ])->middleware('role:supervising_officer|or_pm');
+
 
 
 
@@ -84,7 +80,8 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes - Meeting
+// achini's routes 
+// routes for Meeting
 
 Route::get('/meeting',function(){
 
@@ -97,10 +94,7 @@ Route::get('create', [
     'as'=>'meetingCreate'
     ]);
 
-Route::post('create', [
-    'uses'=>'meeting\meetingController@MeetingStore',
-    'as'=>'meetingStore'
-    ]);
+Route::post('/create', 'meeting\meetingController@MeetingStore');
 
 Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
@@ -124,6 +118,18 @@ Route::get('/send/{id}',[
     ]);
 
 
+//routes for votes
+Route::get('poll', [
+    'uses'=>'event\eventController@PollsView',
+    'as'=>'pollsview'
+    ]);
+
+Route::get('voteAdd',[
+    'uses'=>'event\eventController@VoteAdd',
+    'as'=>'voteAdd'
+    ]);
+
+    
 
 
 // nimesh's routes
@@ -133,3 +139,6 @@ Route::get('/profile','profile\ProfileController@getProfile');
 
 Route::get('/profile/editprofile','profile\ProfileController@editProfile');
 
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit'); 
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
