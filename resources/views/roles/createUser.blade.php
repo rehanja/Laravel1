@@ -14,6 +14,7 @@
     <th>Action</th>
     <th>Update</th>
     <th>Delete</th>
+    <th>Send E-mail</th>
 
     @foreach($data as $details)
     <tr>
@@ -48,6 +49,8 @@
         <td>
         <a href="/deleteMember/{{$details->id}}" class="btn btn-danger">Delete</a>
         </td>
+
+       
     </tr>
 
     @endforeach

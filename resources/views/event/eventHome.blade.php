@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<link href="{{ asset('css/card.css') }}" rel="stylesheet">
+ 
 @section('content')
 you log in as 
     @role('p_member')
@@ -18,9 +19,13 @@ you log in as
 <div class="col-md-12">
         
     @role('or_pm|supervising_officer')
-        <div class="col-md-11"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create an event</button></div>
+        <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
     @endrole
-      </div>
+
+    <br>
+        <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
+ 
+</div>
 
  <!-- Modal -->
  <div class="modal fade" id="myModal" role="dialog">
@@ -115,35 +120,61 @@ you log in as
     <div class="col-md-12">
    
        
+    <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  After voted,  cannot change.</p>
 
+
+        @if (session('error'))
+            <div class="flash-message">
+                <div class="alert alert-danger">
+                    <strong>
+                        {{ session('error') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
+
+        @if (session('message'))
+            <div class="flash-message">
+                <div class="alert alert-success">
+                    <strong>
+                        {{ session('message') }}
+                    </strong>
+                </div>
+            </div>
+        @endif
+
+        
+<div class="col-md-12">
     @foreach($event as $eventData)
-    <div class="card" style="width:18%">
-        <div class="card-body" >
-            
-                <h5 class="card-title">Event name: {{$eventData->eventName}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Reason : {{$eventData->reason}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Region : {{$eventData->region}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Budget : {{$eventData->budget}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Start date : {{$eventData->startDate}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Start time : {{$eventData->startTime}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">End time : {{$eventData->endTime}}</h6>
-                <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a>
-                <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a>
-                <p class="card-text">Event created by rehan</p>
-         
-        </div>
-      </div>
-      @endforeach
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="card-body" >
 
-
-
-                                           
-
-                
-                   
-
+                        <h5 class="card-title">{{$eventData->id}}. {{$eventData->eventName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reason : {{$eventData->reason}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Region : {{$eventData->region}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Budget : {{$eventData->budget}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date : {{$eventData->startDate}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time : {{$eventData->startTime}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Event created by rehan</p>
 
     
+                    <div class="vote">
+                        <button type="button" onclick="location.href='{{ route('voteAdd',['eventid' => $eventData->id] ) }}'" class="btn btn-success btn-sm">Vote</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+
 
 
 @endsection

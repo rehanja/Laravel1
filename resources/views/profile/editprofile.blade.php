@@ -18,7 +18,7 @@
                         <div id="div_id_username" class="form-group required">
                             <label for="id_username" class="control-label col-md-4  requiredField"> Name </label>
                             <div class="controls col-md-8 ">
-                                <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="nameinitial" placeholder="{{Auth::user()->name}}" style="margin-bottom: 10px" type="text" />
+                                <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="nameinitial" value="{{Auth::user()->name}}" style="margin-bottom: 10px" type="text" />
                             </div>
                         </div>
                         <div id="div_id_nameinitial" class="form-group required">
