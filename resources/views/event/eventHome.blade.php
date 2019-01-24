@@ -144,7 +144,7 @@ you log in as
             </div>
         @endif
 
-        
+
 <div class="col-md-12">
     @foreach($event as $eventData)
     <div class="row">
