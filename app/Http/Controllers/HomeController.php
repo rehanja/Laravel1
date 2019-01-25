@@ -38,15 +38,11 @@ class HomeController extends Controller
         //return Auth::user()->id;
         return view('assign\assignHome')->with('assign',$assign);
     }
-  
+
     public function Home(request $request)
     {
         return view('home');
-
-
     }
-
-
 
     public function index(request $request)
     {
@@ -67,9 +63,11 @@ class HomeController extends Controller
         //creating roles for 4 types of users
         //$role = Role::create(['name' => 'p_member']);
         //$role = Role::create(['name' => 'or_fol']);
-       // $role = Role::create(['name' => 'or_pm']);
+         // $role = Role::create(['name' => 'or_pm']);
         //$role = Role::create(['name' => 'supervising_officer']);
         //$role = Role::create(['name' => 'temporyMember']);
+
+
 
       //creating permissions for 4 types of users
         //$permission = Permission::create(['name' => 'view event']);
@@ -105,8 +103,8 @@ class HomeController extends Controller
 echo("added you role correctly");
 
             return view('home');
-        
- 
+
+
 
     }
 }

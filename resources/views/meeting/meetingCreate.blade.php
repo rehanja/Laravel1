@@ -34,8 +34,15 @@
 
 
             <div class="abc">
-                
+
                 <h2>Create Meeting</h2><br>
+
+
+
+
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
 
 
                 <div class="form-group">
@@ -69,6 +76,7 @@
                     <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees" required>
                 </div>
                 <div class="form-group">
+
                     <label for="abc">Status :</label>
                     <select class="form-control" name="status" id="status" required>
                         <option>Sheduled</option>
@@ -78,6 +86,7 @@
 
                     </select>
                 </div>
+
 
 
                 <div class="form-group">
