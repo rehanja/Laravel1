@@ -22,19 +22,19 @@ class meetingController extends Controller
          
         $this ->validate($request,[
             'name'       => 'required',                             //input validations
-            'title'      => 'required|distinct',                 
+            'email'      => 'required',                 
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
             'invitees'   => 'required',
             'status'     => 'required',
         ]);
-
+ 
 
         $meeting=new Meeting;
 
         $meeting->name        = $request-> input('name');          //store in db
-        $meeting->title       = $request-> input('title');        
+        $meeting->email       = $request-> input('email');        
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
@@ -80,7 +80,7 @@ class meetingController extends Controller
         $meeting = Meeting::find($id);
 
         $meeting->name        = $request-> input('name');
-        $meeting->title       = $request-> input('title');
+        $meeting->email       = $request-> input('email');
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
