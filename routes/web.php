@@ -9,7 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@home')->name('home');
 
 
-// routes - sanduni
+// routes - sanduni======================================================================================================================
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
@@ -39,7 +39,7 @@ Route::get('/assignOrFol', function () {
 Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
 
 
-//event routes-rehan
+//event routes-rehan==============================================================================================================
 
 Route::get('/event',function(){
   $a=App\event::all();
@@ -85,7 +85,7 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes
+// achini's routes====================================================================================================================
 
 // routes for Meeting
 
@@ -139,7 +139,7 @@ Route::get('voteAdd',[
 
 
 
-// nimesh's routes
+// nimesh's routes======================================================================================================================
 
 
 Route::get('/profile','profile\ProfileController@getProfile');

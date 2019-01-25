@@ -47,25 +47,25 @@
 
                 <div class="form-group">
                     <label for="title">Member Name :</label>
-                    <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name">
+                    <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name" required>
 
                 </div>
                 <div class="form-group">
-                    <label for="title">Member Email :</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
+                    <label for="email">Member Email :</label>
+                    <input type="email" class="form-control" name="email" placeholder="enter p-member email here" id="email" required>
 
                 </div>
                 <div class="form-group">
                     <label for="date">Date :</label>
-                    <input type="date" class="form-control" name="date" id="date">
+                    <input type="date" class="form-control" name="date" id="date" required>
                 </div>
                 <div class="form-group">
                     <label for="startTime">Start Time :</label>
-                    <input type="time" class="form-control" name="startTime" id="startTime">
+                    <input type="time" class="form-control" name="startTime" id="startTime" required>
                 </div>
                 <div class="form-group">
                     <label for="endTime">End Time :</label>
-                    <input type="time" class="form-control" name="endTime" id="endTime">
+                    <input type="time" class="form-control" name="endTime" id="endTime" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description :</label>
@@ -73,12 +73,12 @@
                 </div>
                 <div class="form-group">
                     <label for="invitees">Invitees :</label>
-                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees">
+                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees" required>
                 </div>
                 <div class="form-group">
 
                     <label for="abc">Status :</label>
-                    <select class="form-control" name="status" id="status">
+                    <select class="form-control" name="status" id="status" required>
                         <option>Sheduled</option>
                         <option>Postponed</option>
                         <option>Re-sheduled</option>
