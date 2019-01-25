@@ -152,44 +152,12 @@ you log in as
             <td>{{$eventData->endTime}}</td>
 
             @role('or_pm|supervising_officer')
-\
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
             @endrole
 
         </tr>
     @endforeach
-
-
-
-    <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  After voted, You cannot change.</p>
-
-
-
-        @if (session('error'))
-            <div class="flash-message">
-                <div class="alert alert-danger">
-                    <strong>
-                        {{ session('error') }}
-                    </strong>
-                </div>
-            </div>
-        @endif
-
-        @if (session('message'))
-            <div class="flash-message">
-                <div class="alert alert-success">
-                    <strong>
-                        {{ session('message') }}
-                    </strong>
-                </div>
-            </div>
-        @endif
-
-
-
-    </table>
 
 
 <div class="col-md-12">
