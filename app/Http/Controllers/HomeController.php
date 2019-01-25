@@ -41,6 +41,13 @@ class HomeController extends Controller
 
     public function Home(request $request)
     {
+       {{Auth::user()->isActive}}
+
+
+       
+       
+       
+       
         return view('home');
     }
 
