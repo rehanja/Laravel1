@@ -44,7 +44,7 @@ you log in as
                         <div class="card-body" >       
 
                             <h5 class="card-title">Meeting with : {{ $data->name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Member Email : {{ $data->title }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Member Email : {{ $data->email }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Date : {{ $data->date }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Start time : {{ $data->startTime }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted">End time : {{ $data->endTime }}</h6>
@@ -52,8 +52,8 @@ you log in as
                             <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6><br>
                             <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
                             <a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                            <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send an E-mail</a>
-                            <p class="card-text">Meeting created by achini</p>
+                            <a href="{{route('meetingViewMail',['email' => $data->email]) }}" class="btn btn-primary btn-sm">Send an E-mail</a>
+                            <p class="card-text">Meeting created by {{Auth::User()->name}}</p>
                         </div> 
                     </div>
                 </div>
