@@ -78,13 +78,15 @@
                 </div>
             @endif
 
-            
+
 
             <div class="content">
                 <div class="title m-b-md">
+
                     <strong>Event Management System</strong>
+
                 </div>
-    
+
             </div>
             <br>
             @role('or_fol')

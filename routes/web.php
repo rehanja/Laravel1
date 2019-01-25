@@ -113,9 +113,11 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
+
         'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
+
 
 
 Route::get('/send/{id}',[
@@ -134,8 +136,6 @@ Route::get('voteAdd',[
     'uses'=>'event\eventController@VoteAdd',
     'as'=>'voteAdd'
     ]);
-
-
 
 
 

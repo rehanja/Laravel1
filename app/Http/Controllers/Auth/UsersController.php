@@ -61,7 +61,6 @@ class UsersController extends Controller
     }
 
     protected function deleteMember($id){
-        //return $id;
         $task=User::find($id);
 
         $task->delete();
@@ -69,7 +68,6 @@ class UsersController extends Controller
     }
 
     protected function updateMember($id){
-        //return "aaa";
         $task=User::find($id);
 
         return view('roles/updateUser')->with('data',$task);
@@ -95,8 +93,8 @@ class UsersController extends Controller
             $data->save();
 
             $d=User::all();
-            //return view('roles/createUser')->with('data',$d);
-            return redirect('/createUser');
+            return view('roles/createUser')->with('data',$d);
+
 
     }
 
