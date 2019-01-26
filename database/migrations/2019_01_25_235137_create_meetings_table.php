@@ -20,7 +20,7 @@ class CreateMeetingsTable extends Migration
             $table->date('date');
             $table->time('startTime');
             $table->time('endTime');
-            $table->text('description')->nullable();
+            $table->text('venue');
             $table->string('invitees');            
             $table->string('status');            
             $table->timestamps();
