@@ -17,9 +17,6 @@ you log in as
     supervising officer
     @endrole
 
-<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
 <!--for email sending & meeting deleting-->
         @if (session('message'))
             <div class="flash-message">
