@@ -38,23 +38,23 @@
 
                 <div class="form-group">
                     <label for="title">Member name :</label>
-                    <input type="text" class="form-control" value="{{$meeting -> name}}" name="name" placeholder="enter p-member name here" id="name">
+                    <input type="text" class="form-control" value="{{$meeting -> name}}" name="name" placeholder="enter p-member name here" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="title">Member Email :</label>
-                    <input type="email" class="form-control" value="{{$meeting -> title}}" name="title" placeholder="enter p-member email here" id="title">
+                    <label for="email">Member Email :</label>
+                    <input type="email" class="form-control" value="{{$meeting -> email}}" name="email" placeholder="enter p-member email here" id="email" required>
                 </div>
                 <div class="form-group">
                     <label for="date">Date :</label>
-                    <input type="date" class="form-control" value="{{$meeting -> date}}" name="date" id="date">
+                    <input type="date" class="form-control" value="{{$meeting -> date}}" name="date" id="date" required>
                 </div>
                 <div class="form-group">
                     <label for="abc">Start Time :</label>
-                    <input type="startTime" class="form-control" value="{{$meeting -> startTime}}" name="startTime" id="startTime">
+                    <input type="startTime" class="form-control" value="{{$meeting -> startTime}}" name="startTime" id="startTime" required>
                 </div>
                 <div class="form-group">
                     <label for="endTime">End Time :</label>
-                    <input type="time" class="form-control" value="{{$meeting -> endTime}}" name="endTime" id="endTime">
+                    <input type="time" class="form-control" value="{{$meeting -> endTime}}" name="endTime" id="endTime" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description :</label>
@@ -62,11 +62,11 @@
                 </div>
                 <div class="form-group">
                     <label for="invitees">Invitees :</label>
-                    <input type="text" class="form-control" value="{{$meeting -> invitees}}" name="invitees" placeholder="enter invitees here" id="invitees">
+                    <input type="text" class="form-control" value="{{$meeting -> invitees}}" name="invitees" placeholder="enter invitees here" id="invitees" required>
                 </div>
                 <div class="form-group">
                     <label for="status">Status :</label>
-                    <select class="form-control" value="{{$meeting -> status}}" name="status" id="status">
+                    <select class="form-control" value="{{$meeting -> status}}" name="status" id="status" required>
                         <option>Sheduled</option>
                         <option>Postponed</option>
                         <option>Re-sheduled</option>

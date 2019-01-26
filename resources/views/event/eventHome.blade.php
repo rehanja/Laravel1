@@ -166,7 +166,7 @@ you log in as
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
+                        <p class="card-text">Meeting created by {{Auth::user()->name}}</p>
 
     
                     <div class="vote">
