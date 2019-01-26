@@ -25,7 +25,6 @@
                         <div class="alert alert-success">
                         <strong>
                             {{ session('message') }}
-                            <a href="http://127.0.0.1:8000/meeting">View</a>
                         </strong>
                         </div>
                     </div>
@@ -61,8 +60,8 @@
                     <input type="time" class="form-control" name="endTime" id="endTime" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description :</label>
-                    <input type="text" class="form-control" name="description" placeholder="enter description here ex:name,place,etc" id="description">
+                    <label for="venue">Venue :</label>
+                    <input type="text" class="form-control" name="venue" placeholder="enter venue here" id="venue" required>
                 </div>
                 <div class="form-group">
                     <label for="invitees">Invitees :</label>

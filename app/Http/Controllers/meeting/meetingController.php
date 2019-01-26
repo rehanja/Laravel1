@@ -13,7 +13,6 @@ class meetingController extends Controller
     public function MeetingCreate(){
 
         //$meeting = Meeting::latest()->paginate(3);
-
         return view('meeting/meetingCreate');
 
     }
@@ -26,6 +25,7 @@ class meetingController extends Controller
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
+            'venue'      => 'required',
             'invitees'   => 'required',
             'status'     => 'required',
         ]);
@@ -38,7 +38,7 @@ class meetingController extends Controller
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
-        $meeting->description = $request-> input('description');
+        $meeting->venue       = $request-> input('venue');
         $meeting->invitees    = $request-> input('invitees');
         $meeting->status      = $request-> input('status');
 
@@ -53,6 +53,7 @@ class meetingController extends Controller
     
         $a = Meeting::find($id);
         $a->delete();
+        //return 0;
         return redirect()->back()->with('message','Meeting Deleted Successfully.');
 
     }
@@ -74,6 +75,7 @@ class meetingController extends Controller
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
+            'venue'      => 'required',
             'status'     => 'required',
         ]);*/
 
@@ -84,7 +86,7 @@ class meetingController extends Controller
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
-        $meeting->description = $request-> input('description');
+        $meeting->venue       = $request-> input('venue');
         $meeting->invitees    = $request-> input('invitees');
         $meeting->status      = $request-> input('status');
         
