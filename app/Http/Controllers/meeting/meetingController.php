@@ -45,7 +45,7 @@ class meetingController extends Controller
         $meeting->save();
 
         $meeting = Meeting::all();
-        return redirect()->back()->with('message','Meeting Created Successfully.'); 
+        return redirect('/meeting')->with('message','Meeting Created Successfully.'); 
 
     }
 
@@ -93,7 +93,7 @@ class meetingController extends Controller
 
         //return redirect('/meeting')->with('meeting',$data);
 
-        return redirect()->back()->with('message','Meeting Updated Successfully.');
+        return redirect('/meeting')->with('message','Meeting Updated Successfully.');
 
     }
 
