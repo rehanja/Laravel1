@@ -64,6 +64,10 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
+Route::get('/events', function () {
+        return view('event\events');
+    });    
+
 
 
 
