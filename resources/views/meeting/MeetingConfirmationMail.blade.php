@@ -1,8 +1,8 @@
 
 <div>
-    <strong>Hello {{Auth::User()->name}},</strong><br><br>
+    <strong>Hello,</strong><br><br>
     
-    The meeting has been sheduled on {{ $meeting }}  
+    The meeting has been sheduled on {{ $data }}  
 
     
     <br>Please confirm your participation.<br>

@@ -56,8 +56,20 @@ you log in as
                             <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6><br>
                             <a onclick="return confirm('Are you sure to delete this meeting?')" href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a>                        
                             <a onclick="return confirm('Are you sure to update this meeting details?')" href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                            <a onclick="return confirm('Are you sure to send this E-mail?')"  href="{{route('meetingViewMail',['email' => $data->email]) }}" class="btn btn-primary btn-sm">Send an E-mail</a>
-                         
+                            <form method="get" onclick="return confirm('Are you sure to send this E-mail?')" action="{{route('meetingViewMail',['email' => $data->email]) }}" onsubmit="return checkForm(this);">
+                            <div class="send">
+                            <input type="submit" class="btn btn-primary btn-sm" name="myButton" value="Send an Email">
+                            </form></div>
+                            
+                            <script type="text/javascript">
+
+                                function checkForm(form) // Send button clicked
+                                {
+                                    form.myButton.disabled = true;
+                                    form.myButton.value = "Sending...";
+                                    return true;
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
