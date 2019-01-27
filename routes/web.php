@@ -9,14 +9,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@home')->name('home');
 
 
-// routes - sanduni
+// routes - sanduni======================================================================================================================
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::all();
+    $d=App\User::paginate(10);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -25,10 +25,10 @@ Route::get('/markAsCompleted/{id}','Auth\UsersController@updateAsMember');
 Route::get('/markAsNotCompleted/{id}','Auth\UsersController@updateAsNotMember');
 
 //delete Member
-Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
+Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember')->name('userDelete');
 
 //update Member
-Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
+Route::get('/updateMember/{id}','Auth\UsersController@updateMember')->name('userUpdate');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
 //assign or-fol
@@ -36,8 +36,10 @@ Route::get('/assignOrFol', function () {
     return view('assign/assignOrFol');
 });
 
+Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
 
-//event routes-rehan
+
+//event routes-rehan==============================================================================================================
 
 Route::get('/event',function(){
   $a=App\event::all();
@@ -82,7 +84,9 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes 
+
+// achini's routes====================================================================================================================
+
 // routes for Meeting
 
 Route::get('/meeting',function(){
@@ -109,9 +113,11 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
+
         'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
+
 
 
 Route::get('/send/{id}',[
@@ -131,14 +137,9 @@ Route::get('voteAdd',[
     'as'=>'voteAdd'
     ]);
 
-//after meeting informing an accepted user
 
 
-
-
-
-
-// nimesh's routes
+// nimesh's routes======================================================================================================================
 
 
 Route::get('/profile','profile\ProfileController@getProfile');
@@ -149,7 +150,13 @@ Route::get('/profile/editprofile/{id}',[
     'uses'=>'profile\ProfileController@editProfile',
     'as'=>'userEdit']);
 
+
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
+
 

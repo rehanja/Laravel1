@@ -78,7 +78,10 @@ $(document).ready(function(){
 
    function searchMembers(lat,lng){
         $.post('http://localhost/searchMembers',{lat:lat,lng:lng},function(match){
+            console.log(match);
             
+
+
         });
    }
 

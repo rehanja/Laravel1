@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'nic' => 'required|string|max:10',
             'address' => 'required|string|max:55',
             'contactNumber' => 'required|string|max:10',
+            'pollingDivision'=>'',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -75,10 +76,12 @@ class RegisterController extends Controller
         Session::flash('status','Registerd! but verify your email to activate your account');
 
         $user= User::create([
+
             'nameWithInitials' => $data['nameWithInitials'],
             'name' => $data['name'],
             'nic' => $data['nic'],
             'address' => $data['address'],
+            'pollingDivision'=>$data['pollingDivision'],
             'contactNumber' => $data['contactNumber'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
