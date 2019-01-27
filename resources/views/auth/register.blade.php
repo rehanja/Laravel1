@@ -68,6 +68,7 @@
                         </div>
 
                         <div class="form-group row">
+
                                 <label for="pollingDivision" class="col-md-4 col-form-label text-md-right">{{ __('Polling Division') }}</label>
 
                                     <div class="col-md-6">
@@ -80,6 +81,7 @@
                                         @endif
                                     </div>
                             </div>
+
 
                         <div class="form-group row">
                             <label for="contactNumber" class="col-md-4 col-form-label text-md-right">{{ __('Contact Number') }}<span class="req"> *</span></label>

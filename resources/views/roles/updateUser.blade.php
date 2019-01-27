@@ -50,13 +50,13 @@
 
 <!--Resumission button-->
                 <div class="form-group">
-                    <button type="submit" class="btn btn-info btn-lg" >Re-submit</button>
+                    <button type="submit" class="btn btn-primary btn-md" >Update</button>
 
 
                 &nbsp; &nbsp;
 
 
-                    <button type="submit" class="btn btn-danger btn-lg" >Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-md" >Close</button>
                 </div>
             </div>
         </div>
