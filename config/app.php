@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Party Manager'),
+    'name' => env('APP_NAME', 'EZevent'),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,7 +163,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        
+
 
 
     ],
