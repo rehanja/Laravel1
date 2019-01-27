@@ -65,7 +65,7 @@ Route::post('/event/save/{id}',[
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
 Route::get('/events', function () {
-        return view('event\events');
+        return view('event/events');
     });    
 
 
