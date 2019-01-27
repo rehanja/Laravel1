@@ -5,7 +5,7 @@
   /* Float four columns side by side */
   .column {
     float: left;
-    width: 28%;
+    width: 35%;
     padding: 10px 10px;
   }
   
@@ -23,7 +23,7 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15); /* this adds the "card" effect */
     padding: 10px;
-    background-color: #f1f1f1;
+    background-color: #259e3f;
     margin-left: 5px;
   }
   
