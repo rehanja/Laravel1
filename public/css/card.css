@@ -4,9 +4,12 @@
   
   /* Float four columns side by side */
   .column {
+
     float: left;
     width: 35%;
+
     padding: 10px 10px;
+    margin-left: 20px
   }
   
   /* Remove extra left and right margins, due to padding in columns */
@@ -42,4 +45,9 @@
 
   .voteCount {
     margin-left: 230px;
+  }
+
+  .send{
+    margin-left: 114px;
+    margin-top: -26.5px;
   }
