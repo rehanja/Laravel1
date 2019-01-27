@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -41,14 +41,9 @@ class HomeController extends Controller
 
     public function Home(request $request)
     {
-       {{Auth::user()->isActive}}
-
-
        
-       
-       
-       
-        return view('home');
+           return view('home');
+        
     }
 
     public function index(request $request)

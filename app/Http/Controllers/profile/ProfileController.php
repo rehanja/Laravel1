@@ -29,13 +29,14 @@ class ProfileController extends Controller
         $user->nic = $request->nic;
         $user->address = $request->address;
         $user->contactNumber = $request->contactNumber;
-        $user->email = $request->email;        
+        $user->email = $request->email;   
+           dd($request->all());
         //$date = $event->start;
         $user->save();
         $data=User::all();
         //return '0';
         return redirect('/profile')->with('user',$data);
-        //dd($request->all());
+        
     }
 
     public function uploadPhoto(Request $request){
