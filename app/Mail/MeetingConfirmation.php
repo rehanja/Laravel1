@@ -11,7 +11,7 @@ class MeetingConfirmation extends Mailable
 {
     use Queueable, SerializesModels;
     public $meeting;
-
+ 
     /**
      * Create a new message instance.
      *
