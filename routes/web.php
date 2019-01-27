@@ -6,7 +6,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 // routes - sanduni======================================================================================================================
@@ -77,9 +77,14 @@ Route::get('/assign',[
     'as'=>'assign'
     ]);
 
-Route::post('/assign/save',[
-    'uses'=>'HomeController@index',
-    'as'=>'assign.save'
+// Route::post('/assign/save',[
+//     'uses'=>'HomeController@index',
+//     'as'=>'assign.save'
+//     ]);
+
+Route::post('/assign/role',[
+    'uses'=>'HomeController@assignNewRole',
+    'as'=>'assign_new_role'
     ]);
 
 Route::post('/assign', 'HomeController@index');

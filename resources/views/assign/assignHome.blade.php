@@ -16,7 +16,7 @@
 @endrole
 
 
-<form method="post" action="/assign/save">
+<form method="post" action="/assign/role">
     {{csrf_field()}}
 <div class="form-group">
         <label for="usr">Mermber Id:</label>
@@ -28,9 +28,9 @@
 
 
     Choose user type
-    <select id="dropDown1" name="role">
+    <select id="dropDown1" name="roleId">
         @foreach ($assign as $item)
-            <option value="{{$item->name}}">{{$item->name}}</option>
+            <option value="{{$item->id}}">{{$item->name}}</option>
         @endforeach
 
     </select>
