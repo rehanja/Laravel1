@@ -43,8 +43,6 @@ class HomeController extends Controller
 
     public function Home(request $request)
     {
-       
-
 
            return view('home');
         

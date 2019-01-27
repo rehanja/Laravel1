@@ -37,7 +37,7 @@
                         <i class="pe-7s-close-circle" aria-hidden="true"></i>
                     </div>
                     <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Meetings..." >
                         <input type="submit" class="d-none" value="submit">
                     </form>
                 </div>
@@ -125,48 +125,15 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-
+<div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/app.jpg);width:1499px;height:400px;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-10">
-                    <div class="hero-content">
-                        <h2>Success Your Events Here...</h2>
-                        <h4>Think future of yours, Think Join. </h4>
-                    </div>
-                    <!-- Hero Search Form -->
-
-                </div>
-            </div>
-        </div>
-        <!-- Hero Social Btn -->
-        <div class="hero-social-btn">
-
-            <div class="social-btns">
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-            </div>
-        </div>
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:160%;">
+        
+                    @yield('content')
+             
     </section>
     <!-- ***** Welcome Area End ***** -->
 
-
-<section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        @yield('content')
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- ****** Footer Area Start ****** -->
     <footer class="dorne-footer-area">
             <footer class="page-footer font-small mdb-color pt-4">
@@ -180,9 +147,8 @@
 
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                          <h6 class="text-uppercase mb-4 font-weight-bold">EZevent</h6>
-                          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.</p>
+                          <h6 class="text mb-4 font-weight-bold">EZevent</h6>
+                          
                         </div>
                         <!-- Grid column -->
 
