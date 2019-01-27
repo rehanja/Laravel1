@@ -119,6 +119,7 @@
                         <h4 class="modal-title" style="margin: 30px 70px -10px;">Are you sure?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
+
                     <div class="modal-body">
                         <p>Do you really want to remove membership? Then active member will become a temporary member.</p>
                     </div>
@@ -183,12 +184,13 @@
                     <h4 class="modal-title">Are you sure?</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
+               
                 <div class="modal-body">
                     <p>Do you really want to delete these records? This process cannot be undone.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-                    <a href="/deleteMember/{{$details->id}}" class="btn btn-danger" >Delete</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
                 </div>
             </div>
         </div>
@@ -196,7 +198,14 @@
 
     @endforeach
   </table>
- </div>
+  <div class="text-center" style="margin:10px 30%" >
+    {{ $data->links() }}
+  </div>
+</div>
+
+
+
+
 
 @endsection
 

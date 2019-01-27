@@ -19,6 +19,7 @@ class User extends Authenticatable
 
         'nameWithInitials','name','nic','address','pollingDivision','contactNumber','email', 'password','verifyToken',
 
+
     ];
 
     /**
