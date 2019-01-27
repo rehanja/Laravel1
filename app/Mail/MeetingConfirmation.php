@@ -19,7 +19,6 @@ class MeetingConfirmation extends Mailable
      */
     public function __construct($meeting)
     {
-        
         $this->meeting = $meeting;
     }
 
