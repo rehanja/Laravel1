@@ -16,7 +16,7 @@ Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDon
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::all();
+    $d=App\User::paginate(10);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -25,10 +25,10 @@ Route::get('/markAsCompleted/{id}','Auth\UsersController@updateAsMember');
 Route::get('/markAsNotCompleted/{id}','Auth\UsersController@updateAsNotMember');
 
 //delete Member
-Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
+Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember')->name('userDelete');
 
 //update Member
-Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
+Route::get('/updateMember/{id}','Auth\UsersController@updateMember')->name('userUpdate');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
 //assign or-fol
@@ -63,6 +63,10 @@ Route::get('/event/update/{id}',[
 Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
+
+Route::get('/events', function () {
+        return view('event/events');
+    });    
 
 
 

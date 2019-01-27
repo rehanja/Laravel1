@@ -12,8 +12,8 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'name' => env('APP_NAME', 'EZevent'),
 
-    'name' => env('APP_NAME', 'Party Manager'),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,7 +163,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        
+
 
 
     ],

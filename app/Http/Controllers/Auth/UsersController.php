@@ -45,6 +45,7 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
+
     protected function updateAsMember($id){
         $task=User::find($id);
 
