@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Input as input;
+use App\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -152,4 +155,16 @@ Route::get('/profile/editprofile/{id}',[
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
+
+Route::post('change/password',function(){
+    $User=User::find(Auth::user()->id);
+    if(Hash::check(Input::get('passwordold'), $User['password']) && Input::get('password') == Input::get('password_confirmation')){
+        $User->password = bcrypt(Input::get('password'));
+        $User->save();
+        return back()->with('success','Password Changed');
+    }
+    else{
+        return back()->with('error','Password NOT changed');
+    }
+});
 
