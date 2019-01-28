@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Support\Facades\Input as input;
+use App\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,13 +13,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // routes - sanduni======================================================================================================================
+
+//about page
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(10);
+    $d=App\User::paginate(5);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -66,7 +76,7 @@ Route::post('/event/save/{id}',[
 
 Route::get('/events', function () {
         return view('event/events');
-    });    
+    });
 
 
 
@@ -172,5 +182,19 @@ Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
+
+
+Route::post('change/password',function(){
+    $User=User::find(Auth::user()->id);
+    if(Hash::check(Input::get('passwordold'), $User['password']) && Input::get('password') == Input::get('password_confirmation')){
+        $User->password = bcrypt(Input::get('password'));
+        $User->save();
+        return back()->with('success','Password Changed');
+    }
+    else{
+        return back()->with('error','Password NOT changed');
+    }
+});
+
 
 
