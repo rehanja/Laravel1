@@ -10,6 +10,12 @@ Route::get('/home', 'HomeController@home')->name('home');
 
 
 // routes - sanduni
+
+//about page
+Route::get('/about', function () {
+    return view('about');
+});
+
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');

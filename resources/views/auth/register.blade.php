@@ -1,13 +1,23 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
+@section('header')
+
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/register.jpg);width:1499px;height:950px;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="hero-content">
+                        <div class="container">
+                                <div class="row justify-content-center">
+
+
+
+        <div class="col-md-10">
+            <div class="card" style="background-image: url(img/createusernew.png);width:700px;height:750px;opacity: 0.7;filter: alpha(opacity=70)">
+                <div class="card-header" style="text-align:center;font-size:40px;font-weight:bold"><img src="img/registericon.png" style="width:60px;height:60px;">        {{ __('Register') }}</div>
+
+                <div class="card-body" style="font-weight:bold;font-size:18px">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
@@ -145,5 +155,18 @@
             </div>
         </div>
     </div>
+
 </div>
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+@endsection
+
+@section('content')
+
 @endsection

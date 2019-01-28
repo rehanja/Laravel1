@@ -1,8 +1,18 @@
 @extends('layouts.app')
 
-@section('content')
- <div class="container">
-  <table class="table table-striped">
+
+@section('header')
+
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/createuser.jpg);width:1499px;height:950px;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-6 col-md-12">
+                <div class="hero-content">
+                        <div class="container">
+                                <div class="row justify-content-center">
+
+ <div class="container" >
+  <table class="table table-sm" background="img/createusernew.jpg">
     <th>User ID</th>
     <th>Name With Initials</th>
     <th>name</th>
@@ -184,7 +194,7 @@
                     <h4 class="modal-title">Are you sure?</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-               
+
                 <div class="modal-body">
                     <p>Do you really want to delete these records? This process cannot be undone.</p>
                 </div>
