@@ -89,6 +89,11 @@ Route::post('/assign/role',[
 
 Route::post('/assign', 'HomeController@index');
 
+Route::get('/contact', function () {
+    return view('other/contact');
+}); 
+
+
 
 
 
