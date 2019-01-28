@@ -8,8 +8,8 @@
             <div class="col-12 col-md-10">
                 <div class="hero-content">
    
-<h4>Contact us</h4>
-<h4>Team CodeBreakers</h4>
+<h1>Contact us:Team CodeBreakers</h1>
+
 <h4>Email:codebraker@uom.com</h4>
 <h4>Hotline:0112345678</h4>
                 </div>
