@@ -26,7 +26,7 @@ Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDon
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(5);
+    $d=App\User::paginate(6);
     return view('roles/createUser')->with('data',$d);
 });
 
