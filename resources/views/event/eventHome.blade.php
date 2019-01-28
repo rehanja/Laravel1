@@ -152,44 +152,12 @@ you log in as
             <td>{{$eventData->endTime}}</td>
 
             @role('or_pm|supervising_officer')
-\
             <td><a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger">Delete</a></td>
             <td><a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning">Update</a></td>
             @endrole
 
         </tr>
     @endforeach
-
-
-
-    <p> * Noted : Give your votes for Event(s). But You can vote for one Event only once. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  After voted, You cannot change.</p>
-
-
-
-        @if (session('error'))
-            <div class="flash-message">
-                <div class="alert alert-danger">
-                    <strong>
-                        {{ session('error') }}
-                    </strong>
-                </div>
-            </div>
-        @endif
-
-        @if (session('message'))
-            <div class="flash-message">
-                <div class="alert alert-success">
-                    <strong>
-                        {{ session('message') }}
-                    </strong>
-                </div>
-            </div>
-        @endif
-
-
-
-    </table>
 
 
 <div class="col-md-12">
@@ -206,8 +174,10 @@ you log in as
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start date : {{$eventData->startDate}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time : {{$eventData->startTime}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time : {{$eventData->endTime}}</h6><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        @role('or_pm|supervising_officer')
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                        @endrole
                         <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
 
 

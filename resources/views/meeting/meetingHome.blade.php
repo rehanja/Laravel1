@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.meeting')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
+<link href="{{ asset('css/popup.css') }}" rel="stylesheet">
 
 @section('content')
 you log in as 
@@ -26,6 +27,8 @@ you log in as
                 </div>
             </div>
         @endif
+ 
+    
 
 
 <div class="content">
@@ -37,29 +40,44 @@ you log in as
 </div><br>
 
     <div class="col-md-12">
+    
         @foreach($meeting as $data)
-            <div class="row">
-                <div class="column">
+            
+                <div class="column" >
                     <div class="card" >
                         <div class="card-body" >       
+                        
+                            <h5 class="card-title"><b> Meeting with : {{ $data->name }} <b></h5>
+                            <h6 class="card-subtitle mb-2 ">Email : {{ $data->email }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Date : {{ $data->date }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Start time : {{ $data->startTime }}</h6>
+                            <h6 class="card-subtitle mb-2 ">End time : {{ $data->endTime }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Venue : {{ $data->venue }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Invitees : {{ $data->invitees }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Status : {{ $data->status }}</h6><br>
+                            <a onclick="return confirm('Are you sure to delete this meeting?')" href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a>                        
+                            <a onclick="return confirm('Are you sure to update this meeting details?')" href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                            <form method="get" onclick="return confirm('Are you sure to send this E-mail?')" action="{{route('meetingViewMail',['email' => $data->email]) }}" onsubmit="return checkForm(this);">
+                            <div class="send">
+                            <input type="submit" class="btn btn-primary btn-sm" name="myButton" value="Send an Email">
+                            </form></div>
+                            
+                            <script type="text/javascript">
 
-                            <h5 class="card-title">Meeting with : {{ $data->name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Member Email : {{ $data->title }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Date : {{ $data->date }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Start time : {{ $data->startTime }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">End time : {{ $data->endTime }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Description : {{ $data->description }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6><br>
-                            <td><a href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a></td>
-                            <a href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
-                            <a href="{{route('meetingViewMail',['title' => $data->title]) }}" class="btn btn-primary btn-sm">Send an E-mail</a>
-                            <p class="card-text">Meeting created by achini</p>
-                        </div> 
+                                function checkForm(form) // Send button clicked
+                                {
+                                    form.myButton.disabled = true;
+                                    form.myButton.value = "Sending...";
+                                    return true;
+                                }
+                            </script>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach  
-    </div>
+            
+
+    @endforeach
+    </div>  
            
 @endsection
    

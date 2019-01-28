@@ -51,7 +51,7 @@ you log in as
     </script>
 
 <!--Search bar-->
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for event id.." title="Type in a name" >
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
 
 
 

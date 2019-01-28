@@ -6,15 +6,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
-// routes - sanduni
+// routes - sanduni======================================================================================================================
 
 //about page
 Route::get('/about', function () {
     return view('about');
 });
+
 
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
@@ -45,7 +46,7 @@ Route::get('/assignOrFol', function () {
 Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
 
 
-//event routes-rehan
+//event routes-rehan==============================================================================================================
 
 Route::get('/event',function(){
   $a=App\event::all();
@@ -70,6 +71,10 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
+Route::get('/events', function () {
+        return view('event/events');
+    });
+
 
 
 
@@ -79,9 +84,14 @@ Route::get('/assign',[
     'as'=>'assign'
     ]);
 
-Route::post('/assign/save',[
-    'uses'=>'HomeController@index',
-    'as'=>'assign.save'
+// Route::post('/assign/save',[
+//     'uses'=>'HomeController@index',
+//     'as'=>'assign.save'
+//     ]);
+
+Route::post('/assign/role',[
+    'uses'=>'HomeController@assignNewRole',
+    'as'=>'assign_new_role'
     ]);
 
 Route::post('/assign', 'HomeController@index');
@@ -91,7 +101,7 @@ Route::post('/assign', 'HomeController@index');
 
 
 
-// achini's routes
+// achini's routes====================================================================================================================
 
 // routes for Meeting
 
@@ -145,7 +155,7 @@ Route::get('voteAdd',[
 
 
 
-// nimesh's routes
+// nimesh's routes======================================================================================================================
 
 
 Route::get('/profile','profile\ProfileController@getProfile');
