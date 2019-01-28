@@ -10,9 +10,19 @@ use App\Mail\MeetingConfirmation;
 
 class meetingController extends Controller
 {
+    public function Index(){
+        
+        $meeting = Meeting::all();
+
+        $meeting = Meeting::paginate(6);
+      
+            return view('meeting/meetingHome',compact('meeting'))
+                ->with('id', (request()->input('page', 1) - 1) * 6);
+
+    }
+
     public function MeetingCreate(){
 
-        //$meeting = Meeting::latest()->paginate(3);
         return view('meeting/meetingCreate');
 
     }

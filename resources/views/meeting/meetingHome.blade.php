@@ -88,6 +88,9 @@ you log in as
 
     @endforeach
     </div>  
+    <div class="abc" style="margin-top:800px;margin-left:600px">
+        {{ $meeting->links() }}
+    </div>
            
 @endsection
    

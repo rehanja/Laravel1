@@ -127,7 +127,7 @@
     <!-- ***** Header Area End ***** -->
 <div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:160%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:170%;">
         
                     @yield('content')
              

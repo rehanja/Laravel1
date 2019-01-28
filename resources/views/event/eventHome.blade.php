@@ -18,6 +18,7 @@ you log in as
     supervising officer
     @endrole
 
+                
 
 <br><br><br><br><br><br>
     @role('or_pm|supervising_officer')
@@ -55,6 +56,23 @@ you log in as
                     </div>
                 @endif
 
+                @if (session('error'))
+                    <div class="flash-message">
+                        <div class="alert alert-danger">
+                        <strong>
+                            {{ session('error') }}
+                        </strong>
+                        </div>
+                    </div>
+                @endif
+
+ 
+
+
+<a href="{{ route('register') }}"></a>
+
+<div class="col-md-12">
+                
     @foreach($event as $eventData)
         <div class="column">
             <div class="card">
@@ -165,7 +183,11 @@ you log in as
                             </div>
     
                         </form>
-                          
+                            <div class="modal-footer">
+                           If you want you can update event later
+    
+                            </div>
+
                 </div>
     
             </div>
