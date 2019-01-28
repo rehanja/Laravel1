@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\model_has_roles;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -89,7 +90,14 @@ class RegisterController extends Controller
         ]);
 
         $thisUser = User::findOrFail($user->id);
-        $this->sendEmail($thisUser);
+
+        // $event=new model_has_roles;
+        // $event->role_id=1;
+        // $event->model_type="App\User";
+        // $event->model_id=$user->id;
+        // $event->save();
+
+        // $this->sendEmail($thisUser);
 
         return $user;
 

@@ -104,7 +104,7 @@ class meetingController extends Controller
 
         $data = Meeting::find($id);
       
-        $data = 'bhbhj';
+        $data = '05.02.2019 at 10.00AM to 10.30AM';
         Mail::to($id)->send(new MeetingConfirmation($data));
        
         return redirect()->back()->with('message','Email sent successfully.',$data);
