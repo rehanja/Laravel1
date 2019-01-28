@@ -4,21 +4,6 @@
 @section('content')
 
 <div class="eventbody">
-you log in as
-    @role('p_member')
-     pmember
-    @endrole
-    @role('or_fol')
-     orfol
-    @endrole
-    @role('or_pm')
-     orpm
-    @endrole
-    @role('or_pm|supervising_officer')
-    supervising officer
-    @endrole
-
-                
 
 <br><br><br><br><br><br>
     @role('or_pm|supervising_officer')
