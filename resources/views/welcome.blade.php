@@ -192,11 +192,11 @@
                 <span></span>
             </div>
             <div class="social-btns">
-                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                <a href="https://www.behance.net"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
             </div>
         </div>
     </section>
