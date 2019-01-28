@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.meeting')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
 <link href="{{ asset('css/popup.css') }}" rel="stylesheet">
 

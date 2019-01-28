@@ -12,7 +12,7 @@
     <title>Event Management System &amp; EZevent</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo.PNG">
+    <link rel="icon" href="img/title.PNG">
 
     <!-- Core Stylesheet -->
     <link href="style.css" rel="stylesheet">
@@ -52,13 +52,13 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="{{ url('/') }}"><img src="img/logo.png" alt="" style="width:120px; height:74px"></a>
+                        <a class="navbar-brand" href="{{ url('/') }}"><img src="img/homelogo.png" alt="" style="width:120px; height:74px"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
 
                                 <li class="nav-item">
@@ -132,8 +132,8 @@
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
                     <div class="hero-content">
-                        <h2>Discover places near you</h2>
-                        <h4>This is the best guide of your city</h4>
+                        <h2>Success Your Events Here...</h2>
+                        <h4>Think future of yours, Think Join. </h4>
                     </div>
                     <!-- Hero Search Form -->
 
