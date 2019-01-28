@@ -28,7 +28,23 @@
         <div class="dorne-load"></div>
     </div>
 
-   
+    <!-- ***** Search Form Area ***** -->
+    <div class="dorne-search-form d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                    </div>
+                    <form action="#" method="get">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Events..." >
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ***** Header Area Start ***** -->
     <header class="header_area" id="header">
         <div class="container-fluid h-100">
@@ -57,7 +73,11 @@
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
                             </ul>
-                            
+                            <!-- Search btn -->
+                            <div class="dorne-search-btn">
+                                <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                            </div>
+
 
                              @guest
 
@@ -105,16 +125,15 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-
+<div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meetingcreate.jpg);width:100%;height:170%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/event.jpg);width:100%;height:170%;">
         
-            @yield('content')
-
-
+                    @yield('content')
+             
     </section>
+    <section class="footer"> @yield('footer')</section>
     <!-- ***** Welcome Area End ***** -->
-
 
     <!-- ****** Footer Area Start ****** -->
     <footer class="dorne-footer-area">
@@ -129,7 +148,7 @@
 
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                          <h6 class=" mb-4 font-weight-bold">EZevent</h6>
+                          <h6 class="text mb-4 font-weight-bold">EZevent</h6>
                           
                         </div>
                         <!-- Grid column -->

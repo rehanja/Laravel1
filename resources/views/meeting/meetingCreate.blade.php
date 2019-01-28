@@ -33,50 +33,51 @@
                         </div>
                     </div>
                 </div><br>
-
-        
-    <form method="post" action="/create">
-
-            {{csrf_field()}}
-        <center>
-        <div class = "abc">
-            
-            <h2 style="color:black;">Create Your Meeting Here...</h2><br> 
-               
+<center>
+<br><br><br><br><br><br>
+<div class="col-md-8">
+    <div class="card" style="background-image: url(img/loginnew.jpg);width:650px;height:900px;opacity: 0.4;filter: alpha(opacity=70)">
+    
+        <div class="card-header" style="color:black;text-align:center;font-size:40px;font-weight:bold;width:620px;height:860px;">Create Your Meeting Here...</div>               
+            <div class="card-body">  
                 
-                <div class="form-group col-sm-9">
-                    <label for="title" style="color:white;margin-left:-396px;">Member Name :</label>
+                <form method="post" action="/create">
+
+                {{csrf_field()}}
+  
+                <div class="form-group col-sm-11">
+                    <label for="title">Member Name :</label>
                     <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name" required>
 
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="email" style="color:white;margin-left:-400px;">Member Email :</label>
+                <div class="form-group col-sm-11">
+                    <label for="email" >Member Email :</label>
                     <input type="email" class="form-control" name="email" placeholder="enter p-member email here" id="email" required>
 
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="date" style="color:white;margin-left:-473px;">Date :</label>
+                <div class="form-group col-sm-11">
+                    <label for="date" >Date :</label>
                     <input type="date" class="form-control" name="date" id="date" required>
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="startTime" style="color:white;margin-left:-431px;">Start Time :</label>
+                <div class="form-group col-sm-11">
+                    <label for="startTime">Start Time :</label>
                     <input type="time" class="form-control" name="startTime" id="startTime" required>
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="endTime" style="color:white;margin-left:-437px;">End Time :</label>
+                <div class="form-group col-sm-11">
+                    <label for="endTime">End Time :</label>
                     <input type="time" class="form-control" name="endTime" id="endTime" required>
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="venue" style="color:white;margin-left:-457px;">Venue :</label>
+                <div class="form-group col-sm-11">
+                    <label for="venue" >Venue :</label>
                     <input type="text" class="form-control" name="venue" placeholder="enter venue here" id="venue" required>
                 </div>
-                <div class="form-group col-sm-9">
-                    <label for="invitees" style="color:white;margin-left:-448px;">Invitees :</label>
+                <div class="form-group col-sm-11">
+                    <label for="invitees">Invitees :</label>
                     <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees" required>
                 </div>
-                <div class="form-group col-sm-9">
+                <div class="form-group col-sm-11">
 
-                    <label for="status" style="color:white;margin-left:-460px;">Status :</label>
+                    <label for="status">Status :</label>
                     <select class="form-control" name="status" id="status" required>
                         <option>Created</option>
                         <option>Email Sent</option>
@@ -92,8 +93,7 @@
 <br>
                 <div class="create">
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
-                </div>
-            </div>  
+                </div> 
 
                 @role('or_fol')
                 <p> orfol</p>
@@ -108,10 +108,13 @@
                 <p>supervising officer</p>
                 @endrole
 
-               
-        </center>
-    </form>
-
+                </div>
+            </div>   
+        </form>
+    </div>
+</div>
+</div>
+</div>
 
 @endsection
 
