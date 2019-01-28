@@ -9,8 +9,8 @@ use App\User;
 use App\model_has_roles;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
-{
+    class HomeController extends Controller
+    {
     /**
      * Create a new controller instance.
      *
@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function assignHome()
     {
         //dd("test");
-                $assign = DB::table('roles')->get();
+        $assign = DB::table('roles')->get();
         //return Auth::user()->id;
         return view('assign\assignHome')->with('assign',$assign);
     }
@@ -147,7 +147,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('home');
+        return redirect()->back();
 
     }
 }
