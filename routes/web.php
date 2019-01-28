@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes()
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,7 +23,7 @@ Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDon
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(10);
+    $d=App\User::paginate(5);
     return view('roles/createUser')->with('data',$d);
 });
 
