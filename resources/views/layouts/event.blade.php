@@ -132,6 +132,7 @@
                     @yield('content')
              
     </section>
+    <section class="footer"> @yield('footer')</section>
     <!-- ***** Welcome Area End ***** -->
 
     <!-- ****** Footer Area Start ****** -->
