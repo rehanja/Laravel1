@@ -17,18 +17,6 @@ you log in as
     supervising officer
     @endrole
 
-<!--for email sending & meeting deleting-->
-        @if (session('message'))
-            <div class="flash-message">
-                <div class="alert alert-success">
-                    <strong>
-                        {{ session('message') }}
-                    </strong>
-                </div>
-            </div>
-        @endif
- 
-    
 
 
 <div class="mcrbtn">
@@ -40,6 +28,28 @@ you log in as
 </div><br>
 
     <div class="col-md-12">
+
+    <!--for email sending & meeting deleting-->
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if (session('message'))
+                    <div class="flash-message">
+                        <div class="alert alert-success">
+                        <strong>
+                            {{ session('message') }}
+                        </strong>
+                        </div>
+                    </div>
+                @endif
+
     
         @foreach($meeting as $data)
             
