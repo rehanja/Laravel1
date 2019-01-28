@@ -4,21 +4,6 @@
 @section('content')
 
 <div class="eventbody">
-you log in as
-    @role('p_member')
-     pmember
-    @endrole
-    @role('or_fol')
-     orfol
-    @endrole
-    @role('or_pm')
-     orpm
-    @endrole
-    @role('or_pm|supervising_officer')
-    supervising officer
-    @endrole
-
-                
 
 <br><br><br><br><br><br>
     @role('or_pm|supervising_officer')
@@ -89,12 +74,15 @@ you log in as
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
                         @endrole
+                        @role('p_member|or_fol|or_pm|supervising_officer')
                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if you need this event plz vote below)</p>
-
+                       @endrole
 
 
                     <div class="vote">
+                        @role('p_member|or_fol|or_pm|supervising_officer')
                         <button type="button" onclick="location.href='{{ route('voteAdd',['eventid' => $eventData->id] ) }}'" class="btn btn-success btn-sm">Vote</button>
+                        @endrole
                     </div>
 
                 </div>

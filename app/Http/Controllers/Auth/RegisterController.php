@@ -55,9 +55,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nameWithInitials' => 'required|string|max:55',
-            'name' => 'required|string|max:255',
-            'nic' => 'required|string|max:10',
+            'nameWithInitials' => 'required|string|max:55|min:4',
+            'name' => 'required|string|max:255|min:4',
+            'nic' => 'required|string|max:10|min:10',
             'address' => 'required|string|max:55',
             'contactNumber' => 'required|string|max:10',
             'pollingDivision'=>'',
