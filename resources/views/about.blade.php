@@ -8,8 +8,8 @@
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
                 <div class="hero-content">
-                        <h2>Discover places near you</h2>
-                        <h4>This is the best guide of your city</h4>
+                        <<h2>Success Your Events Here...</h2>
+                        <h4>Think future of yours, Think Join. </h4>
                 </div>
                 <!-- Hero Search Form -->
 
