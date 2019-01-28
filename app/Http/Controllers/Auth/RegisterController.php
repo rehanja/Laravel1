@@ -57,10 +57,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nameWithInitials' => 'required|string|max:55',
             'name' => 'required|string|max:255',
-            'nic' => 'required|string|max:10',
+            'nic' => 'required|string|max:10|min:10|unique:users',
             'address' => 'required|string|max:55',
-            'contactNumber' => 'required|string|max:10',
-            'pollingDivision'=>'',
+            'contactNumber' => 'required|string|max:10|min:10',
+            'pollingDivision'=>'string',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -97,7 +97,7 @@ class RegisterController extends Controller
         // $event->model_id=$user->id;
         // $event->save();
 
-        // $this->sendEmail($thisUser);
+        $this->sendEmail($thisUser);
 
         return $user;
 
