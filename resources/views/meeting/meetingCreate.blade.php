@@ -1,16 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.mcreate')
+<link href="{{ asset('css/meetingform.css') }}" rel="stylesheet">
 
 @section('content')
 
-<form method="post" action="/create">
 
-    {{csrf_field()}}
-
-    <div class = "container">
-        <div class="form-group">
-
-
-            @if ($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -32,18 +26,21 @@
 
 
 
-            <div class="abc">
+                <div class="content">
+                    <div class="title m-b-md">
+                        <div class="col-md-12">    
+                            <h2>Create Meeting</h2><br>        
+                        </div>
+                    </div>
+                </div><br>
 
-                <h2>Create Meeting</h2><br>
+        
+    <form method="post" action="/create">
 
+            {{csrf_field()}}
 
-
-
-                <div>
-                    <label for="title">Title:</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
-
-
+        <div class = "container">
+                    
                 <div class="form-group">
                     <label for="title">Member Name :</label>
                     <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name" required>

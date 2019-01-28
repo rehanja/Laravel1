@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.meeting')
 
 @section('content')
 
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     <label for="venue">Venue :</label>
-                    <input type="textarea" class="form-control" value="{{$meeting -> venue}}" name="description" placeholder="enter venue here" id="venue" required>
+                    <input type="textarea" class="form-control" value="{{$meeting -> venue}}" name="venue" placeholder="enter venue here" id="venue" required>
                 </div>
                 <div class="form-group">
                     <label for="invitees">Invitees :</label>

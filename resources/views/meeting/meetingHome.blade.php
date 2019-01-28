@@ -40,20 +40,21 @@ you log in as
 </div><br>
 
     <div class="col-md-12">
+    
         @foreach($meeting as $data)
-            <div class="row">
-                <div class="column">
+            
+                <div class="column" >
                     <div class="card" >
                         <div class="card-body" >       
                         
-                            <h5 class="card-title"> Meeting with : {{ $data->name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Member Email : {{ $data->email }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Date : {{ $data->date }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Start time : {{ $data->startTime }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">End time : {{ $data->endTime }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Venue : {{ $data->venue }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Invitees : {{ $data->invitees }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Status : {{ $data->status }}</h6><br>
+                            <h5 class="card-title"><b> Meeting with : {{ $data->name }} <b></h5>
+                            <h6 class="card-subtitle mb-2 ">Email : {{ $data->email }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Date : {{ $data->date }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Start time : {{ $data->startTime }}</h6>
+                            <h6 class="card-subtitle mb-2 ">End time : {{ $data->endTime }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Venue : {{ $data->venue }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Invitees : {{ $data->invitees }}</h6>
+                            <h6 class="card-subtitle mb-2 ">Status : {{ $data->status }}</h6><br>
                             <a onclick="return confirm('Are you sure to delete this meeting?')" href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a>                        
                             <a onclick="return confirm('Are you sure to update this meeting details?')" href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
                             <form method="get" onclick="return confirm('Are you sure to send this E-mail?')" action="{{route('meetingViewMail',['email' => $data->email]) }}" onsubmit="return checkForm(this);">
@@ -73,10 +74,10 @@ you log in as
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
-    @endforeach  
-    </div>
+    @endforeach
+    </div>  
            
 @endsection
    
