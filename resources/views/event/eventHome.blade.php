@@ -19,7 +19,22 @@ you log in as
     @endrole
 
 
+<br><br><br><br><br><br>
+    @role('or_pm|supervising_officer')
+        <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
+    @endrole
 
+    <br>
+        <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
+
+
+
+ 
+
+
+<a href="{{ route('register') }}"></a>
+
+<div class="col-md-12">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -39,24 +54,6 @@ you log in as
                         </div>
                     </div>
                 @endif
-
-
-<br><br><br><br><br><br>
-    @role('or_pm|supervising_officer')
-        <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
-    @endrole
-
-    <br>
-        <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
-
-
-
- 
-
-
-<a href="{{ route('register') }}"></a>
-
-<div class="col-md-12">
 
     @foreach($event as $eventData)
         <div class="column">
