@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-
 @section('header')
 
 <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/login1.jpg);width:1348px;height:700px;">
