@@ -28,6 +28,14 @@ you log in as
     <br>
         <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
 
+
+
+ 
+
+
+<a href="{{ route('register') }}"></a>
+
+<div class="col-md-12">
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -179,6 +187,7 @@ you log in as
                            If you want you can update event later
     
                             </div>
+
                 </div>
     
             </div>
