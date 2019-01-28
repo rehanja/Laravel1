@@ -19,6 +19,7 @@ you log in as
     @endrole
 
 
+
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

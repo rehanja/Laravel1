@@ -57,7 +57,9 @@
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+
+                                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+
                                 </li>
 
                                 <li class="nav-item">
@@ -65,11 +67,11 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">About Us</a>
+                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                                 </li>
                             </ul>
                             <!-- Search btn -->
@@ -130,18 +132,18 @@
                                 <h6>What are you looking for?</h6>
                                 <form action="#" method="get">
                                     <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
+                                        <option selected>Your Roles</option>
+                                        <option value="1">Temporary Member</option>
+                                        <option value="2">P-Member</option>
+                                        <option value="3">OR-FOL</option>
+                                        <option value="4">OR-PM@MO</option>
+                                        <option value="5">Supervising Officer</option>
                                     </select>
                                     <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
+                                        <option selected>Permission</option>
+                                        <option value="1">Assign OR-Fol</option>
+                                        <option value="2">Create Meetings</option>
+                                        <option value="3"></option>
                                     </select>
                                     <select class="custom-select">
                                         <option selected>Price Range</option>
@@ -190,11 +192,11 @@
                 <span></span>
             </div>
             <div class="social-btns">
-                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                <a href="https://www.behance.net"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
             </div>
         </div>
     </section>
@@ -386,7 +388,7 @@
                             </div>
                         </div>
                         <div class="feature-events-content">
-                            <h5>Create Events</h5>
+                            <h5>Manage Events</h5>
                             <h6>5th step</h6>
                             <p>Create events according to the your requirement</p>
                         </div>
@@ -407,7 +409,7 @@
                         <div class="feature-events-content">
                             <h5>Vote for Events</h5>
                             <h6>6th step</h6>
-                            <p>Consider the vote results ....Only active members can vote for the events.</p>
+                            <p>Consider the vote results and choose highest voted events.Only active members can vote for the events.</p>
                         </div>
                         <div class="feature-events-details-btn">
                             <a href="#">+</a>
