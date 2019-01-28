@@ -62,16 +62,16 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Events</a>
+                                    <a class="nav-link" href="{{ url('/events') }}">Events</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">About Us</a>
+                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
+                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                                </li>>
                             </ul>
                             <!-- Search btn -->
                             <div class="dorne-search-btn">
@@ -127,7 +127,7 @@
     <!-- ***** Header Area End ***** -->
 <div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:160%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:170%;">
         
                     @yield('content')
              

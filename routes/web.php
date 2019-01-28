@@ -113,11 +113,8 @@ Route::get('/contact', function () {
 
 // routes for Meeting
 
-Route::get('/meeting',function(){
+Route::get('/meeting', 'meeting\meetingController@Index');
 
-    $a=App\Meeting::all();
-    return view('meeting/meetingHome')->with('meeting',$a);
-    });
 
 Route::get('create', [
     'uses'=>'meeting\meetingController@MeetingCreate',

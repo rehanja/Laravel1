@@ -116,8 +116,8 @@
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
                     <div class="hero-content">
-                        <h2>Success Your Events Here...</h2>
-                        <h4>Think future of yours, Think Join. </h4>
+                        <h2>Success Your charity Events ...</h2>
+                        <h4>Join with us..... </h4>
                     </div>
                     <!-- Hero Search Form -->
                     <div class="hero-search-form">
@@ -279,8 +279,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="about-content text-center">
-                        <h2>Discover your city with <br><span>Dorne</span></h2>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus, nunc nec tincidunt volutpat, ex libero.</p>
+                        <h2>From our platform <span>EZevents</span></h2>
+                        <p>EZevents is a online platform which connect low level member's requirements with high level management donations in charity societies like Rotaract,Leo,Lions...etc.So, join with us to success your charity events. </p>
                     </div>
                 </div>
             </div>
@@ -527,17 +527,20 @@
         </div>
     </section>
     <!-- ***** Features Destinations Area End ***** -->
-
+    <div class="feature-content d-flex align-items-center justify-content-between">
+            <h1>Here's some of our partners...</h1>
+    </div>
+    
     <div class="dorne-clients-area section-padding-100">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="clients-logo d-md-flex align-items-center justify-content-around">
-                        <img src="img/clients-img/1.png" alt="">
-                        <img src="img/clients-img/2.png" alt="">
-                        <img src="img/clients-img/3.png" alt="">
-                        <img src="img/clients-img/4.png" alt="">
-                        <img src="img/clients-img/5.png" alt="">
+                        <img src="img/clients-img/1.png" alt="" style="width:200px;height:200px;">
+                        <img src="img/clients-img/2.png" alt="" style="width:200px;height:200px;">
+                        <img src="img/clients-img/3.png" alt="" style="width:200px;height:200px;">
+                        <img src="img/clients-img/4.png" alt="" style="width:200px;height:200px;">
+                        <img src="img/clients-img/5.png" alt="" style="width:200px;height:200px;" >
                     </div>
                 </div>
             </div>

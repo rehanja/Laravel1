@@ -46,15 +46,17 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Events</a>
+
+                                    <a class="nav-link" href="{{ url('/events') }}">Events</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">About Us</a>
+                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+
                                 </li>
                             </ul>
                             
@@ -107,7 +109,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meetingcreate.jpg);width:100%;height:180%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/poll.jpg);width:100%;height:180%;">
         
             @yield('content')
 

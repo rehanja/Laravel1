@@ -4,20 +4,6 @@
 @section('content')
 
 <div class="eventbody">
-you log in as
-    @role('p_member')
-     pmember
-    @endrole
-    @role('or_fol')
-     orfol
-    @endrole
-    @role('or_pm')
-     orpm
-    @endrole
-    @role('or_pm|supervising_officer')
-    supervising officer
-    @endrole
-
 
 <br><br><br><br><br><br>
     @role('or_pm|supervising_officer')
@@ -55,6 +41,23 @@ you log in as
                     </div>
                 @endif
 
+                @if (session('error'))
+                    <div class="flash-message">
+                        <div class="alert alert-danger">
+                        <strong>
+                            {{ session('error') }}
+                        </strong>
+                        </div>
+                    </div>
+                @endif
+
+ 
+
+
+<a href="{{ route('register') }}"></a>
+
+<div class="col-md-12">
+                
     @foreach($event as $eventData)
         <div class="column">
             <div class="card">
@@ -71,7 +74,7 @@ you log in as
                         <a href="{{route('event.delete',['id' => $eventData->id]) }}" class="btn btn-danger btn-sm">Delete</a>
                         <a href="{{route('event.update',['id' => $eventData->id]) }}" class="btn btn-warning btn-sm">Update</a>
                         @endrole
-                        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
+                       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if you need this event plz vote below)</p>
 
 
 
@@ -165,7 +168,11 @@ you log in as
                             </div>
     
                         </form>
-                          
+                            <div class="modal-footer">
+                           If you want you can update event later
+    
+                            </div>
+
                 </div>
     
             </div>
