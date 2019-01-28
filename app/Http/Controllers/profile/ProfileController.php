@@ -8,7 +8,6 @@ use Auth;
 use Image;
 use App\User;
 
-
 class ProfileController extends Controller
 {
     public function getProfile(){
@@ -30,12 +29,9 @@ class ProfileController extends Controller
         $user->address = $request->address;
         $user->contactNumber = $request->contactNumber;
         $user->email = $request->email;        
-        //$date = $event->start;
         $user->save();
         $data=User::all();
-        //return '0';
         return redirect('/profile')->with('user',$data);
-        //dd($request->all());
     }
 
     public function uploadPhoto(Request $request){

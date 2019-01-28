@@ -47,10 +47,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($exception instanceof UnauthorizedException){
-            return response()->json('You do not have permission for do that',404);
-        }
-        dd($exception);
-        return parent::render($request, $exception);
+       /* if($exception instanceof UnauthorizedException){
+            return view('exceptions.notfound');
+            //return response()->json('You do not have permission for do that',404);
+        } */
+        //return parent::render($request, $exception);
+        return view('exceptions.notfound');
+
     }
 }
