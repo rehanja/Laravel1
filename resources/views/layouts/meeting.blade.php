@@ -37,7 +37,7 @@
                         <i class="pe-7s-close-circle" aria-hidden="true"></i>
                     </div>
                     <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Meetings...">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Meetings..." >
                         <input type="submit" class="d-none" value="submit">
                     </form>
                 </div>
@@ -127,12 +127,10 @@
     <!-- ***** Header Area End ***** -->
 <div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:150%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/meeting.jpg);width:100%;height:160%;">
         
-                    <!-- Hero Search Form -->
                     @yield('content')
-
-               
+             
     </section>
     <!-- ***** Welcome Area End ***** -->
 

@@ -65,6 +65,8 @@
                 <div class="form-group">
                     <label for="status">Status :</label>
                     <select class="form-control" value="{{$meeting -> status}}" name="status" id="status" required>
+                        <option>Pending...</option>
+                        <option>Email Sent</option>
                         <option>Sheduled</option>
                         <option>Postponed</option>
                         <option>Re-sheduled</option>
