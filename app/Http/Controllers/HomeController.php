@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use App\model_has_roles;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -34,19 +35,18 @@ class HomeController extends Controller
 
     public function assignHome()
     {
+        //dd("test");
                 $assign = DB::table('roles')->get();
         //return Auth::user()->id;
         return view('assign\assignHome')->with('assign',$assign);
     }
-  
+
     public function Home(request $request)
     {
-        return view('home');
 
+           return view('home');
 
     }
-
-
 
     public function index(request $request)
     {
@@ -65,11 +65,13 @@ class HomeController extends Controller
 
 
         //creating roles for 4 types of users
-       // $role = Role::create(['name' => 'p_member']);
-        //$role = Role::create(['name' => 'or_fol']);
-        //$role = Role::create(['name' => 'or_pm']);
+        //$role = Role::create(['name' => 'p_member']);
+       // $role = Role::create(['name' => 'or_fol']);
+         // $role = Role::create(['name' => 'or_pm']);
        // $role = Role::create(['name' => 'supervising_officer']);
-       $role = Role::create(['name' => 'temporyMember']);
+       // $role = Role::create(['name' => 'temporyMember']);
+
+
 
       //creating permissions for 4 types of users
        // $permission = Permission::create(['name' => 'view event']);
@@ -98,15 +100,54 @@ class HomeController extends Controller
     $role4->givePermissionTo($permissionAll);
 
 
-//assign p_member role to user
-    $user1=User::find($memberId);
-    $user1->assignRole($role);
+    $assign = DB::table('users')->get();
+    $a=Auth::user()->isActive;
 
-echo("added you role correctly");
+  // dd($a);
+
+    if($a==0){
+        auth()->user()->assignRole('p_member');
+        echo("added you role correctly as a pmember");
+    }
+    else{
+        return view('home');
+    }
+
+//
+
+
+//assign p_member role to user
+    //$user1=User::find($memberId);
+   // $user1->assignRole($role);
+
+
 
             return view('home');
-        
- 
+
+
+
+    }
+
+    public function assignNewRole(request $request)
+    {
+
+        $memberId = $request['memberId'];
+        $roleId = $request['roleId'];
+
+        $assign = DB::table('model_has_roles')->get()->toArray();
+
+        foreach($assign as $value){
+            if($memberId == $value->model_id){
+
+                $assign = DB::table('roles')->get();
+
+                DB::table('model_has_roles')
+                ->where('model_id', $value->model_id)
+                ->update(['role_id' => $roleId]);
+            }
+        }
+
+        return view('home');
 
     }
 }

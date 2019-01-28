@@ -32,6 +32,7 @@ class ProfileController extends Controller
         $user->save();
         $data=User::all();
         return redirect('/profile')->with('user',$data);
+
     }
 
     public function uploadPhoto(Request $request){

@@ -9,17 +9,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
-// routes - sanduni
+// routes - sanduni======================================================================================================================
+
+//about page
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::all();
+    $d=App\User::paginate(5);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -28,10 +35,10 @@ Route::get('/markAsCompleted/{id}','Auth\UsersController@updateAsMember');
 Route::get('/markAsNotCompleted/{id}','Auth\UsersController@updateAsNotMember');
 
 //delete Member
-Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember');
+Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember')->name('userDelete');
 
 //update Member
-Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
+Route::get('/updateMember/{id}','Auth\UsersController@updateMember')->name('userUpdate');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
 //assign or-fol
@@ -39,8 +46,10 @@ Route::get('/assignOrFol', function () {
     return view('assign/assignOrFol');
 });
 
+Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
 
-//event routes-rehan
+
+//event routes-rehan==============================================================================================================
 
 Route::get('/event',function(){
   $a=App\event::all();
@@ -65,6 +74,10 @@ Route::post('/event/save/{id}',[
     'uses'=>'event\eventController@eventUpdateSave',
     'as'=>'event.save' ])->middleware('role:supervising_officer');
 
+Route::get('/events', function () {
+        return view('event/events');
+    });
+
 
 
 
@@ -74,18 +87,30 @@ Route::get('/assign',[
     'as'=>'assign'
     ]);
 
-Route::post('/assign/save',[
-    'uses'=>'HomeController@index',
-    'as'=>'assign.save'
+// Route::post('/assign/save',[
+//     'uses'=>'HomeController@index',
+//     'as'=>'assign.save'
+//     ]);
+
+Route::post('/assign/role',[
+    'uses'=>'HomeController@assignNewRole',
+    'as'=>'assign_new_role'
     ]);
 
 Route::post('/assign', 'HomeController@index');
 
+Route::get('/contact', function () {
+    return view('other/contact');
+}); 
 
 
 
 
-// achini's routes 
+
+
+
+// achini's routes====================================================================================================================
+
 // routes for Meeting
 
 Route::get('/meeting',function(){
@@ -112,9 +137,11 @@ Route::get('/update/{id}',[
     ]);
 
 Route::post('/save/{id}',[
+
         'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
+
 
 
 Route::get('/send/{id}',[
@@ -134,14 +161,9 @@ Route::get('voteAdd',[
     'as'=>'voteAdd'
     ]);
 
-//after meeting informing an accepted user
 
 
-
-
-
-
-// nimesh's routes
+// nimesh's routes======================================================================================================================
 
 
 Route::get('/profile','profile\ProfileController@getProfile');
@@ -152,9 +174,15 @@ Route::get('/profile/editprofile/{id}',[
     'uses'=>'profile\ProfileController@editProfile',
     'as'=>'userEdit']);
 
+
+Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
+
 
 Route::post('change/password',function(){
     $User=User::find(Auth::user()->id);
@@ -167,5 +195,6 @@ Route::post('change/password',function(){
         return back()->with('error','Password NOT changed');
     }
 });
+
 
 

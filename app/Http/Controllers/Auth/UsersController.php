@@ -45,6 +45,7 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
+
     protected function updateAsMember($id){
         $task=User::find($id);
 
@@ -61,7 +62,6 @@ class UsersController extends Controller
     }
 
     protected function deleteMember($id){
-        //return $id;
         $task=User::find($id);
 
         $task->delete();
@@ -69,7 +69,6 @@ class UsersController extends Controller
     }
 
     protected function updateMember($id){
-        //return "aaa";
         $task=User::find($id);
 
         return view('roles/updateUser')->with('data',$task);
@@ -81,20 +80,32 @@ class UsersController extends Controller
             $name=$request->name;
             $nic=$request->nic;
             $address=$request->address;
+            $pollingDivision=$request->pollingDivision;
             $contactNumber=$request->contactNumber;
+
 
             $data=User::find($id);
             $data->nameWithInitials=$nameWithInitials;
             $data->name=$name;
             $data->nic=$nic;
             $data->address=$address;
+            $data->pollingDivision=$pollingDivision;
             $data->contactNumber=$contactNumber;
             $data->save();
 
             $d=User::all();
-            //return view('roles/createUser')->with('data',$d);
-            return redirect('/createUser');
+            return view('roles/createUser')->with('data',$d);
 
+
+    }
+
+    protected function assignOrFol(Request $request){
+        $lat=$request->lat;
+        $lng=$request->lng;
+
+        $memebers=User::whereBetween('lat',[$lat-0.1,$lat+0.1])->whereBetween('lng',[$lng-0.1,$lng+0.1])->get();
+
+        return $memebers;
     }
 
 }
