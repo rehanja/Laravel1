@@ -165,10 +165,7 @@ you log in as
                             </div>
     
                         </form>
-                            <div class="modal-footer">
-                           If you want you can update event later
-    
-                            </div>
+                          
                 </div>
     
             </div>
