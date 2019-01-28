@@ -1,34 +1,55 @@
 @extends('layouts.app')
 
 
-@section('content')
+@section('header')
 
-<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/dashboard.jpg);width:1499px;height:950px;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="">
+                <div class="hero-content">
+                        <div class="container">
+                                <div class="row justify-content-center">
+                                        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-    <a href="/assign" class="w3-bar-item w3-button">Assign</a>
-    <a href="/createUser" class="w3-bar-item w3-button">Create user</a>
-    <a href="/meeting" class="w3-bar-item w3-button">Meeting</a>
-    <a href="/event" class="w3-bar-item w3-button">Event</a>
-    <a href="/poll" class="w3-bar-item w3-button">Polling</a>
-    <a href="/assignOrFol" class="w3-bar-item w3-button">assignOrFol</a>
-    <a href="/profile" class="w3-bar-item w3-button">profile</a>
+                                        <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:300px;margin:5px">
 
-    {{-- <div class="w3-dropdown-hover">
-      <button class="w3-button">Dropdown
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="w3-dropdown-content w3-bar-block">
-        <a href="#" class="w3-bar-item w3-button">Link</a>
-        <a href="#" class="w3-bar-item w3-button">Link</a>
-      </div>
-    </div> --}}
+                                                <button class="w3-button w3-block w3-left-align" onclick="User()">
+                                                User <i class="fa fa-caret-down"></i>
+                                                </button>
+                                                <div id="demoAcc1" class="w3-hide w3-white w3-card">
+                                                  <a href="/createUser" class="w3-bar-item w3-button">Create User</a>
+                                                  <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+                                                </div>
+
+                                                <a href="/meeting" class="w3-bar-item w3-button">Meetings</a>
+
+                                                <button class="w3-button w3-block w3-left-align" onclick="Events()">
+                                                        Events <i class="fa fa-caret-down"></i>
+                                                        </button>
+                                                        <div id="demoAcc2" class="w3-hide w3-white w3-card">
+                                                          <a href="/event" class="w3-bar-item w3-button">Events</a>
+                                                          <a href="/poll" class="w3-bar-item w3-button">Polling</a>
+                                                        </div>
+
+                                                        <button class="w3-button w3-block w3-left-align" onclick="Assign()">
+                                                                Assign <i class="fa fa-caret-down"></i>
+                                                                </button>
+                                                                <div id="demoAcc3" class="w3-hide w3-white w3-card">
+                                                                  <a href="/assign" class="w3-bar-item w3-button">Assign Role</a>
+                                                                  <a href="/assignOrFol" class="w3-bar-item w3-button">Assign OR-FOL</a>
+                                                        </div>
+                                         </div>
 
 
-  </div>
-<div class="container">
+
+
+
+
+<div class="container" style="width:800px">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -65,4 +86,55 @@
         </div>
     </div>
 </div>
-@endsection
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+        function User() {
+          var x = document.getElementById("demoAcc1");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-green";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" w3-green", "");
+          }
+        }
+        function Events() {
+          var x = document.getElementById("demoAcc2");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-green";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" w3-green", "");
+          }
+        }
+        function Assign() {
+          var x = document.getElementById("demoAcc3");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-green";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" w3-green", "");
+          }
+        }
+
+
+        </script>
+</section>

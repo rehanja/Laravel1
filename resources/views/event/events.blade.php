@@ -1,4 +1,24 @@
 @extends('layouts.app')
+
+@section('header')
+
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/about.jpg);width:1499px;height:500px;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="hero-content">
+                        <<h2>Success Your Events Here...</h2>
+                        <h4>Think future of yours, Think Join. </h4>
+                </div>
+                <!-- Hero Search Form -->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection
+
 @section('content')
 
 
