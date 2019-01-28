@@ -4,8 +4,6 @@
     margin-left: 320px;
     margin-right: 320px;
     background-color: grey;
-    z-index: -3;
-    position: relative;
 }
 
 .abc::before {
@@ -17,6 +15,6 @@
     position: relative;
     display: block;
     position: absolute;
-    z-index: -2;
+    z-index: +1;
     opacity: 0.4;
 }

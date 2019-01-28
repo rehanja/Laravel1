@@ -31,7 +31,7 @@ you log in as
     
 
 
-<div class="content">
+<div class="mcrbtn">
     <div class="title m-b-md">
         <div class="col-md-12">    
             <a class="btn btn-primary" href="{{ route('meetingCreate') }}"> Create a Meeting</a>    
