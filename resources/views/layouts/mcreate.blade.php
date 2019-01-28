@@ -46,15 +46,15 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Events</a>
+                                    <a class="nav-link" href="{{ url('/events') }}">Events</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">About Us</a>
+                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                                 </li>
                             </ul>
                             
