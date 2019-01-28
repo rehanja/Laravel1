@@ -1,16 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.mcreate')
+<link href="{{ asset('css/meetingform.css') }}" rel="stylesheet">
 
 @section('content')
 
-<form method="post" action="/create">
 
-    {{csrf_field()}}
-
-    <div class = "container">
-        <div class="form-group">
-
-
-            @if ($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -25,7 +19,6 @@
                         <div class="alert alert-success">
                         <strong>
                             {{ session('message') }}
-                            <a href="http://127.0.0.1:8000/meeting">View</a>
                         </strong>
                         </div>
                     </div>
@@ -33,52 +26,60 @@
 
 
 
-            <div class="abc">
+                <div class="content">
+                    <div class="title m-b-md">
+                        <div class="col-md-12">    
+                                   
+                        </div>
+                    </div>
+                </div><br>
 
-                <h2>Create Meeting</h2><br>
+        
+    <form method="post" action="/create">
 
-
-
-
-                <div>
-                    <label for="title">Title:</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
-
-
-                <div class="form-group">
-                    <label for="title">Member Name :</label>
-                    <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name">
+            {{csrf_field()}}
+        <center>
+        <div class = "abc">
+            
+            <h2 style="color:black;">Create Your Meeting Here...</h2><br> 
+               
+                
+                <div class="form-group col-sm-9">
+                    <label for="title" style="color:white;margin-left:-396px;">Member Name :</label>
+                    <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name" required>
 
                 </div>
-                <div class="form-group">
-                    <label for="title">Member Email :</label>
-                    <input type="email" class="form-control" name="title" placeholder="enter p-member email here" id="title">
+                <div class="form-group col-sm-9">
+                    <label for="email" style="color:white;margin-left:-400px;">Member Email :</label>
+                    <input type="email" class="form-control" name="email" placeholder="enter p-member email here" id="email" required>
 
                 </div>
-                <div class="form-group">
-                    <label for="date">Date :</label>
-                    <input type="date" class="form-control" name="date" id="date">
+                <div class="form-group col-sm-9">
+                    <label for="date" style="color:white;margin-left:-473px;">Date :</label>
+                    <input type="date" class="form-control" name="date" id="date" required>
                 </div>
-                <div class="form-group">
-                    <label for="startTime">Start Time :</label>
-                    <input type="time" class="form-control" name="startTime" id="startTime">
+                <div class="form-group col-sm-9">
+                    <label for="startTime" style="color:white;margin-left:-431px;">Start Time :</label>
+                    <input type="time" class="form-control" name="startTime" id="startTime" required>
                 </div>
-                <div class="form-group">
-                    <label for="endTime">End Time :</label>
-                    <input type="time" class="form-control" name="endTime" id="endTime">
+                <div class="form-group col-sm-9">
+                    <label for="endTime" style="color:white;margin-left:-437px;">End Time :</label>
+                    <input type="time" class="form-control" name="endTime" id="endTime" required>
                 </div>
-                <div class="form-group">
-                    <label for="description">Description :</label>
-                    <input type="text" class="form-control" name="description" placeholder="enter description here ex:name,place,etc" id="description">
+                <div class="form-group col-sm-9">
+                    <label for="venue" style="color:white;margin-left:-457px;">Venue :</label>
+                    <input type="text" class="form-control" name="venue" placeholder="enter venue here" id="venue" required>
                 </div>
-                <div class="form-group">
-                    <label for="invitees">Invitees :</label>
-                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees">
+                <div class="form-group col-sm-9">
+                    <label for="invitees" style="color:white;margin-left:-448px;">Invitees :</label>
+                    <input type="text" class="form-control" name="invitees" placeholder="enter invitees here" id="invitees" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-9">
 
-                    <label for="abc">Status :</label>
-                    <select class="form-control" name="status" id="status">
+                    <label for="status" style="color:white;margin-left:-460px;">Status :</label>
+                    <select class="form-control" name="status" id="status" required>
+                        <option>Created</option>
+                        <option>Email Sent</option>
                         <option>Sheduled</option>
                         <option>Postponed</option>
                         <option>Re-sheduled</option>
@@ -88,11 +89,11 @@
                 </div>
 
 
-
-                <div class="form-group">
+<br>
+                <div class="create">
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
                 </div>
-
+            </div>  
 
                 @role('or_fol')
                 <p> orfol</p>
@@ -107,10 +108,10 @@
                 <p>supervising officer</p>
                 @endrole
 
-            </div>
-        </div>
-    </div>
-</form>
+               
+        </center>
+    </form>
+
 
 @endsection
 
