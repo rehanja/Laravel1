@@ -62,7 +62,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/event') }}">Events</a>
+                                    <a class="nav-link" href="{{ url('/events') }}">Events</a>
                                 </li>
 
                                 <li class="nav-item">

@@ -22,7 +22,9 @@ you log in as
 <div class="mcrbtn">
     <div class="title m-b-md">
         <div class="col-md-12">    
+            @role('or_pm|supervising_officer')
             <a class="btn btn-primary" href="{{ route('meetingCreate') }}"> Create a Meeting</a>    
+            @endrole
         </div>
     </div>
 </div><br>
@@ -65,11 +67,15 @@ you log in as
                             <h6 class="card-subtitle mb-2 ">Venue : {{ $data->venue }}</h6>
                             <h6 class="card-subtitle mb-2 ">Invitees : {{ $data->invitees }}</h6>
                             <h6 class="card-subtitle mb-2 ">Status : {{ $data->status }}</h6><br>
+                            @role('or_pm|supervising_officer')
                             <a onclick="return confirm('Are you sure to delete this meeting?')" href="{{route('meetingDelete',['id' => $data->id]) }}" class="btn btn-danger btn-sm">Delete</a>                        
                             <a onclick="return confirm('Are you sure to update this meeting details?')" href="{{route('meetingUpdate',['id' => $data->id]) }}" class="btn btn-warning btn-sm">Update</a>
+                            @endrole
                             <form method="get" onclick="return confirm('Are you sure to send this E-mail?')" action="{{route('meetingViewMail',['email' => $data->email]) }}" onsubmit="return checkForm(this);">
                             <div class="send">
+                                    @role('or_pm|supervising_officer')   
                             <input type="submit" class="btn btn-primary btn-sm" name="myButton" value="Send an Email">
+                            @endrole
                             </form></div>
                             
                             <script type="text/javascript">
@@ -88,6 +94,9 @@ you log in as
 
     @endforeach
     </div>  
+    <div class="abc" style="margin-top:800px;margin-left:600px">
+        {{ $meeting->links() }}
+    </div>
            
 @endsection
    

@@ -8,7 +8,7 @@
     padding: 8px 16px 8px 30px;
     border: 1px solid #ddd;
     margin-bottom: 20px;
-    margin-left: 20%;
+    margin-left: 2%;
   }
   
   #myTable {
@@ -26,6 +26,6 @@
     border-bottom: 1px solid #ddd;
   }
   
-  #myTable tr.header, #myTable tr:hover {
-    background-color: #f1f1f1;
+  #myTable tr.header{
+    background-color: #cfcacaf5;
   }
