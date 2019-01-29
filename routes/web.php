@@ -201,35 +201,3 @@ Route::get('/profile/dummy','profile\ProfileController@dummy');
 
 
 
-<<<<<<< HEAD
-Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
-
-
-
-
-//api calls 
-
-//Get all Meetings
-Route::get('/getallmeetings',[
-    'uses'=>'ApiContoller@getAllMeeting'
-]);
-
-//get one meeting
-Route::get('/getPeticularMeeting/{id}',['uses'=>'ApiContoller@getPeticularMeeting']);
-
-//delete meeting
-
-Route::get('delmeeting/{id}',['uses'=>'ApiContoller@delmeeting']);
-
-//update meeting
-
-Route::post('/updatemeetings/{id}',['uses'=>'ApiContoller@MeetingUpdate']);
-
-//create meeting
-
-Route::post('crmeeting',['uses'=>'ApiContoller@MeetingsCreate']);
-
-
-
-=======
->>>>>>> 8e47aa65ecfc988a11b5d97e5a828d44ef4a8d9c
