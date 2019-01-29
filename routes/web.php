@@ -10,13 +10,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // routes - sanduni======================================================================================================================
+
+//about page
+Route::get('/about', function () {
+    return view('about');
+});
+
+
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(10);
+    $d=App\User::paginate(5);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -66,7 +73,7 @@ Route::post('/event/save/{id}',[
 
 Route::get('/events', function () {
         return view('event/events');
-    });    
+    });
 
 
 
@@ -88,6 +95,11 @@ Route::post('/assign/role',[
     ]);
 
 Route::post('/assign', 'HomeController@index');
+
+Route::get('/contact', function () {
+    return view('other/contact');
+}); 
+
 
 
 
