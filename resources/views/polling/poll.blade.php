@@ -44,6 +44,10 @@ you log in as
         }
     </script>
 
+<h1>Voting Rates for the Events</h1>
+<br>
+
+
 <!--Search bar-->
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
 
@@ -71,12 +75,8 @@ you log in as
     {{$data[0]}}
     @endforeach
 </script>
- <br><br>
 
 
-
-
-<h1>Voting Rates for the Events</h1>
 
 <div id="piechart"></div>
 
