@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.polling')
 <link href="{{ asset('css/search.css') }}" rel="stylesheet">
 
 @section('content')
@@ -16,14 +16,8 @@ you log in as
     supervising officer
     @endrole
 
-<div class="content">
-    <div class="title m-b-md">
-        <div class="col-md-12">    
-            <button type="button" onclick="location.href='{{ url('event') }}'" class="btn btn-primary">Vote Events</button>    
-        </div>
-    </div>
-</div>
-<br><br>
+
+<br><br><br><br><br><br>
 
 
 
@@ -56,7 +50,7 @@ you log in as
 
 
     <center><div>
-        <table id="myTable" class="table"  style="width:60%;">
+        <table id="myTable" class="table table-light"  style="width:40%;">
             <tr class="header">
                 <th>Event Name </th>
                 <th>No.of Votes </th>
