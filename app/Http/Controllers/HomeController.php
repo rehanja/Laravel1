@@ -118,8 +118,10 @@ use Illuminate\Support\Facades\DB;
 
 
     if($a==0){
-        auth()->user()->assignRole('p_member');
-      //  echo("added you role correctly as a pmember");
+
+        auth()->user()->assignRole('temporyMember');
+       // echo("added you role correctly as a temporyMember");
+
     }
     else{
         return view('home')->with('data',$data);
