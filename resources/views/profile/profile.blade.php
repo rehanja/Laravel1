@@ -12,6 +12,7 @@
 .profile-img img{
     width: 70%;
     height: 40%;
+    border-radius:50%;
 }
 .profile-img .file {
     position: relative;
@@ -116,7 +117,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                    <a href="profile/editprofile" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
+                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
                     </div>
                 </div>
                         <div class="tab-content profile-tab" id="myTabContent">

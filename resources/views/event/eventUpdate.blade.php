@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.mcreate')
 
 @section('content')
 
@@ -49,7 +49,7 @@
                                         </div>
 <!--Resumission button-->                                        
                                         <div class="form-group">
-                                        <button type="submit" class="btn btn-success btn-lg" >Re-submit</button>
+                                        <button type="submit" class="btn btn-primary btn-md" >Update</button>
                                         </div>
                                 </div>            
             </div>                            
@@ -57,4 +57,3 @@
     </form>
 
     @endsection
-

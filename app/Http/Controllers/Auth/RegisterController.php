@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\model_has_roles;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -59,6 +60,7 @@ class RegisterController extends Controller
             'nic' => 'required|string|max:10',
             'address' => 'required|string|max:55',
             'contactNumber' => 'required|string|max:10',
+            'pollingDivision'=>'',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -75,10 +77,12 @@ class RegisterController extends Controller
         Session::flash('status','Registerd! but verify your email to activate your account');
 
         $user= User::create([
+
             'nameWithInitials' => $data['nameWithInitials'],
             'name' => $data['name'],
             'nic' => $data['nic'],
             'address' => $data['address'],
+            'pollingDivision'=>$data['pollingDivision'],
             'contactNumber' => $data['contactNumber'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -86,7 +90,14 @@ class RegisterController extends Controller
         ]);
 
         $thisUser = User::findOrFail($user->id);
-        $this->sendEmail($thisUser);
+
+        // $event=new model_has_roles;
+        // $event->role_id=1;
+        // $event->model_type="App\User";
+        // $event->model_id=$user->id;
+        // $event->save();
+
+        // $this->sendEmail($thisUser);
 
         return $user;
 
