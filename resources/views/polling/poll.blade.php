@@ -44,13 +44,17 @@ you log in as
         }
     </script>
 
-<h1>Voting Rates for the Events</h1>
-<br>
+
+<p style="color:white;font-size:20px;margin-left:50px;">
+<i class="fa fa-check-square-o" style="font-size:40px;color:#14F32A;"></i>
+<i>Give your vote and get success of the Events...</i>
+        <a href='{{ url('event') }}'><i style="font-size:17px;color:#14F32A;">Click Here.<i></a></p>
 
 
 <!--Search bar-->
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
-
+<div style="color:grey;">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
+</div>
 
 
     <center><div>

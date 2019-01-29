@@ -18,10 +18,11 @@ class eventController extends Controller
 
     public function index(){
 
-        $a=event::all();
-        $a = event::orderBy('vote', 'ASCE')->get();
+        $event=event::all();
+        $event = event::paginate(6);
         //return Auth::user()->id;
-        return view('event/eventHome')->with('event',$a);
+        return view('event/eventHome',compact('event'))
+                ->with('id', (request()->input('page', 1) - 1) * 6);
     }
 
     
@@ -60,7 +61,7 @@ class eventController extends Controller
         //dd($id);
         $a=event::find($id);
         $a->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Event Deleted Successfully.');
     }
 
 
@@ -102,7 +103,7 @@ class eventController extends Controller
         $event->save();
         $data=event::all();
         //return '0';
-        return redirect('/event')->with('event',$data);
+        return redirect('/event')->with('message','Event Updated Successfully.');
     }
     
 

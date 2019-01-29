@@ -107,7 +107,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/poll.jpg);width:100%;height:180%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/poll.jpg);width:100%;height:190%;">
         
             @yield('content')
 
