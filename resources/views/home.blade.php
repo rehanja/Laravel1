@@ -20,13 +20,13 @@ h1 {
         <div class="sidenav" style="opacity: 0.7;filter: alpha(opacity=70);margin-top:45px" >
             <h3 >Menu</h3>
                 <hr>
-                    <a href="/profile">Profile</a>
-                    <a href="/createUser">Create User</a>
-                    <a href="/assign">Assign Role</a>
-                    <a href="/assignOrFol">Assign OR-FOL</a>
                     <a href="/meeting">Meetings</a>
                     <a href="/event">Events</a>
                     <a href="/poll">Votes</a>
+                    <a href="/createUser">Create User</a>
+                    <a href="/assign">Assign Role</a>
+                    <a href="/assignOrFol">Assign OR-FOL</a>
+                    <a href="/profile">Profile</a>
         </div>
         <div class="col-md-9">
             <div class="card" style="width:100%;height:90%;opacity: 0.7;filter: alpha(opacity=70); margin-left:0.5%;margin-top:9%">
