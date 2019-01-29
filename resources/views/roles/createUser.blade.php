@@ -15,7 +15,7 @@
 
 @section('header')
 
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/createuser.jpg);width:1348px;height:1200px; margin:0px 0px 0px 0px;">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/createuser.jpg);width:100%;height:1200px; margin:0px 0px 0px 0px;">
     <div class="row h-100 align-items-center justify-content-center">
 
 
