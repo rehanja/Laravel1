@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Permission;
 use App\User;
 use App\event;
 use App\vote;
+use App\Meeting;
 use App\model_has_roles;
 use Illuminate\Support\Facades\DB;
 
@@ -116,6 +117,14 @@ use Illuminate\Support\Facades\DB;
   //return $data;
 
 
+  $detail=DB::table('meetings')
+  ->select('name','email','date','startTime','endTime','venue','invitees','status')
+  ->where('date', '<', date('y-m-d', strtotime('+1 month')))
+  ->where('date', '>', date('y-m-d', strtotime('0 month')))
+  ->take(3)
+  ->get();
+
+//return $detail;
 
     if($a==0){
 
@@ -124,7 +133,7 @@ use Illuminate\Support\Facades\DB;
 
     }
     else{
-        return view('home')->with('data',$data);
+        return view('home')->with(['data'=>$data, 'detail'=>$detail]);
     }
 
 //
@@ -136,7 +145,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-        return view('home')->with('data',$data);
+   return view('home')->with(['data'=>$data, 'detail'=>$detail]);
 
     }
 
