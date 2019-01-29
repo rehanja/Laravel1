@@ -1,32 +1,43 @@
-@extends('layouts.meeting')
+@extends('layouts.app')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
 <link href="{{ asset('css/confirmationModel.css') }}" rel="stylesheet">
 
-@section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
 
 
+@section('header')
+
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/createuser.jpg);width:100%;height:1200px; margin:0px 0px 0px 0px;">
+    <div class="row h-100 align-items-center justify-content-center">
 
 
-<div class="content">
-    <div class="title m-b-md">
-        <div class="col-md-12">
-            <a class="btn btn-primary" href="{{ route('register') }}"> Create User</a>
+        <div class="content" style="display: block; margin: 0">
+                <br><br><br><br><br><br><br><br>
+                    <a class="btn btn-primary"  href="{{ route('register') }}"> Create User</a>
+                    <a class="btn btn-primary" href="{{ route('assign') }}"> Assign Role</a>
+
         </div>
-    </div>
-</div><br>
 
-    <div class="col-md-12">
+        <br><br>
+
+        <div class="col-md-12">
 
         @foreach($data as $details)
 
                 <div class="column" >
-                    <div class="card" >
+                    <div class="w3-grey w3-hover-shadow w3-center" >
                         <div class="card-body" >
 
-                            <h5 class="card-title"><b> User ID : {{$details->id}} <b></h5>
+                            <h5 class="card-title"><b> User ID : {{$details->id}} <b>&nbsp;&nbsp;<img src={{$details->profilePic}} style="width:50px;height:50px"></h5>
+
                             <h6 class="card-subtitle mb-2 "> Name with Initials : {{$details->nameWithInitials}}</h6>
                             <h6 class="card-subtitle mb-2 "> Name : {{$details->name}} </h6>
                             <h6 class="card-subtitle mb-2 "> NIC : {{$details->nic}}</h6>
@@ -47,17 +58,44 @@
                                 <a href="#myModal2" class="btn btn-info" data-toggle="modal" >Remove Membership</a>
                             @endif
 
-
+<br><br>
                     <a href="#myModal3" class="btn btn-warning" data-toggle="modal">Update</a>
                      <a href="#myModal4" class="btn btn-danger" data-toggle="modal">Delete</a>
 
 
-                                                <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
-                          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-                          <!--issue membership confirmation pop-up-->
 
-                          <div id="myModal1" class="modal fade">
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+    @endforeach
+
+    <div class="content" style="margin-top:800px;margin-left:600px">
+        {{ $data->links() }}
+      </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+</section>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+                              <!--issue membership confirmation pop-up-->
+
+                          <div id="myModal1" class="modal fade" style="">
                                 <div class="modal-dialog modal-confirm">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -200,21 +238,12 @@
 
 
 
+@endsection
 
-
-                        </div>
-                    </div>
-                </div>
-
-
-    @endforeach
-
-    <div class="text-center" >
-        {{ $data->links() }}
-      </div>
-
-    </div>
+@section('content')
 
 
 
 @endsection
+
+

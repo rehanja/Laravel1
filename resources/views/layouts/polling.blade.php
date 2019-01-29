@@ -28,23 +28,7 @@
         <div class="dorne-load"></div>
     </div>
 
-    <!-- ***** Search Form Area ***** -->
-    <div class="dorne-search-form d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-close-btn" id="closeBtn">
-                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
-                    </div>
-                    <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
-                        <input type="submit" class="d-none" value="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+   
     <!-- ***** Header Area Start ***** -->
     <header class="header_area" id="header">
         <div class="container-fluid h-100">
@@ -58,10 +42,11 @@
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
 
                                 <li class="nav-item">
+
                                     <a class="nav-link" href="{{ url('/events') }}">Events</a>
                                 </li>
 
@@ -71,13 +56,10 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+
                                 </li>
                             </ul>
-                            <!-- Search btn -->
-                            <div class="dorne-search-btn">
-                                <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                            </div>
-
+                            
 
                              @guest
 
@@ -126,22 +108,16 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-<section class="header">
-    @yield('header')
-</section>
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/poll.jpg);width:100%;height:180%;">
+        
+            @yield('content')
 
-<section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        @yield('content')
 
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
+    <!-- ***** Welcome Area End ***** -->
+
+
     <!-- ****** Footer Area Start ****** -->
     <footer class="dorne-footer-area">
             <footer class="page-footer font-small mdb-color pt-4">
@@ -155,9 +131,8 @@
 
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                          <h6 class="text-uppercase mb-4 font-weight-bold">EZevent</h6>
-                          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.</p>
+                          <h6 class=" mb-4 font-weight-bold">EZevent</h6>
+                          
                         </div>
                         <!-- Grid column -->
 

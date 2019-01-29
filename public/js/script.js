@@ -1,5 +1,6 @@
 var map;
 var myLatLng;
+
 $(document).ready(function(){
 
    geoLocationInit();
@@ -19,8 +20,8 @@ $(document).ready(function(){
        myLatLng = new google.maps.LatLng(latval,lngval);
        createMap(myLatLng);
 
-       //nearbySearch(myLatLng, "school");
-       searchMembers(latval,lngval);
+       nearbySearch(myLatLng, "school");
+      // searchMembers(latval,lngval);
    }
 
    function fail(){
@@ -52,37 +53,37 @@ $(document).ready(function(){
    }
 
    //near by serach
-//    function nearbySearch(myLatLng, type){
-//     var request = {
-//         location: myLatLng,
-//         radius: '2500',
-//         types: [type]
-//       };
+   function nearbySearch(myLatLng, type){
+    var request = {
+        location: myLatLng,
+        radius: '2500',
+        types: [type]
+      };
 
-//        service = new google.maps.places.PlacesService(map);
-//        service.nearbySearch(request, callback);
+       service = new google.maps.places.PlacesService(map);
+       service.nearbySearch(request, callback);
 
-//       function callback(results, status) {
-//         if (status == google.maps.places.PlacesServiceStatus.OK) {
-//           for (var i = 0; i < results.length; i++) {
-//             var place = results[i];
-//             console.log(place);
-//             latlng = place.geometry.location;
-//             icn='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-//             name=place.name;
-//             createMarker(latlng,icn,name);
-//           }
-//         }
-//       }
-//    }
-
-   function searchMembers(lat,lng){
-        $.post('http://localhost/searchMembers',{lat:lat,lng:lng},function(match){
-            console.log(match);
-            
-
-
-        });
+      function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            console.log(place);
+            latlng = place.geometry.location;
+            icn='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+            name=place.name;
+            createMarker(latlng,icn,name);
+          }
+        }
+      }
    }
+
+//    function searchMembers(lat,lng){
+//         $.post('http://localhost/searchMembers',{lat:lat,lng:lng},function(match){
+//             console.log(match);
+
+
+
+//         });
+//    }
 
 });

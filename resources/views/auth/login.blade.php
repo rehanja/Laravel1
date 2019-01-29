@@ -1,9 +1,7 @@
 @extends('layouts.app')
-
-
 @section('header')
 
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/login1.jpg);width:1348px;height:700px;">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/login1.jpg);width:100%;height:700px;">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">

@@ -26,7 +26,7 @@ Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDon
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(5);
+    $d=App\User::paginate(6);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -101,7 +101,7 @@ Route::post('/assign', 'HomeController@index');
 
 Route::get('/contact', function () {
     return view('other/contact');
-}); 
+});
 
 
 
@@ -113,11 +113,8 @@ Route::get('/contact', function () {
 
 // routes for Meeting
 
-Route::get('/meeting',function(){
+Route::get('/meeting', 'meeting\meetingController@Index');
 
-    $a=App\Meeting::all();
-    return view('meeting/meetingHome')->with('meeting',$a);
-    });
 
 Route::get('create', [
     'uses'=>'meeting\meetingController@MeetingCreate',
@@ -174,7 +171,6 @@ Route::get('/profile/editprofile/{id}',[
     'uses'=>'profile\ProfileController@editProfile',
     'as'=>'userEdit']);
 
-
 Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
 
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
@@ -182,7 +178,6 @@ Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
-
 
 Route::post('change/password',function(){
     $User=User::find(Auth::user()->id);
