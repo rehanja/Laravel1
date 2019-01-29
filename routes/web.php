@@ -60,8 +60,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-
-
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
     'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm');
