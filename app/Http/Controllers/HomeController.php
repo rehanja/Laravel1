@@ -121,11 +121,7 @@ use Illuminate\Support\Facades\DB;
 
         auth()->user()->assignRole('temporyMember');
        // echo("added you role correctly as a temporyMember");
-<<<<<<< HEAD
-       return view('login');
-=======
 
->>>>>>> c248ad80931c24fa9133b94f97a487e1ed6b0504
     }
     else{
         return view('home')->with('data',$data);
@@ -139,14 +135,7 @@ use Illuminate\Support\Facades\DB;
    // $user1->assignRole($role);
 
 
-
-<<<<<<< HEAD
-          
-
-
-=======
         return view('home')->with('data',$data);
->>>>>>> c248ad80931c24fa9133b94f97a487e1ed6b0504
 
     }
 
