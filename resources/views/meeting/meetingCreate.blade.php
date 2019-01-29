@@ -36,7 +36,7 @@
 <center>
 <br><br><br><br><br><br>
 <div class="col-md-8">
-    <div class="card" style="background-image: url(img/loginnew.jpg);width:650px;height:900px;opacity: 0.5;filter: alpha(opacity=70)">
+    <div class="card" style="background-image: url(img/loginnew.jpg);width:650px;height:900px;opacity: 0.4;filter: alpha(opacity=70)">
     
         <div class="card-header" style="color:black;text-align:center;font-size:40px;font-weight:bold;width:620px;height:860px;">Create Your Meeting Here...</div>               
             <div class="card-body">  
