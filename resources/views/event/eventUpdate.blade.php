@@ -1,7 +1,9 @@
 @extends('layouts.mcreate')
 
-@section('content')
 
+
+@section('content')
+<br><br><br><br><br>
 <!--Begin of update form-->
     <form method="post" action="{{route('event.save',['id'=>$event->id])}}">
     {{csrf_field()}}

@@ -44,7 +44,7 @@
         @foreach($data as $details)
 
                 <div class="column" >
-                    <div class="w3-grey w3-hover-shadow w3-center" >
+                    <div class="w3-white w3-hover-shadow w3-center" >
                         <div class="card-body" >
 
                             <h5 class="card-title"><b> User ID : {{$details->id}} <b>&nbsp;&nbsp;<img src={{$details->profilePic}} style="width:50px;height:50px"></h5>

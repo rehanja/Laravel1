@@ -145,7 +145,9 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
    return view('home')->with(['data'=>$data, 'detail'=>$detail]);
+
 
     }
 
