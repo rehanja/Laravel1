@@ -135,7 +135,6 @@ use Illuminate\Support\Facades\DB;
    // $user1->assignRole($role);
 
 
-
         return view('home')->with('data',$data);
 
     }
