@@ -49,4 +49,8 @@ class ProfileController extends Controller
         return view('profile.profile');
        
     }
+
+    public function dummy(){
+        return view('profile.dummy');
+    }
 }

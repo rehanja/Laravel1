@@ -196,5 +196,8 @@ Route::post('change/password',function(){
     }
 });
 
+Route::get('/profile/dummy','profile\ProfileController@dummy');
+
+
 
 
