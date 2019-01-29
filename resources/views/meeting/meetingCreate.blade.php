@@ -1,4 +1,3 @@
-@role('or_pm|supervising_officer')
 @extends('layouts.mcreate')
 <link href="{{ asset('css/meetingform.css') }}" rel="stylesheet">
 
