@@ -108,6 +108,7 @@ use Illuminate\Support\Facades\DB;
     if($a==0){
         auth()->user()->assignRole('temporyMember');
        // echo("added you role correctly as a temporyMember");
+       return view('login');
     }
     else{
         return view('home');
@@ -122,7 +123,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-            return view('home');
+          
 
 
 
