@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  #myInput {
+    width: 20%;
+    font-size: 16px;
+    padding: 8px 16px 8px 30px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    margin-left: 2%;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header{
+    background-color: #cfcacaf5;
+  }

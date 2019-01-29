@@ -10,9 +10,18 @@ use App\Mail\MeetingConfirmation;
 
 class meetingController extends Controller
 {
-    public function MeetingCreate(){
+    public function Index(){
+        
+        $meeting = Meeting::all();
 
-        //$meeting = Meeting::latest()->paginate(3);
+        $meeting = Meeting::paginate(6);
+      
+            return view('meeting/meetingHome',compact('meeting'))
+                ->with('id', (request()->input('page', 1) - 1) * 6);
+
+    }
+
+    public function MeetingCreate(){
 
         return view('meeting/meetingCreate');
 
@@ -22,30 +31,31 @@ class meetingController extends Controller
          
         $this ->validate($request,[
             'name'       => 'required',                             //input validations
-            'title'      => 'required|distinct',                 
+            'email'      => 'required',                 
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
+            'venue'      => 'required',
             'invitees'   => 'required',
             'status'     => 'required',
         ]);
-
+ 
 
         $meeting=new Meeting;
 
         $meeting->name        = $request-> input('name');          //store in db
-        $meeting->title       = $request-> input('title');        
+        $meeting->email       = $request-> input('email');        
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
-        $meeting->description = $request-> input('description');
+        $meeting->venue       = $request-> input('venue');
         $meeting->invitees    = $request-> input('invitees');
         $meeting->status      = $request-> input('status');
 
         $meeting->save();
 
         $meeting = Meeting::all();
-        return redirect()->back()->with('message','Meeting Created Successfully.'); 
+        return redirect('/meeting')->with('message','Meeting Created Successfully.'); 
 
     }
 
@@ -53,6 +63,7 @@ class meetingController extends Controller
     
         $a = Meeting::find($id);
         $a->delete();
+        //return 0;
         return redirect()->back()->with('message','Meeting Deleted Successfully.');
 
     }
@@ -74,17 +85,18 @@ class meetingController extends Controller
             'date'       => 'required',
             'startTime'  => 'required',
             'endTime'    => 'required',
+            'venue'      => 'required',
             'status'     => 'required',
         ]);*/
 
         $meeting = Meeting::find($id);
 
         $meeting->name        = $request-> input('name');
-        $meeting->title       = $request-> input('title');
+        $meeting->email       = $request-> input('email');
         $meeting->date        = $request-> input('date');
         $meeting->startTime   = $request-> input('startTime');
         $meeting->endTime     = $request-> input('endTime');
-        $meeting->description = $request-> input('description');
+        $meeting->venue       = $request-> input('venue');
         $meeting->invitees    = $request-> input('invitees');
         $meeting->status      = $request-> input('status');
         
@@ -93,22 +105,22 @@ class meetingController extends Controller
 
         //return redirect('/meeting')->with('meeting',$data);
 
-        return redirect()->back()->with('message','Meeting Updated Successfully.');
+        return redirect('/meeting')->with('message','Meeting Updated Successfully.');
 
     }
 
     public function MeetingViewMail($id)
     {
 
-       $meeting = Meeting::find($id);
+        $data = Meeting::find($id);
       
-       $date = '2018-12-12 at 08:00:00 to 09:00:00.';
-             
-       Mail::to($id)->send(new MeetingConfirmation($date));
+        $data = '05.02.2019 at 10.00AM to 10.30AM';
+        Mail::to($id)->send(new MeetingConfirmation($data));
        
-       return redirect()->back()->with('message','Email sent successfully.');
-       //return 'Email has been sent successfully';
+        return redirect()->back()->with('message','Email sent successfully.',$data);
+        //return 'Email has been sent successfully';
     }  
  
 
 }
+ 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\event;
 use App\event;
 use App\vote;
-use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,6 +19,7 @@ class eventController extends Controller
     public function index(){
 
         $a=event::all();
+        $a = event::orderBy('vote', 'ASCE')->get();
         //return Auth::user()->id;
         return view('event/eventHome')->with('event',$a);
     }
@@ -47,6 +48,7 @@ class eventController extends Controller
     $event->startDate=$request->startDate;
     $event->startTime=$request->startTime;
     $event->endTime=$request->endTime;
+    //$event->eventCreated=$request->{{Auth::user()->name}};
     $event->save();
 
     $data=event::all();
@@ -108,7 +110,14 @@ class eventController extends Controller
     public function PollsView(Request $request){
 
         $event = event::orderBy('vote', 'ASCE')->get();
-        return view('polling/poll')->with('event',$event);
+        $sum = $event->sum('vote');
+        $arr = [['eventName', 'votes']];
+
+        foreach($event as $a){
+            array_push($arr, [(string)$a->eventName, $a->vote]);
+        }
+        
+        return view('polling/poll')->with(['event'=>$event, 'sum'=>$sum, 'arr'=>$arr]);
 
     }
     
@@ -137,5 +146,5 @@ class eventController extends Controller
             // return '0';
             return redirect('/event')->with('event',$data);
     }
-    
+     
 }

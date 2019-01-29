@@ -12,8 +12,8 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'name' => env('APP_NAME', 'EZevent'),
 
-    'name' => env('APP_NAME', 'Party Manager'),
 
     /*
     |--------------------------------------------------------------------------
@@ -146,10 +146,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
+
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -160,7 +163,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Intervention\Image\ImageServiceProvider::class,
+
+
+
 
     ],
 
@@ -212,6 +217,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
 
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
