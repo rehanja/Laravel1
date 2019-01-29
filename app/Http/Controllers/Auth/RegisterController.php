@@ -98,7 +98,7 @@ class RegisterController extends Controller
         // $event->model_id=$user->id;
         // $event->save();
 
-        $this->sendEmail($thisUser);
+        //$this->sendEmail($thisUser);
 
         return $user;
 

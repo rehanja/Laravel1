@@ -140,7 +140,9 @@
            
         </tr>
     @endforeach
-
+    <div class="content" style="margin-top:800px;margin-left:600px">
+        {{ $event->links() }}
+    </div>
 
 
                                            
