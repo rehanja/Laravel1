@@ -16,7 +16,7 @@ class meetingController extends Controller
 
         $meeting = Meeting::paginate(6);
       
-            return view('meeting/meetingHome',compact('meeting'))
+        return view('meeting/meetingHome',compact('meeting'))
                 ->with('id', (request()->input('page', 1) - 1) * 6);
 
     }
