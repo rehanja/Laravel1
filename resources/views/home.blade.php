@@ -3,27 +3,23 @@
 
 @section('header')
 
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/dashboard.jpg);width:100%;height:950px;margin:0px 0px 0px 0px;">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/dashboard.jpg);width:100%;height:950px">
     <div class="row h-100 align-items-center justify-content-center">
 
-                            <div class="sidenav">
-                                    <a href="/profile">Profile</a>
-                                    <a href="/createUser">Create User</a>
-                                    <a href="/assign">Assign Role</a>
-                                    <a href="/assignOrFol">Assign OR-FOL</a>
-                                    <a href="/meeting">Meetings</a>
-                                    <a href="/event">Events</a>
-                                    <a href="/poll">Votes</a>
-
-
-                            </div>
-
-                            <div class="main">
-                                    <div class="container" style="width:1000px;height:400px;">
-
-                                                <div class="col-md-12">
-                                                    <div class="card">
-                                                        <div class="card-header">Dashboard</div>
+        <div class="sidenav" style="background-image: url(img/createusernew.png);opacity: 0.7;filter: alpha(opacity=70)" >
+            <h3 >Menu</h3>
+                <hr>
+                    <a href="/profile">Profile</a>
+                    <a href="/createUser">Create User</a>
+                    <a href="/assign">Assign Role</a>
+                    <a href="/assignOrFol">Assign OR-FOL</a>
+                    <a href="/meeting">Meetings</a>
+                    <a href="/event">Events</a>
+                    <a href="/poll">Votes</a>
+        </div>
+        <div class="col-md-8">
+            <div class="card" style="background-image: url(img/createusernew.png);width:900px;height:750px;opacity: 0.7;filter: alpha(opacity=70) margin-left:20px">
+                <div class="card-header" style="font-size:27px;font-weight:bold">Dashboard</div>
 
                                                         <div class="card-body">
                                                             @if (session('status'))
@@ -49,6 +45,36 @@
                                                             <h2>Welcome</h2><br>
                                                             <h4>Upcoming Events</h4><hr>
 
+                                                            @foreach($data as $details)
+
+                                                            <div class="column" >
+                                                                <div class="w3-grey w3-hover-shadow w3-center" >
+                                                                    <div class="card-body" >
+
+
+                                                                        <h6 class="card-subtitle mb-2 "> Event Name : {{$details->eventName}}</h6>
+                                                                        <h6 class="card-subtitle mb-2 "> Reason : {{$details->reason}} </h6>
+                                                                        <h6 class="card-subtitle mb-2 "> Region : {{$details->region}}</h6>
+                                                                        <h6 class="card-subtitle mb-2 "> Budget : {{$details->budget}}</h6>
+                                                                        <h6 class="card-subtitle mb-2 "> Start Date : {{$details->startDate}}</h6>
+                                                                        <h6 class="card-subtitle mb-2 "> Start Time : {{$details->startTime}}h6>
+
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+
+                                                @endforeach
+
+
+
+
+
+
+
                                                             <br><br>
                                                             <h4>Upcoming Meetings</h4><hr>
 
@@ -57,10 +83,9 @@
                                                     </div>
                                                 </div>
 
-                                        </div>
 
 
-                                        </div>
+
 
     </div>
 </section>

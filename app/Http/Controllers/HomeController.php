@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use App\event;
+use App\vote;
 use App\model_has_roles;
 use Illuminate\Support\Facades\DB;
 
@@ -105,12 +107,24 @@ use Illuminate\Support\Facades\DB;
 
   // dd($a);
 
+ //for dashboard
+  $data=DB::table('events')
+  ->join('votes','votes.event_id','=','events.id')
+  ->select('events.eventName','events.reason','events.region','events.budget','events.startDate','events.startTime')
+  ->take(4)
+  ->get();
+  //return $data;
+
+
+
     if($a==0){
-        auth()->user()->assignRole('p_member');
-        echo("added you role correctly as a pmember");
+
+        auth()->user()->assignRole('temporyMember');
+       // echo("added you role correctly as a temporyMember");
+
     }
     else{
-        return view('home');
+        return view('home')->with('data',$data);
     }
 
 //
@@ -122,9 +136,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-            return view('home');
-
-
+        return view('home')->with('data',$data);
 
     }
 

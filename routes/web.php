@@ -101,7 +101,7 @@ Route::post('/assign', 'HomeController@index');
 
 Route::get('/contact', function () {
     return view('other/contact');
-}); 
+});
 
 
 
@@ -171,7 +171,6 @@ Route::get('/profile/editprofile/{id}',[
     'uses'=>'profile\ProfileController@editProfile',
     'as'=>'userEdit']);
 
-
 Route::post('/profile/editprofile/submit','profile\ProfileController@submit');
 
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
@@ -179,7 +178,6 @@ Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
 Route::post('/profile/editprofile/submit/{id}',[
     'uses'=>'profile\ProfileController@submit',
     'as'=>'userUpdate' ]);
-
 
 Route::post('change/password',function(){
     $User=User::find(Auth::user()->id);

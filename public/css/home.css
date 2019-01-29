@@ -3,13 +3,19 @@
     width: 220px;
     position: relative;
     z-index: 1;
-    top: 120px;
-    left: 2%;
+    top: 100px;
+    left: 0.5%;
     background-color:whitesmoke;
     overflow-x: auto;
-    padding-top: 150px;
-  }
 
+  }
+ .sidenav h3 {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    margin-top: 0%;
+    font-size:27px;
+    font-weight:bold
+}
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -28,11 +34,7 @@
     background-color: #555;
     color: white;
   }
-  .main {
-    margin-left: 40px; /* Same as the width of the sidenav */
-    font-size: 20px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
+
 
   @media screen and (max-height: 10px) {
     .sidenav {padding-top: 15px;}
