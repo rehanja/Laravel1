@@ -3,7 +3,7 @@
 
 @section('header')
 
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/dashboard.jpg);width:100%;height:950px;margin:0px 0px 0px 0px;">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image:url(img/dashboard.jpg);width:100%;height:950px">
     <div class="row h-100 align-items-center justify-content-center">
 
                             <div class="sidenav">
@@ -49,6 +49,13 @@
                                                             <h2>Welcome</h2><br>
                                                             <h4>Upcoming Events</h4><hr>
 
+
+
+
+
+
+
+                                                            
                                                             <br><br>
                                                             <h4>Upcoming Meetings</h4><hr>
 
