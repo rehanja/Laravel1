@@ -53,7 +53,7 @@ class eventController extends Controller
 
     $data=event::all();
     //return redirect()->back();
-    return redirect('/event')->with('event',$data);
+    return redirect('/event')->with('message','Event created Successfully.');
     
     }
     public function eventDelete($id){
