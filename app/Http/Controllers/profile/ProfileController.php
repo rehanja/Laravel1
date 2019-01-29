@@ -50,7 +50,4 @@ class ProfileController extends Controller
        
     }
 
-    public function dummy(){
-        return view('profile.dummy');
-    }
 }
