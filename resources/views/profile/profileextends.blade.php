@@ -37,7 +37,7 @@
                         <i class="pe-7s-close-circle" aria-hidden="true"></i>
                     </div>
                     <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Meetings..." >
                         <input type="submit" class="d-none" value="submit">
                     </form>
                 </div>
@@ -58,19 +58,19 @@
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/events') }}">Events</a>
+                                    <a class="nav-link" href="contact.html">Events</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
+                                    <a class="nav-link" href="contact.html">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                                    <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
                             </ul>
                             <!-- Search btn -->
@@ -97,7 +97,9 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Profile Settings') }}
+
 										</a>
+
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -109,9 +111,11 @@
                                         {{ __('Logout') }}
                                         </a>
 
+
 										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
 										</form>
+
 
                                     </div>
                                 </li>
@@ -126,23 +130,19 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-<section class="header">
+    <section class="header">
     @yield('header')
-</section>
-
-
-<section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        @yield('content')
-
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
+
+<div>
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="dorne-welcome-area bg-img bg-overlay">
+        
+                    @yield('content')
+             
+    </section>
+    <!-- ***** Welcome Area End ***** -->
+
     <!-- ****** Footer Area Start ****** -->
     <footer class="dorne-footer-area">
             <footer class="page-footer font-small mdb-color pt-4">
@@ -156,9 +156,8 @@
 
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                          <h6 class="text-uppercase mb-4 font-weight-bold">EZevent</h6>
-                          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.</p>
+                          <h6 class="text mb-4 font-weight-bold">EZevent</h6>
+                          
                         </div>
                         <!-- Grid column -->
 
@@ -293,4 +292,6 @@
     <script src="js/active.js"></script>
 </body>
 
+
 </html>
+
