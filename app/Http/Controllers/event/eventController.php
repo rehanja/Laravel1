@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\event;
 use App\event;
 use App\vote;
-use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -54,7 +54,7 @@ class eventController extends Controller
 
     $data=event::all();
     //return redirect()->back();
-    return redirect('/event')->with('event',$data);
+    return redirect('/event')->with('message','Event created Successfully.');
     
     }
     public function eventDelete($id){

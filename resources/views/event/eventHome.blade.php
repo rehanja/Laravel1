@@ -1,6 +1,5 @@
 @extends('layouts.event')
 <link href="{{ asset('css/card.css') }}" rel="stylesheet">
-
 @section('content')
 
 <div class="eventbody">

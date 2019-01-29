@@ -1,15 +1,14 @@
-@extends('layouts.app')
+@extends('profile.profileextends')
 
-
-<head>
+@section('header')
 <style>
-
-
 .profile-img{
     text-align: center;
     margin-left:-18%;
 }
 .profile-img img{
+    margin-top:150px;
+    margin-left:-160px;
     width: 70%;
     height: 40%;
     border-radius:50%;
@@ -73,29 +72,46 @@
     font-weight: 600;
     color: #0062cc;
 }
+#choosephoto{
+    margin-left:-284px;
+    margin-top:380px;
+}
+#uploadphoto{
+    margin-left:-6px;
+}
+#mainname{
+    margin-top:180px;
+    margin-left:-120px;
+}
+#editbutton{
+    margin-top:180px;
+    margin-left:225px;
+}
+#home{
+    margin-left:325px;
+}
 </style>
-</head>
+
+
+@endsection
 
 @section('content')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="container emp-profile">
             <form action="/photoUpload" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img src="/uploads/profilePic/{{Auth::user()->profilePic}}">
-                            <div class="file btn btn-lg btn-primary">
+                            <div class="file btn btn-lg btn-primary" id="choosephoto">
                                 Choose Photo
                                 <input type="file" name="profilePic">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
-                        <input class="btn btn-primary" type="submit" value="Upload Photo">
+                        <input class="btn btn-primary" type="submit" value="Upload Photo" id="uploadphoto">
 
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="mainname">
                         <div class="profile-head">
                                     <h5>
                                         {{Auth::user()->name}}
@@ -118,19 +134,12 @@
                     </div>
                     <br><br><br><br><br><br><br>
                     <div class="col-md-2">
-                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
+                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" id="editbutton">Edit Profile</a>
                     </div>
                 </div>
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{Auth::user()->id}}</p>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Name</label>
@@ -201,4 +210,7 @@
                             </div>
             </form>           
         </div>
+
+
 @endsection
+

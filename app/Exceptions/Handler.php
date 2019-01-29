@@ -52,7 +52,11 @@ class Handler extends ExceptionHandler
             //return response()->json('You do not have permission for do that',404);
         } */
         return parent::render($request, $exception);
+<<<<<<< HEAD
+      //  return view('exceptions.notfound');
+=======
        // return view('exceptions.notfound');
+>>>>>>> 37ba1ad53f322a1f90f32f9034700cf4e51473a8
 
     }
 }

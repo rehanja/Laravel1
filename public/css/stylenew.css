@@ -10,14 +10,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
-/* Import CSS */
 
-@import 'css/bootstrap.min.css';
-@import 'css/animate.css';
-@import 'css/magnific-popup.css';
-@import 'css/owl.carousel.min.css';
-@import 'css/font-awesome.min.css';
-@import 'css/pe-icon-7-stroke.css';
+
 
 /* Base CSS */
 
@@ -1401,4 +1395,3 @@ li {
     width: 100%;
     height: 380px;
 }
-

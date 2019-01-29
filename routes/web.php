@@ -55,8 +55,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-
-
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
     'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm');
@@ -192,6 +190,39 @@ Route::post('change/password',function(){
         return back()->with('error','Password NOT changed');
     }
 });
+
+Route::get('/profile/dummy','profile\ProfileController@dummy');
+
+
+
+
+
+Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
+
+
+
+
+//api calls 
+
+//Get all Meetings
+Route::get('/getallmeetings',[
+    'uses'=>'ApiContoller@getAllMeeting'
+]);
+
+//get one meeting
+Route::get('/getPeticularMeeting/{id}',['uses'=>'ApiContoller@getPeticularMeeting']);
+
+//delete meeting
+
+Route::get('delmeeting/{id}',['uses'=>'ApiContoller@delmeeting']);
+
+//update meeting
+
+Route::post('/updatemeetings/{id}',['uses'=>'ApiContoller@MeetingUpdate']);
+
+//create meeting
+
+Route::post('crmeeting',['uses'=>'ApiContoller@MeetingsCreate']);
 
 
 
