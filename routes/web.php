@@ -198,7 +198,7 @@ Route::post('change/password',function(){
 
 
 
-<<<<<<< HEAD
+
 Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
 
 
@@ -228,5 +228,3 @@ Route::post('crmeeting',['uses'=>'ApiContoller@MeetingsCreate']);
 
 
 
-=======
->>>>>>> 8e47aa65ecfc988a11b5d97e5a828d44ef4a8d9c
