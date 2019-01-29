@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use App\event;
+use App\vote;
 use App\model_has_roles;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
-{
+    class HomeController extends Controller
+    {
     /**
      * Create a new controller instance.
      *
@@ -36,7 +38,7 @@ class HomeController extends Controller
     public function assignHome()
     {
         //dd("test");
-                $assign = DB::table('roles')->get();
+        $assign = DB::table('roles')->get();
         //return Auth::user()->id;
         return view('assign\assignHome')->with('assign',$assign);
     }
@@ -105,12 +107,24 @@ class HomeController extends Controller
 
   // dd($a);
 
+ //for dashboard
+  $data=DB::table('events')
+  ->join('votes','votes.event_id','=','events.id')
+  ->select('events.eventName','events.reason','events.region','events.budget','events.startDate','events.startTime')
+  ->take(4)
+  ->get();
+  //return $data;
+
+
+
     if($a==0){
-        auth()->user()->assignRole('p_member');
-        echo("added you role correctly as a pmember");
+
+        auth()->user()->assignRole('temporyMember');
+       // echo("added you role correctly as a temporyMember");
+
     }
     else{
-        return view('home');
+        return view('home')->with('data',$data);
     }
 
 //
@@ -122,9 +136,7 @@ class HomeController extends Controller
 
 
 
-            return view('home');
-
-
+        return view('home')->with('data',$data);
 
     }
 
@@ -147,7 +159,7 @@ class HomeController extends Controller
             }
         }
 
-        return view('home');
+        return redirect()->back();
 
     }
 }
