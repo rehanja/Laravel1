@@ -111,7 +111,7 @@ use Illuminate\Support\Facades\DB;
   $data=DB::table('events')
   ->join('votes','votes.event_id','=','events.id')
   ->select('events.eventName','events.reason','events.region','events.budget','events.startDate','events.startTime')
-  ->take(4)
+  ->take(3)
   ->get();
   //return $data;
 
