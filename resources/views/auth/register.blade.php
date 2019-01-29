@@ -14,6 +14,7 @@
 
 
         <div class="col-md-10">
+                <br><br>
             <div class="card" style="background-image: url(img/createusernew.png);width:700px;height:750px;opacity: 0.7;filter: alpha(opacity=70)">
                 <div class="card-header" style="text-align:center;font-size:40px;font-weight:bold"><img src="img/registericon.png" style="width:60px;height:60px;">        {{ __('Register') }}</div>
 
