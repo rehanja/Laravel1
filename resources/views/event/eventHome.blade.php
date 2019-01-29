@@ -19,28 +19,6 @@ you log in as
     @endrole
 
 
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                @if (session('message'))
-                    <div class="flash-message">
-                        <div class="alert alert-success">
-                        <strong>
-                            {{ session('message') }}
-                        </strong>
-                        </div>
-                    </div>
-                @endif
-
-
 <br><br><br><br><br><br>
     @role('or_pm|supervising_officer')
         <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
@@ -142,6 +120,25 @@ you log in as
 <a href="{{ route('register') }}"></a>
 
 <div class="col-md-12">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if (session('message'))
+                    <div class="flash-message">
+                        <div class="alert alert-success">
+                        <strong>
+                            {{ session('message') }}
+                        </strong>
+                        </div>
+                    </div>
+                @endif
 
     @foreach($event as $eventData)
         <div class="column">

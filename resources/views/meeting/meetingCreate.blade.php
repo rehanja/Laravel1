@@ -3,43 +3,21 @@
 
 @section('content')
 
+<div class="content">
+    <div class="title m-b-md">
+        <div class="col-md-12">               
+        </div>
+    </div>
+</div><br>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                @if (session('message'))
-                    <div class="flash-message">
-                        <div class="alert alert-success">
-                        <strong>
-                            {{ session('message') }}
-                        </strong>
-                        </div>
-                    </div>
-                @endif
-
-
-
-                <div class="content">
-                    <div class="title m-b-md">
-                        <div class="col-md-12">    
-                                   
-                        </div>
-                    </div>
-                </div><br>
-<center>
-<br><br><br><br><br><br>
-<div class="col-md-8">
-    <div class="card" style="background-image: url(img/loginnew.jpg);width:650px;height:900px;opacity: 0.4;filter: alpha(opacity=70)">
+<br><br><br><br><br>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card" style="background-image: url(img/mcform.jpg);width:650px;margin-left:110px;height:900px;opacity: 0.6;filter: alpha(opacity=70)">
     
-        <div class="card-header" style="color:black;text-align:center;font-size:40px;font-weight:bold;width:620px;height:860px;">Create Your Meeting Here...</div>               
-            <div class="card-body">  
+                
+            <div class="card-header" style="color:black;text-align:center;font-size:40px;font-weight:bold;width:620px;height:860px;">Create Your Meeting Here...</div>               
+                <div class="card-body">  
                 
                 <form method="post" action="/create">
 
@@ -91,7 +69,7 @@
 
 
 <br>
-                <div class="create">
+                <div class="create" style="margin-left:465px;">
                     <button type="submit" class="btn btn-primary btn-md">Create</button>
                 </div> 
 
@@ -108,13 +86,12 @@
                 <p>supervising officer</p>
                 @endrole
 
+                </form>
                 </div>
-            </div>   
-        </form>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-</div>
+</div> 
 
 @endsection
 
