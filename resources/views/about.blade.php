@@ -8,7 +8,7 @@
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
                 <div class="hero-content">
-                        <<h2>Success Your Events Here...</h2>
+                        <h2>Success Your Events Here...</h2>
                         <h4>Think future of yours, Think Join. </h4>
                 </div>
                 <!-- Hero Search Form -->
@@ -24,14 +24,14 @@
 <br><br>
 <div class="col-12 col-md-12" >
 <h3>Aim</h3>
-<p>The aim of our project is to simplify and make the process of getting correct low-level information to high level management easier </p>
+<p style="color:black;">The aim of our project is to simplify and make the process of getting correct low-level information to high level management easier. </p>
 </div>
 <br>
 <div class="col-12 col-md-12">
         <h3>Objectives</h3>
 </div>
-<ul>
-        <li>To enable the initial capture of member information and manage the progress of the member across the different divisions of the organizations as well as monitor the participation in organizational activities</li>
+<ul style="color:black; text-align:">
+        <li>To enable the initial capture of member information and manage the progress of the member across the different divisions of the organizations as well as monitor the participation in organizational activities.</li>
         <li>To ensure any individual desirous of joining the organization has the opportunity to join and to develop a personal relationship between the prospective member and organization through the village representatives of the organization.</li>
         <li>To create activities members should participate, inform the members of the need to participate and monitor the participation of the members at the event.</li>
         <li>To enable the assignment of members to various divisions/positions within the organization.</li>

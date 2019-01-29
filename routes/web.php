@@ -60,8 +60,6 @@ Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');
 
-
-
 Route::get('/event/delete/{id}',[
     'uses'=>'event\eventController@eventDelete',
     'as'=>'event.delete'])->middleware('role:supervising_officer|or_pm');
@@ -111,48 +109,55 @@ Route::get('/contact', function () {
 
 // achini's routes====================================================================================================================
 
-// routes for Meeting
+/*routes for Meeting---------------------------------------------------------*/
 
+//view meetings
 Route::get('/meeting', 'meeting\meetingController@Index');
 
-
+//view meeting create form
 Route::get('create', [
     'uses'=>'meeting\meetingController@MeetingCreate',
     'as'=>'meetingCreate'
     ]);
 
+//save meeting in db
 Route::post('/create', 'meeting\meetingController@MeetingStore');
 
+//delete meeting
 Route::get('/delete/{id}',[
     'uses'=>'meeting\meetingController@MeetingDelete',
     'as'=>'meetingDelete'
     ]);
 
+//view meeting update form
 Route::get('/update/{id}',[
     'uses'=>'meeting\meetingController@MeetingUpdate',
     'as'=>'meetingUpdate'
     ]);
 
+//save update meeting in db
 Route::post('/save/{id}',[
 
         'uses'=>'meeting\meetingController@MeetingUpdateSave',
         'as'=>'meetingSave'
         ]);
 
-
-
+//send email
 Route::get('/send/{id}',[
     'uses'=>'meeting\meetingController@MeetingViewMail',
     'as'=>'meetingViewMail'
     ]);
 
 
-//routes for votes
+/*routes for votes---------------------------------------------------------------*/
+
+//view vote ratings page
 Route::get('poll', [
     'uses'=>'event\eventController@PollsView',
     'as'=>'pollsview'
     ]);
 
+//add vote for events
 Route::get('voteAdd',[
     'uses'=>'event\eventController@VoteAdd',
     'as'=>'voteAdd'
