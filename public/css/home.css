@@ -31,7 +31,7 @@
   .main {
     margin-left: 40px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
+
   }
 
   @media screen and (max-height: 10px) {
