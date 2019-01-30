@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+ 
     <!-- Title -->
     <title>Event Management System &amp; EZevent</title>
 
@@ -42,19 +42,19 @@
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Events</a>
+                                    <a class="nav-link" href="{{ url('/event') }}">Events</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">About Us</a>
+                                    <a class="nav-link" href="{{ url('/about') }}">About Us</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                                 </li>
                             </ul>
                             

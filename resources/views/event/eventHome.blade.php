@@ -103,7 +103,6 @@ you log in as
     @endforeach
 </div>
 
-
 @endsection
 
 @section('footer')

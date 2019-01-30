@@ -3,7 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
-use Spatie\Permission\Exceptions\UnauthorizedException;
+//use Spatie\Permission\Exceptions\UnauthorizedException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -51,8 +51,8 @@ class Handler extends ExceptionHandler
             return view('exceptions.notfound');
             //return response()->json('You do not have permission for do that',404);
         } */
-        //return parent::render($request, $exception);
-        return view('exceptions.notfound');
+        return parent::render($request, $exception);
+       // return view('exceptions.notfound');
 
     }
 }
