@@ -116,6 +116,7 @@
                                     </h6>
                         </div>
                     </div>
+                    <br><br><br><br><br><br><br>
                     <div class="col-md-2">
                     <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit Profile</a>
                     </div>
