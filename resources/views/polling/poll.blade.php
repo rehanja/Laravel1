@@ -50,7 +50,7 @@ you log in as
 <p style="color:white;font-size:20px;margin-left:50px;">
 <i class="fa fa-check-square-o" style="font-size:40px;color:#14F32A;"></i>
 <i>Give your vote and get success of the Events...</i>
-        <a href='{{ url('event') }}'><i>Click Here.<i></a></p>
+        <a href='{{ url('event') }}'><i style="font-size:17px;color:#14F32A;">Click Here.<i></a></p>
 
 
 <!--Search bar-->

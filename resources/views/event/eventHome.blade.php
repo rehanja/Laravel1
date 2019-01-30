@@ -29,7 +29,7 @@ you log in as
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
     Look for Voting Results...</i>
-    <a href='{{ url('poll') }}'><i>Click Here.<i></a>
+    <a href='{{ url('poll') }}'><i style="font-size:17px;color:red;">Click Here.<i></a>
 </p>
 
 
