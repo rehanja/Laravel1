@@ -44,8 +44,6 @@ you log in as
         }
     </script>
 
-<h1 style="color:black;font-size:40px;margin-left:400px;">Voting Rates for the Events</h1>
-<br>
 
 <p style="color:white;font-size:20px;margin-left:50px;">
 <i class="fa fa-check-square-o" style="font-size:40px;color:#14F32A;"></i>
@@ -54,8 +52,9 @@ you log in as
 
 
 <!--Search bar-->
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
-
+<div style="color:grey;">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
+</div>
 
 
     <center><div>
