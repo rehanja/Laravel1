@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,9 +7,7 @@ use App\Meeting;
 use App\Event;
 use App\User;
 use App\vote;
-
 //use Auth;
-
 class ApiContoller extends Controller
 {
     /**
@@ -22,14 +19,12 @@ class ApiContoller extends Controller
     {
         //
     }
-
     //check weather user is activated
     public function isActive($email){
         return response()->json(['isactive'=>user::findOrFail($email)->isActive]);
     }
         //get all meetings
     public function getAllMeeting(){
-
         
         $allmeetings=Meeting::all();
         if($allmeetings){
@@ -43,25 +38,18 @@ class ApiContoller extends Controller
     public function getPeticularMeeting($id){
         return response()->json(['meeting'=>Meeting::findOrFail($id)]);
     }
-
     //delete meeting
     public function delmeeting($id){
     
         $a = Meeting::find($id);
         $a->delete();
-
         return response()->json(['response'=>'Meeting deleted successfully']);
-
     }
-
     //meeting update
-
     public function MeetingUpdate(Request $request,$id){
         
  
-
         $meeting = Meeting::find($id);
-
         $meeting->name        = $request-> input('name');
         $meeting->email      = $request-> input('email');
         $meeting->date        = $request-> input('date');
@@ -76,13 +64,9 @@ class ApiContoller extends Controller
     }
      
     //update meeting
-
     public function MeetingsCreate(Request $request){
          
-
-
         $meeting=new Meeting;
-
         $meeting->name        = $request-> input('name');          //store in db
         $meeting->title       = $request-> input('title');        
         $meeting->date        = $request-> input('date');
@@ -91,15 +75,12 @@ class ApiContoller extends Controller
         $meeting->description = $request-> input('description');
         $meeting->invitees    = $request-> input('invitees');
         $meeting->status      = $request-> input('status');
-
         $meeting->save();
-
       
         
         //GET ALL EVENTS
     }
     public function getAllEvents(){
-
         
         $allevents=event::all();
         if($allevents){
@@ -110,17 +91,12 @@ class ApiContoller extends Controller
         }
        
     }
-
     //GET PARTICULAR EVENT
-
     public function getPeticularevent($id){
         return response()->json(['event'=>event::findOrFail($id)]);
     }
-
     //GET ALL USERS
-
     public function getAllusers(){
-
         
         $allusers=user::all();
         if($allusers){
@@ -130,42 +106,31 @@ class ApiContoller extends Controller
             return response()->json(['response'=>'bad response']);
         }
     }
-
     //GET PARTICULAR USER
-
     public function getpeticularuser($id){
         return response()->json(['user'=>user::findOrFail($id)]);
     }
-
     //GET USER COUNT (TO GET PERCENTAGE OF VOTES)
-
     public function usercount(){
         return response()->json(['usercount'=>user::count()]);
     }
-
     //Add votes
-
     public function VoteAdd(Request $request,$id,$uid){
        // $uid = Auth::user()->id;
         $event = Event::find($id);
-
         $c = count(vote::where(['event_id'=> $id, 'user_id'=> $uid])->get());
         if($c==0){
             $event->vote = $event->vote + 1;
             $event->save();
-
             $vote = new vote;
             $vote->event_id= $event->id;
             $vote->user_id = $uid;
             $vote->save();
-
           //  return redirect()->back()->with('message','Voted successfully.'); 
         }
     }
-
     public function editProfile(Request $request, $id){
         $user=User::find($id);
-
     
         
         if ($request->nameWithInitials) {
@@ -200,7 +165,6 @@ class ApiContoller extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -211,7 +175,6 @@ class ApiContoller extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -222,7 +185,6 @@ class ApiContoller extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -233,7 +195,6 @@ class ApiContoller extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -245,7 +206,6 @@ class ApiContoller extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
