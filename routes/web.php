@@ -51,11 +51,6 @@ Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
 
 //event routes-rehan==============================================================================================================
 
-Route::get('/event',function(){
-  $a=App\event::all();
-    return view('event/eventHome')->with('event',$a);
-   });
-
 Route::get('/event', 'event\eventController@index');
 
 Route::post('/eventSave', 'event\eventController@eventSave');

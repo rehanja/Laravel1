@@ -21,17 +21,23 @@ you log in as
                 
 
 <br><br><br><br><br><br>
+<p style="color:white;font-size:18px;margin-left:50px;"> 
+    <i class="fa fa-bar-chart" style="font-size:40px;color:red;"></i>  
+    <i>Give your vote and see success of the Events..<br>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    Look for Voting Results...</i>
+    <a href='{{ url('poll') }}'><i>Click Here.<i></a>
+</p>
+
+
     @role('or_pm|supervising_officer')
-        <div class="col-md-11"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
+        <div class="ecreate"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create an Event &nbsp;&nbsp;&nbsp;</button></div>
     @endrole
-
-    <br>
-        <div class="col-md-11"><button type="button" onclick="location.href='{{ url('poll') }}'" class="btn btn-primary">View Vote Results</button></div>
-
-
-
  
-
+<br>
 
 <a href="{{ route('register') }}"></a>
 
@@ -102,6 +108,10 @@ you log in as
         </div>
     @endforeach
 </div>
+
+    <div class="abc" style="margin-top:800px;margin-left:600px">
+        {{ $event->links() }}
+    </div>
 
 @endsection
 

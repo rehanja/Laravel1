@@ -44,8 +44,13 @@ you log in as
         }
     </script>
 
-<h1>Voting Rates for the Events</h1>
+<h1 style="color:black;font-size:40px;margin-left:400px;">Voting Rates for the Events</h1>
 <br>
+
+<p style="color:white;font-size:20px;margin-left:50px;">
+<i class="fa fa-check-square-o" style="font-size:40px;color:#14F32A;"></i>
+<i>Give your vote and get success of the Events...</i>
+        <a href='{{ url('event') }}'><i>Click Here.<i></a></p>
 
 
 <!--Search bar-->
