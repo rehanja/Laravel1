@@ -51,21 +51,22 @@ class UsersController extends Controller
 
         $task->isActive=1;
         $task->save();
-        return redirect()->back();
+        return redirect()->back()->with('message','Issue Membership Successfully.');
     }
+    
     protected function updateAsNotMember($id){
         $task=User::find($id);
 
         $task->isActive=0;
         $task->save();
-        return redirect()->back();
+        return redirect()->back()->with('message','Remove Membership Successfully.');
     }
 
     protected function deleteMember($id){
         $task=User::find($id);
 
         $task->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Delete member Successfully.');
     }
 
     protected function updateMember($id){
@@ -94,18 +95,10 @@ class UsersController extends Controller
             $data->save();
 
             $d=User::all();
-            return view('roles/createUser')->with('data',$d);
+            $d=User::paginate(6);          
+          
+            return view('roles/createUser') ->with('data',$d);
 
-
-    }
-
-    protected function assignOrFol(Request $request){
-        $lat=$request->lat;
-        $lng=$request->lng;
-
-        $memebers=User::whereBetween('lat',[$lat-0.1,$lat+0.1])->whereBetween('lng',[$lng-0.1,$lng+0.1])->get();
-
-        return $memebers;
     }
 
 }

@@ -43,14 +43,18 @@ you log in as
             }
         }
     </script>
-
-<h1>Voting Rates for the Events</h1>
 <br>
+<i><h5 style="color:#E0E1E3;margin-left:100px;">See <b>10<b> Events In The Table Which Are Having <b>Highest</b> Voting Rates... </h5></i><br>
+<p style="color:white;font-size:20px;margin-left:50px;">
+<i class="fa fa-check-square-o" style="font-size:40px;color:#14F32A;"></i>
+<i>Give your vote and get success of the Events...</i>
+        <a href='{{ url('event') }}'><i style="font-size:17px;color:#14F32A;">Click Here.<i></a></p>
 
 
 <!--Search bar-->
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
-
+<div style="color:grey;">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for events . . ." title="Type in an event" >
+</div>
 
 
     <center><div>
@@ -97,4 +101,5 @@ you log in as
         }
         
     </script> 
+    </center>
 @endsection 

@@ -41,7 +41,17 @@ use Illuminate\Support\Facades\DB;
         //dd("test");
         $assign = DB::table('roles')->get();
         //return Auth::user()->id;
-        return view('assign\assignHome')->with('assign',$assign);
+
+        //for assign role view
+$d=DB::table('model_has_roles')
+->join('users','users.id','=','model_has_roles.model_id')
+->join('roles','roles.id','=','model_has_roles.role_id')
+->select('users.id','users.nameWithInitials','users.nic','users.contactNumber','users.email','roles.name')
+->take(10)
+->get();
+
+
+        return view('assign\assignHome')->with(['assign'=>$assign,'d'=>$d]);
     }
 
     public function Home(request $request)
@@ -123,8 +133,15 @@ use Illuminate\Support\Facades\DB;
   ->where('date', '>', date('y-m-d', strtotime('0 month')))
   ->take(3)
   ->get();
-
 //return $detail;
+
+//for assign role view
+$d=DB::table('model_has_roles')
+->join('users','users.id','=','model_has_roles.model_id')
+->join('roles','roles.id','=','model_has_roles.role_id')
+->select('users.id','users.nameWithInitials','users.nic','users.contactNumber','users.email','roles.name')
+->take(10)
+->get();
 
     if($a==0){
 
@@ -133,7 +150,10 @@ use Illuminate\Support\Facades\DB;
 
     }
     else{
-        return view('home')->with(['data'=>$data, 'detail'=>$detail]);
+        
+            return view('home')->with(['data'=>$data, 'detail'=>$detail,'d'=>$d]);
+        
+      
     }
 
 //
@@ -146,7 +166,9 @@ use Illuminate\Support\Facades\DB;
 
 
 
-   return view('home')->with(['data'=>$data, 'detail'=>$detail]);
+   
+    return view('home')->with(['data'=>$data, 'detail'=>$detail,'d'=>$d]);
+
 
 
     }
@@ -170,7 +192,44 @@ use Illuminate\Support\Facades\DB;
             }
         }
 
-        return redirect()->back();
+        $d=DB::table('model_has_roles')
+        ->join('users','users.id','=','model_has_roles.model_id')
+        ->join('roles','roles.id','=','model_has_roles.role_id')
+        ->select('users.id','users.nameWithInitials','users.nic','users.contactNumber','users.email','roles.name')
+        ->take(10)
+        ->get();
+
+        return redirect()->back()->with('d',$d);
 
     }
+
+
+    public function assignORFOL(Request $request){
+      // dd($request->memberId);
+        $pMember = User::find($request->memberId);
+        $users = User::role('or_fol')->get();
+
+        $min = 99999999;
+        $user = null;
+
+        $client = new \GuzzleHttp\Client(); 
+
+        for($i=0; $i<$users->count(); $i++){
+          //  echo $users[$i]->pollingDivision." : ";
+            $res = $client->get('https://maps.googleapis.com/maps/api/directions/json?origin='.$pMember->pollingDivision.'&destination='.$users[$i]->pollingDivision.'&key=AIzaSyBOBD8RfyIG-op1SKN3p1Ylqfca_ZdYFJQ', ['auth' =>  ['user', 'pass']]);
+            $s = $res->getBody(); // { "type": "User", ....
+            if($min>json_decode($s, true)['routes'][0]['legs'][0]['distance']['value']){
+                $min = json_decode($s, true)['routes'][0]['legs'][0]['distance']['value'];
+                $user = $users[$i];
+            }
+           // echo json_decode($s, true)['routes'][0]['legs'][0]['distance']['value'];
+           // echo '                        ';
+        }
+      
+//  return ( $user);
+
+   return view('assign.assignorfolview')->with(['user'=>$user,'min'=>$min/100]);
+    }
 }
+
+

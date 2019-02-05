@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.mcreate')
 
 @section('content')
 
 <!--Begin of update form-->
     <form method="post" action="{{route('userUpdate',['id'=>$user->id])}}">
-
+<br>
+<div class="card" style="width:50%;margin-left:340px; margin-top:100px; background-color:rgba(0,0,0,0);">
     {{csrf_field()}}
         <div class = "container">
             <div class="form-group">
@@ -18,7 +19,7 @@
                         </ul>
                     </div>
                             @endif
-                                <div class="groove">
+                                <div class="groove" style="color:blue">
                                     <h2>Profile Settings</h2><hr>
                                         <div>
                                             <label for="usr">Name With Initials:</label>
@@ -54,7 +55,7 @@
         </div>
     </form>
 
-<div class="container">
+<div class="container" style="color:blue">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -64,7 +65,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('passwordold') ? ' has-error' : '' }}">
-                            <label for="password" class="col-mdd-4 control-label">Old Password</label>
+                            <label for="password" class="col-md-4 control-label">Old Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="passwordold" required>
@@ -92,7 +93,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-panel">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-6 control-panel">Confirm Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password_confirmation" required>
@@ -135,5 +136,5 @@ $ (document).ready(function(){
 });
 </script>
 @endif
+</div>
     @endsection
-

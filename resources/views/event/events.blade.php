@@ -2,13 +2,13 @@
 
 @section('header')
 
-<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/about.jpg);width:1499px;height:500px;">
+<section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/events.jpg);width:100%;height:500px;">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
-                <div class="hero-content">
-                        <<h2>Success Your Events Here...</h2>
-                        <h4>Think future of yours, Think Join. </h4>
+                <div class="hero-content"><br>
+                        <h2>Your Success Is Here...</h2>
+                        <h4>Join and See. </h4>
                 </div>
                 <!-- Hero Search Form -->
 
@@ -21,9 +21,12 @@
 
 @section('content')
 
+<br>
 
-
-<p>From our web site we introduce many events for you that you can vote according to your requirements.Your vote will directly consider by our high level management.The highest voted event will choose by the high level management and donate necessary fundings.These are the few awsome last year works done by our society according to your vote. </p>
+<p>From our web site we introduce many events for you that you can vote according to your requirements. 
+Your vote will directly consider by our high level management. 
+The highest voted event will choose by the high level management and donate necessary fundings. 
+These are the few awsome last year works done by our society according to your vote. </p>
 
  <!-- ***** Features Destinations Area Start ***** -->
  <section class="dorne-features-destinations-area">

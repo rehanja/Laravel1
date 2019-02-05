@@ -15,16 +15,17 @@
     <link rel="icon" href="http://127.0.0.1:8000/img/title.PNG">
 
     <!-- Core Stylesheet -->
-    <link href="http://127.0.0.1:8000/css/stylenew.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/css/others/animate.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href=" css/style.css" rel="stylesheet">
 
     <!-- Responsive CSS -->
     <link href="http://127.0.0.1:8000/css/responsive/responsive.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/stylenew.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/others/animate.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -42,7 +43,7 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="{{ url('/') }}"><img src="http://127.0.0.1:8000/img/homelogo.png" alt="" style="width:120px; height:74px"></a>
+                        <a class="navbar-brand" href="{{ url('http://127.0.0.1:8000//') }}"><img src="http://127.0.0.1:8000/img/homelogo.png" alt="" style="width:120px; height:74px"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
@@ -83,7 +84,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Profile Settings') }}
-										</a>
+                    </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -95,9 +96,9 @@
                                         {{ __('Logout') }}
                                         </a>
 
-										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-										</form>
+                    </form>
 
                                     </div>
                                 </li>
@@ -113,7 +114,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(http://127.0.0.1:8000/img/meetingcreate.jpg);width:100%;height:180%;">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(http://127.0.0.1:8000/img/meetingcreate.jpg);background-repeat: no-repeat;width:100%;height:200%;">
         
             @yield('content')
 
@@ -186,13 +187,13 @@
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                           <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
                           <p>
-                                <img src="http://127.0.0.1:8000/img/address.png" alt="" style="width:30px; height:30px;"> No 97/4, Katubadda, Moratuwa</p>
+                                <img src=" http://127.0.0.1:8000/img/address.png" alt="" style="width:30px; height:30px;"> No 97/4, Katubadda, Moratuwa</p>
                           <p>
-                                <img src="http://127.0.0.1:8000/img/email.png" alt="" style="width:20px; height:20px;"> ezevent@gmail.com</p>
+                                <img src=" http://127.0.0.1:8000/img/email.png" alt="" style="width:20px; height:20px;"> ezevent@gmail.com</p>
                           <p>
-                                <img src="http://127.0.0.1:8000/img/phone.png" alt="" style="width:20px; height:20px;"> +94 775641982</p>
+                                <img src=" http://127.0.0.1:8000/img/phone.png" alt="" style="width:20px; height:20px;"> +94 775641982</p>
                           <p>
-                                <img src="http://127.0.0.1:8000/img/land.png" alt="" style="width:30px; height:30px;"> 011 5246985</p>
+                                <img src=" http://127.0.0.1:8000/img/land.png" alt="" style="width:30px; height:30px;"> 011 5246985</p>
                         </div>
                         <!-- Grid column -->
 
@@ -209,7 +210,7 @@
 
                           <!--Copyright-->
                           <p class="text-center text-md-left">
-                            <a href="https://mdbootstrap.com/education/bootstrap/">
+                            <a href=" http://127.0.0.1:8000/mdbootstrap.com/education/bootstrap/">
                               <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</strong>
                             </a>
                           </p>
@@ -260,15 +261,15 @@
     <!-- ****** Footer Area End ****** -->
 
     <!-- jQuery-2.2.4 js -->
-    <script src="http://127.0.0.1:8000/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src=" http://127.0.0.1:8000/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="http://127.0.0.1:8000/js/bootstrap/popper.min.js"></script>
+    <script src=" http://127.0.0.1:8000/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap-4 js -->
-    <script src="http://127.0.0.1:8000/js/bootstrap/bootstrap.min.js"></script>
+    <script src=" http://127.0.0.1:8000/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="http://127.0.0.1:8000/js/others/plugins.js"></script>
+    <script src=" http://127.0.0.1:8000/js/others/plugins.js"></script>
     <!-- Active JS -->
-    <script src="http://127.0.0.1:8000/js/active.js"></script>
+    <script src=" http://127.0.0.1:8000/js/active.js"></script>
 </body>
 
 </html>

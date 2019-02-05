@@ -12,13 +12,19 @@
     <title>Event Management System &amp; EZevent</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/title.PNG">
+    <link rel="icon" href="http://127.0.0.1:8000/img/title.PNG">
 
     <!-- Core Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/stylenew.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/others/animate.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Responsive CSS -->
-    <link href="css/responsive/responsive.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/responsive/responsive.css" rel="stylesheet">
 
 </head>
 
@@ -52,7 +58,7 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="{{ url('/') }}"><img src="img/homelogo.png" alt="" style="width:120px; height:74px"></a>
+                        <a class="navbar-brand" href="{{ url('/') }}"><img src="http://127.0.0.1:8000/img/homelogo.png" alt="" style="width:120px; height:74px"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
@@ -207,13 +213,13 @@
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                           <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
                           <p>
-                                <img src="img/address.png" alt="" style="width:30px; height:30px;"> No 97/4, Katubadda, Moratuwa</p>
-                          <p>
-                                <img src="img/email.png" alt="" style="width:20px; height:20px;"> ezevent@gmail.com</p>
-                          <p>
-                                <img src="img/phone.png" alt="" style="width:20px; height:20px;"> +94 775641982</p>
-                          <p>
-                                <img src="img/land.png" alt="" style="width:30px; height:30px;"> 011 5246985</p>
+                            <img src="http://127.0.0.1:8000/img/address.png" alt="" style="width:30px; height:30px;"> No 97/4, Katubadda, Moratuwa</p>
+                      <p>
+                            <img src="http://127.0.0.1:8000/img/email.png" alt="" style="width:20px; height:20px;"> ezevent@gmail.com</p>
+                      <p>
+                            <img src="http://127.0.0.1:8000/img/phone.png" alt="" style="width:20px; height:20px;"> +94 775641982</p>
+                      <p>
+                            <img src="http://127.0.0.1:8000/img/land.png" alt="" style="width:30px; height:30px;"> 011 5246985</p>
                         </div>
                         <!-- Grid column -->
 
@@ -281,15 +287,15 @@
     <!-- ****** Footer Area End ****** -->
 
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap-4 js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/others/plugins.js"></script>
+    <script src="http://127.0.0.1:8000/js/others/plugins.js"></script>
     <!-- Active JS -->
-    <script src="js/active.js"></script>
+    <script src="http://127.0.0.1:8000/js/active.js"></script>
 </body>
 
 </html>

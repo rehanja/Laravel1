@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\event;
 use App\event;
 use App\vote;
-    use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,10 +18,11 @@ class eventController extends Controller
 
     public function index(){
 
-        $a=event::all();
-        $a = event::orderBy('vote', 'ASCE')->get();
+        $event=event::all();
+        $event = event::paginate(6);
         //return Auth::user()->id;
-        return view('event/eventHome')->with('event',$a);
+        return view('event/eventHome',compact('event'))
+                ->with('id', (request()->input('page', 1) - 1) * 6);
     }
 
     
@@ -53,14 +54,14 @@ class eventController extends Controller
 
     $data=event::all();
     //return redirect()->back();
-    return redirect('/event')->with('message','Event created Successfully.');
+    return redirect('/event')->with('event',$data);
     
     }
     public function eventDelete($id){
         //dd($id);
         $a=event::find($id);
         $a->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Event Deleted Successfully.');
     }
 
 
@@ -102,14 +103,14 @@ class eventController extends Controller
         $event->save();
         $data=event::all();
         //return '0';
-        return redirect('/event')->with('event',$data);
+        return redirect('/event')->with('message','Event Updated Successfully.');
     }
     
 
 //functions for polling
     public function PollsView(Request $request){
 
-        $event = event::orderBy('vote', 'ASCE')->get();
+        $event = event::orderBy('vote', 'ASCE')->take(10)->get();
         $sum = $event->sum('vote');
         $arr = [['eventName', 'votes']];
 

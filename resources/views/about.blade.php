@@ -2,14 +2,13 @@
 
 
 @section('header')
-
 <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/about.jpg);width:1499px;height:500px;">
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 col-md-10">
                 <div class="hero-content">
-                        <h2>Success Your Events Here...</h2>
-                        <h4>Think future of yours, Think Join. </h4>
+                        <h2>Who We Are...</h2>
+                        <h4>Think of you, It for you.  </h4>
                 </div>
                 <!-- Hero Search Form -->
 
@@ -21,23 +20,23 @@
 @endsection
 
 @section('content')
-<br><br>
+<br>
 <div class="col-12 col-md-12" >
 <h3>Aim</h3>
-<p style="color:black;">The aim of our project is to simplify and make the process of getting correct low-level information to high level management easier. </p>
+<p >The aim of our project is to simplify and make the process of getting correct low-level information to high level management easier. </p>
 </div>
 <br>
 <div class="col-12 col-md-12">
-        <h3>Objectives</h3>
+        <h3>Objectives</h3><br>
 </div>
-<ul style="color:black; text-align:">
+    <ul style="color:grey;font-size:18px;">
         <li>To enable the initial capture of member information and manage the progress of the member across the different divisions of the organizations as well as monitor the participation in organizational activities.</li>
         <li>To ensure any individual desirous of joining the organization has the opportunity to join and to develop a personal relationship between the prospective member and organization through the village representatives of the organization.</li>
         <li>To create activities members should participate, inform the members of the need to participate and monitor the participation of the members at the event.</li>
         <li>To enable the assignment of members to various divisions/positions within the organization.</li>
-</ul>
+    </ul>
 
-                    <br><br><br><br>
+                    <br><br>
                     <hr>
                     <h4>hierarchy of the system</h4>
                     <p>Event Management System</p>

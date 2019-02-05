@@ -20,16 +20,22 @@ h1 {
         <div class="sidenav" style="opacity: 0.7;filter: alpha(opacity=70);margin-top:45px" >
             <h3 >Menu</h3>
                 <hr>
+                
+                <a href="/event">Events</a>
+                @role('p_member|or_fol|or_pm|supervising_officer|')
                     <a href="/meeting">Meetings</a>
-                    <a href="/event">Events</a>
                     <a href="/poll">Votes</a>
+                @endrole
+                @role('or_pm|supervising_officer|')
                     <a href="/createUser">Create User</a>
                     <a href="/assign">Assign Role</a>
                     <a href="/assignOrFol">Assign OR-FOL</a>
+                @endrole 
                     <a href="/profile">Profile</a>
+                   
         </div>
         <div class="col-md-9">
-            <div class="card" style="width:100%;height:90%;opacity: 0.7;filter: alpha(opacity=70); margin-left:0.5%;margin-top:9%">
+            <div class="card" style="width:100%;height:90%;opacity: 0.8;filter: alpha(opacity=80); margin-left:0.5%;margin-top:9%">
                 <div class="card-header" style="font-size:27px;font-weight:bold">Dashboard</div>
                     <div class="card-body">
                         @if (session('status'))
@@ -38,19 +44,6 @@ h1 {
                             </div>
                         @endif
 
-                        <p style="font-size:25px">You are logged in as a <span style="font-weight:bold">
-                            @role('p_member')
-                                Primary member
-                            @endrole
-                            @role('or_fol')
-                                Officer responsible for follow up (OR_FOL)
-                            @endrole
-                            @role('or_pm')
-                                Officer responsible for respctive member (OR_PM)
-                            @endrole
-                            @role('or_pm|supervising_officer')
-                               Supervising officer
-                            @endrole </span> </p> <br><br>
 
                         <h1>Welcome</h1><br>
                         <h4>Highest Voted Upcoming Events</h4><hr>
@@ -74,7 +67,7 @@ h1 {
 
                         @endforeach
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                         <h4>Upcoming Meetings</h4><hr>
 
@@ -100,10 +93,6 @@ h1 {
 
                         @endforeach
                     </div>
-
-
-
-
 
                 </div>
             </div>

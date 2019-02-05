@@ -73,22 +73,25 @@
     color: #0062cc;
 }
 #choosephoto{
-    margin-left:-284px;
+    margin-left:-294px;
     margin-top:380px;
 }
 #uploadphoto{
     margin-left:-6px;
 }
+/*name and role*/
 #mainname{
-    margin-top:180px;
-    margin-left:-120px;
+    margin-top:20px;
+    margin-left:0px;
 }
 #editbutton{
-    margin-top:180px;
-    margin-left:225px;
+    margin-top:150px;
+    margin-left:650px;
 }
+/*details of the card*/
 #home{
-    margin-left:325px;
+    margin-left:25px;
+    margin-top:-100px;
 }
 </style>
 
@@ -111,13 +114,19 @@
                         <input class="btn btn-primary" type="submit" value="Upload Photo" id="uploadphoto">
 
                     </div>
+
+                    <div class="col-md-2">
+                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-md active" role="button" aria-pressed="true" id="editbutton" style>Edit Profile</a>
+                    </div>
+
+                <div class="card" style="width:65%;height:450px; margin-top:-200px; margin-left:350px; margin-bottom:0px;">
                     <div class="col-md-6" id="mainname">
                         <div class="profile-head">
-                                    <h5>
+                                    <h3>
                                         {{Auth::user()->name}}
-                                    </h5>
+                                    </h3>
                                     <h6>
-                                    <p> @role('or_fol')
+                                    <p style="color:black"> @role('or_fol')
                                                 orfol
                                                 @endrole
                                                 @role('or_pm')
@@ -132,11 +141,7 @@
                                     </h6>
                         </div>
                     </div>
-                    <br><br><br><br><br><br><br>
-                    <div class="col-md-2">
-                    <a href="{{route('userEdit',['id' => Auth::user()->id]) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" id="editbutton">Edit Profile</a>
-                    </div>
-                </div>
+
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         
@@ -208,7 +213,7 @@
                                             </div>
                                         </div>
                             </div>
-            </form>           
+                </div>
         </div>
 
 @endsection

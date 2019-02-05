@@ -19,14 +19,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
-
 //verify email
 Route::get('verifyEmailFirst','Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
 Route::get('verify','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
 
 //view users
 Route::get('/createUser',function () {
-    $d=App\User::paginate(6);
+    $d=app\User::paginate(6);
     return view('roles/createUser')->with('data',$d);
 });
 
@@ -38,7 +37,7 @@ Route::get('/markAsNotCompleted/{id}','Auth\UsersController@updateAsNotMember');
 Route::get('/deleteMember/{id}','Auth\UsersController@deleteMember')->name('userDelete');
 
 //update Member
-Route::get('/updateMember/{id}','Auth\UsersController@updateMember')->name('userUpdate');
+Route::get('/updateMember/{id}','Auth\UsersController@updateMember');
 Route::post('/updateUser','Auth\UsersController@updateMemberView');
 
 //assign or-fol
@@ -46,7 +45,8 @@ Route::get('/assignOrFol', function () {
     return view('assign/assignOrFol');
 });
 
-Route::post('/assignOrFol','Auth\UsersController@assignOrFol');
+Route::post('/assignOrFol/save', 'HomeController@assignORFOL');
+
 
 
 //event routes-rehan==============================================================================================================
@@ -93,7 +93,7 @@ Route::get('/assign',[
 Route::post('/assign/role',[
     'uses'=>'HomeController@assignNewRole',
     'as'=>'assign_new_role'
-    ]);
+]);
 
 Route::post('/assign', 'HomeController@index');
 
@@ -204,27 +204,7 @@ Route::post('/photoUpload','profile\ProfileController@uploadPhoto');
 
 
 
-//api calls 
 
-//Get all Meetings
-Route::get('/getallmeetings',[
-    'uses'=>'ApiContoller@getAllMeeting'
-]);
-
-//get one meeting
-Route::get('/getPeticularMeeting/{id}',['uses'=>'ApiContoller@getPeticularMeeting']);
-
-//delete meeting
-
-Route::get('delmeeting/{id}',['uses'=>'ApiContoller@delmeeting']);
-
-//update meeting
-
-Route::post('/updatemeetings/{id}',['uses'=>'ApiContoller@MeetingUpdate']);
-
-//create meeting
-
-Route::post('crmeeting',['uses'=>'ApiContoller@MeetingsCreate']);
 
 
 

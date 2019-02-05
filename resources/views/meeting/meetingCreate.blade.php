@@ -13,7 +13,7 @@
 <br><br><br><br><br>
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card" style="background-image: url(img/mcform.jpg);width:650px;margin-left:110px;height:900px;opacity: 0.6;filter: alpha(opacity=70)">
+        <div class="card" style="background-image: url(img/mcform.jpg);width:700px;margin-left:120px;height:900px;opacity: 0.9;filter: alpha(opacity=90)">
     
                 
             <div class="card-header" style="color:black;text-align:center;font-size:40px;font-weight:bold;width:620px;height:860px;">Create Your Meeting Here...</div>               
@@ -22,7 +22,7 @@
                 <form method="post" action="/create">
 
                 {{csrf_field()}}
-  
+                <b>
                 <div class="form-group col-sm-11">
                     <label for="title">Member Name :</label>
                     <input type="text" class="form-control" name="name" placeholder="enter p-member name here" id="name" required>

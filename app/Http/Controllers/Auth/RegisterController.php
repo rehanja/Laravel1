@@ -34,7 +34,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -56,14 +56,14 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
 
-            'nameWithInitials' => 'required|string|max:55',
+            'nameWithInitials' => 'required|string|max:55|regex:/^[a-zA-Z]+$/u',
             'name' => 'required|string|max:255',
             'nic' => 'required|string|max:10|min:10|unique:users',
             'address' => 'required|string|max:55',
             'contactNumber' => 'required|string|max:10|min:10',
             'pollingDivision'=>'string',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|confirmed|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/'
         ]);
     }
 
@@ -98,7 +98,7 @@ class RegisterController extends Controller
         // $event->model_id=$user->id;
         // $event->save();
 
-        //$this->sendEmail($thisUser);
+        $this->sendEmail($thisUser);
 
         return $user;
 

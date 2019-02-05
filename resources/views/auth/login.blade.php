@@ -10,7 +10,7 @@
                                 <div class="row justify-content-center">
 
                                     <div class="col-md-8">
-                                        <div class="card" style="background-image: url(img/loginnew.jpg);width:600px;height:350px;opacity: 0.7;filter: alpha(opacity=70)">
+                                        <div class="card" style="background-image: url(img/loginnew.jpg);width:600px;height:120%;opacity: 0.7;filter: alpha(opacity=70)">
 
                                             @if(session('status'))
                                             <div class="alert alert-warning">
